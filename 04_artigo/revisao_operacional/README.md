@@ -1,14 +1,12 @@
 # Revisão operacional — entrada principal
 
-Esta área implementa a revisão experimental. **Artigo, carta, PDFs, dados brutos e resultados históricos não são editados.**
+Esta área contém o protocolo da campanha (jobs, scripts, formulação). O manuscrito está em `04_artigo/ieee_access/`.
 
-## Documentos
+## Documentos neste pacote
 
 - `HANDOFF_DE2115.md`: guião da bancada DE2-115.
-- `MATRIZ_REVISORES.csv`: um registro por comentário, com identificador e ação.
-- `REGISTRO_ALTERACOES.md`: decisões, erros encontrados e limitações.
-- `inventario_original.json`: hashes SHA-256 e tamanhos de todos os arquivos anteriores nas pastas inventariadas.
-- `jobs.json`: especificação pré-registrada dos 1.755 jobs; não editar para retomar uma campanha existente.
+- `jobs.json`: especificação pré-registrada dos 1.755 jobs.
+- `preparacao_artigo_20260911_v1/`: formulação QP e tabelas da consolidação.
 
 ## Entradas e código
 
