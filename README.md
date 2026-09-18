@@ -1,58 +1,59 @@
-# Reproduction package — IEEE Access revision
 # EMS-MPC for an aggregated AI/HPC data-center load with BESS
-# Tag: v1.0.0-ieee-access-rev
 
-This repository accompanies the IEEE Access resubmission
-(`https://github.com/raonialderete-eng/ems-mpc-datacenter`).
-It is **private until acceptance**. Cite the printed article (and the Zenodo DOI
-once minted from the GitHub Release).
+Reproduction package for the IEEE Access manuscript on predictive energy management of an aggregated critical load with battery energy storage.
 
-## Honest scope (read before citing hardware)
+- **Code:** https://github.com/raonialderete-eng/ems-mpc-datacenter
+- **Archive (DOI):** https://doi.org/10.5281/zenodo.22835283
 
-| Claim | Status in this tag |
+Please cite the published article (title and DOI as printed) together with the Zenodo record.
+
+## Scope of the evidence
+
+| Item | In this repository |
 |---|---|
-| Desktop SIL campaign (MATLAB R2025b + Optimization Toolbox) | Yes — 11 Sep 2026 consolidation |
-| FPGA-ready C copy, ADMM, UART protocol | Yes — sources in `07_fpga/` |
+| Desktop campaign (MATLAB R2025b, Optimization Toolbox) | Yes — consolidation of 11 Sep 2026 |
+| FPGA-ready C, ADMM, UART protocol | Yes — `07_fpga/` |
 | SIL (`backend=matlab_fpga`, \(N_p=12\), \(N_c=4\)) | Yes — `05_resultados/hil_de2115/` |
-| UART HIL of the **heuristic** on four short scenarios | Yes — matches SIL digits |
-| UART HIL of ADMM / serial MPC, 1200 steps | **No.** Tens of RSP frames until OpenCore Plus (~1 h) expired; each QP ≫ \(T_s\) on Nios soft-float |
-| FIL (HDL Verifier / Ethernet) | **Not implemented** (DUT is C on Nios, not generated HDL) |
-| \(T_s=1\) s real-time ADMM on Cyclone IV Lite | **Not claimed** |
-| MW facility / UPS inner loops / EMT | **Not this plant** (aggregated first-order BESS + critical load) |
-| Stochastic 3-scenario MPC on FPGA | Desktop only |
-| Warm-start | Not used (`X0` empty) |
+| UART HIL of the **heuristic** (four short scenarios) | Yes — matches SIL |
+| UART HIL of ADMM / 1200-step serial MPC | No (OpenCore Plus ~1 h; QP ≫ \(T_s\) on Nios) |
+| FIL (HDL Verifier) | Not implemented |
+| Real-time ADMM at \(T_s=1\) s on Cyclone IV Lite | Not claimed |
+| MW facility or UPS inner-loop / EMT tests | Not this plant |
+| Stochastic three-scenario MPC on FPGA | Desktop only |
+| Warm-start | Not used |
 
-SIL is **not** a MW installation test. UART HIL validates the **embedded controller** on the same aggregated model, not a UPS.
+SIL is not a facility test. UART HIL validates the embedded controller on the same aggregated model used in simulation.
 
 ## Layout
 
-- `01_matlab_base/` — plant, controllers, audited QP (`revisao_operacional/`), UART HIL loop. Do **not** treat historical `controle_mpc_qp_v5.m` as the revision assembler; the audited maps are in `revisao_operacional/`.
-- `04_artigo/revisao_operacional/` — `jobs.json`, `criar_jobs.py`, formulation notes, dataset script.
-- `04_artigo/ieee_access/` — manuscript TeX (revision).
-- `05_resultados/revisao_operacional/dataset_v1/` — derived 1200 s traces + `manifest.json` hashes (seed 20260909).
+- `01_matlab_base/` — plant, controllers, audited QP (`revisao_operacional/`), UART loop. The revision assembler is `revisao_operacional/`, not the historical `controle_mpc_qp_v5.m` used as a frozen reference.
+- `04_artigo/ieee_access/` — manuscript and response letter (TeX).
+- `04_artigo/revisao_operacional/` — `jobs.json`, campaign scripts, formulation notes.
+- `05_resultados/revisao_operacional/dataset_v1/` — derived 1200 s traces and `manifest.json` hashes (seed 20260909).
 - `05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/` — campaign CSVs.
 - `05_resultados/hil_de2115/` — SIL and UART HIL logs.
-- `07_fpga/` — Qsys Tcl, Verilog top, C golden / Nios app sources. Quartus `output_files` and time-limited `.sof` are **not** in git; see `07_fpga/SOF_HASH.md` if present.
+- `07_fpga/` — Qsys Tcl, Verilog top, C sources. Time-limited `.sof` bitstreams are not distributed; see `07_fpga/SOF_HASH.md`.
 
-Raw ~1 GB DIPLOEE/NVML drops are **not** redistributed. Rebuild derived traces with `04_artigo/revisao_operacional/preparar_dataset.py` from the official sources, then check `manifest.json`. NVML metadata fields named `raw_min_W` / `raw_max_W` are a **unit-label errata** (values are stored after W→kW); the 600–950 kW mapped profiles used in the paper are unaffected.
+Raw DIPLOEE/NVML drops (~1 GB) are not redistributed. Rebuild derived traces with `04_artigo/revisao_operacional/preparar_dataset.py` from the official sources and check `manifest.json`. NVML metadata fields named `raw_min_W` / `raw_max_W` are mislabelled (stored after W→kW); the mapped 600–950 kW profiles used in the paper are unaffected.
 
-## Reproduce desktop KPIs
+## Desktop reproduction
 
-Requires MATLAB R2025b and Optimization Toolbox on Windows (campaign host: Intel Core i7-4510U).
+MATLAB R2025b and Optimization Toolbox (campaign host: Intel Core i7-4510U):
 
 ```matlab
 cd('01_matlab_base')
 % Jobs and seeds: 04_artigo/revisao_operacional/jobs.json
-% Consolidation CSVs are the numerical source of the tables.
+% Tables in the paper follow the consolidation CSVs.
 ```
 
-SIL (no board):
+SIL (no FPGA):
 
 ```matlab
 hil_loop_de2115('backend','matlab_fpga','controle','mpc','cenario','carga_faixas')
 ```
 
-UART HIL requires a Terasic DE2-115, Quartus Prime Lite 20.1.1 bitstream, `ems.elf`, COM port (lab: COM4, 115200 8N1), SW[0]=1 for HIL, SW[2] for MPC vs heuristic. OpenCore Plus IP is time-limited (~1 h).
+UART HIL requires a Terasic DE2-115, Quartus Prime Lite 20.1.1, `ems.elf`, serial port (lab: COM4, 115200 8N1), SW[0]=1, SW[2] for MPC versus heuristic. OpenCore Plus IP is time-limited (~1 h).
 
+## License
 
-
+MIT (`LICENSE`). No warranty. Not certified for field deployment or detailed UPS control.
