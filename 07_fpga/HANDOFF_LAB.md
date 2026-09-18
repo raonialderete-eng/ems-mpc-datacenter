@@ -1,9 +1,7 @@
-# Handoff — EMS-MPC no laboratório (DE2-115)
+# Laboratório EMS-MPC (DE2-115)
 
-Documento para abrir **no PC da faculdade**, sem esta conversa do Cursor.
-Autor: Raoni. Placa: Terasic DE2-115 (Cyclone IV E **EP4CE115F29C7**).
-
-Leve a pasta inteira `MPC_DATACENTER` (USB, Drive ou Git). O chat do Cursor **não** sincroniza entre PCs.
+Placa: Terasic DE2-115 (Cyclone IV E **EP4CE115F29C7**).
+Copiar o projeto para um caminho sem acento e sem espaço, por exemplo `C:\MPC_DATACENTER`.
 
 ---
 
