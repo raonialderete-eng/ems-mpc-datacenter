@@ -54,24 +54,5 @@ hil_loop_de2115('backend','matlab_fpga','controle','mpc','cenario','carga_faixas
 
 UART HIL requires a Terasic DE2-115, Quartus Prime Lite 20.1.1 bitstream, `ems.elf`, COM port (lab: COM4, 115200 8N1), SW[0]=1 for HIL, SW[2] for MPC vs heuristic. OpenCore Plus IP is time-limited (~1 h).
 
-## What is not in this git tree
 
-- `.venv_revisao` and other local Python venvs
-- Quartus `output_files`, `db`, `incremental_db`
-- Per-job `.mat` of the 1 755-run campaign (CSVs suffice; MATs optional on Zenodo later)
-- Intel time-limited `.sof` bitstream (license); publish SHA-256 instead
-- Credentials, Overleaf build junk, unrelated personal folders
 
-## Zenodo DOI (author step; not done from this machine)
-
-1. Sign in at https://zenodo.org with the **same** GitHub account that owns this private repo.
-2. GitHub → Settings → Applications → Zenodo authorized; on Zenodo: GitHub → enable this repository.
-3. On GitHub create Release from tag `v1.0.0-ieee-access-rev` if not already created.
-4. Zenodo → the repo → **Publish**. Copy the DOI (`10.5281/zenodo.XXXXXXXX`).
-5. Paste the DOI into `04_artigo/ieee_access/artigo_ems_mpc_datacenter_access.tex` (Data Availability) and into the response letter item R2.17.
-
-A GitHub URL is versioned code. A Zenodo DOI is the archival cite. Both are required for the letter; only GitHub is created in the engineering session.
-
-## License
-
-MIT (see `LICENSE`). No warranty. Not certified for real-time field control.
