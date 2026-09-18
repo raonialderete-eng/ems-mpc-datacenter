@@ -62,6 +62,32 @@ Desktop.ini
 04_artigo/revisao_operacional/ZENODO_DOI_PASSO.md
 04_artigo/revisao_operacional/CHECKLIST_COMENTARIO_SECAO.md
 04_artigo/revisao_operacional/R2.17_PACOTE.md
+04_artigo/revisao_operacional/ANDAMENTO.md
+04_artigo/revisao_operacional/ACHADOS_EXECUTADOS_01.md
+04_artigo/revisao_operacional/MATRIZ_REVISORES.csv
+04_artigo/revisao_operacional/PLANO_OPERACIONAL.md
+04_artigo/revisao_operacional/REGISTRO_ALTERACOES.md
+04_artigo/revisao_operacional/RETOMADA_20260910.md
+04_artigo/revisao_operacional/confronto_revisores_20260913_v1/
+
+# Editorial letters and local PDF screenshots (not the reproduction pack)
+04_artigo/ieee_access/response_to_reviewers.tex
+04_artigo/ieee_access/cover_letter_access.tex
+04_artigo/ieee_access/cover_letter_access.pdf
+04_artigo/ieee_access/NOMENCLATURA_REVISAO.md
+04_artigo/ieee_access/PRESUBMIT_CHECKLIST.txt
+04_artigo/ieee_access/APPENDIX_QP_DRAFT.md
+04_artigo/ieee_access/artigo_ems_mpc_datacenter_access.pdf
+04_artigo/ieee_access/artigo_ems_mpc_datacenter_access_FINAL.pdf
+04_artigo/ieee_access/artigo_ems_mpc_datacenter_access_new.pdf
+04_artigo/ieee_access/chk_*.png
+04_artigo/ieee_access/fix_*.png
+04_artigo/ieee_access/fixpg*.png
+04_artigo/ieee_access/preview*.png
+04_artigo/ieee_access/v2-*.png
+04_artigo/ieee_access/v2p8-*.png
+04_artigo/ieee_access/v3-*.png
+
 
 
 # Raw ~GB traces (derived copies live in dataset_v1)
