@@ -1,6 +1,6 @@
-# Handoff — sessão futura de execução na DE2-115
+# Guia da bancada DE2-115
 
-**Situação atualizada em 13/09/2026:** o autor já recebeu a DE2-115 e planeja estruturar os testes na semana seguinte. A indisponibilidade da placa foi uma condição da preparação inicial. Comunicação, firmware e validação física continuam pendentes; este guia não é evidência de HIL. A execução ocorrerá em outra conversa, acompanhada pelo autor. O pacote `preparacao_artigo_20260911_v1/README.md` reúne formulação, resultados corrigidos e diagnóstico numérico para definir a referência de software antes da bancada.
+A DE2-115 está disponível no laboratório. Este ficheiro descreve o material e o procedimento; não substitui os CSVs de HIL em `05_resultados/hil_de2115/`. Formulação e resultados de secretária: `preparacao_artigo_20260911_v1/README.md`.
 
 ## 1. O que levar
 
