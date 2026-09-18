@@ -1,0 +1,579 @@
+{
+  "seed": 20260909,
+  "inputs": [
+    {
+      "path": "dataset\\03_whole-facility_profiles\\inference\\simulated_data\\inference_1MW_283nodes_40u_power.csv",
+      "sha256": "acfb0cb2d0bce785e73ca907faaca9554ef32b6ff0a3eb42f985fcbccae3c57f"
+    },
+    {
+      "path": "dataset\\00_raw_datasets\\training_llama2_70b_lora\\16node\\nvml_wattameter_emissions_parsed_slurmid_10742842_node_x3105c0s37b0n0.log",
+      "sha256": "5a686b78aebe1302a25ee49ad6c4f038e4e9ce921f69870abaea546427af9159"
+    },
+    {
+      "path": "dataset\\00_raw_datasets\\training_llama2_70b_lora\\16node\\nvml_wattameter_emissions_parsed_slurmid_10742842_node_x3105c0s41b0n0.log",
+      "sha256": "c8e2fc2ba5efb50ae4e0a11cabcde77c3e6b8fabe4f0c50dc5b13329c7fa83ab"
+    },
+    {
+      "path": "dataset\\00_raw_datasets\\training_llama2_70b_lora\\16node\\nvml_wattameter_emissions_parsed_slurmid_10742842_node_x3106c0s13b0n0.log",
+      "sha256": "fd1fff3d496bdfdeb78c90137018613b3816b2aea936ee8c1d5cffb99471b37c"
+    },
+    {
+      "path": "dataset\\00_raw_datasets\\training_llama2_70b_lora\\16node\\nvml_wattameter_emissions_parsed_slurmid_10742842_node_x3106c0s17b0n0.log",
+      "sha256": "6e7a12aa9709612ecf761d69613bfbf9a45aecdb99b9c99e0b971519c09bd185"
+    },
+    {
+      "path": "dataset\\00_raw_datasets\\training_llama2_70b_lora\\16node\\nvml_wattameter_emissions_parsed_slurmid_10742842_node_x3106c0s25b0n0.log",
+      "sha256": "b49886d4e1005c47c169bc5c42200bb9880a334de29e44418e69e5d45de9cb0a"
+    },
+    {
+      "path": "dataset\\00_raw_datasets\\training_llama2_70b_lora\\16node\\nvml_wattameter_emissions_parsed_slurmid_10742842_node_x3106c0s33b0n0.log",
+      "sha256": "df112cfe215c6ae3d5236dbf920808f30ac12e4d4a5b43f23be4ebd2d683d8d5"
+    },
+    {
+      "path": "dataset\\00_raw_datasets\\training_llama2_70b_lora\\16node\\nvml_wattameter_emissions_parsed_slurmid_10742842_node_x3106c0s5b0n0.log",
+      "sha256": "ab0b4ad3a0d082a19f1d27c5e993f1d20d2c892417cb6a3ce0294cc733e7eea3"
+    },
+    {
+      "path": "dataset\\00_raw_datasets\\training_llama2_70b_lora\\16node\\nvml_wattameter_emissions_parsed_slurmid_10742842_node_x3107c0s13b0n0.log",
+      "sha256": "9532335051ec25b5d96d7c8a9c308ab2a25b7ec3257785b38d0d56b98fa148ad"
+    },
+    {
+      "path": "dataset\\00_raw_datasets\\training_llama2_70b_lora\\16node\\nvml_wattameter_emissions_parsed_slurmid_10742842_node_x3107c0s17b0n0.log",
+      "sha256": "e8b3a4da9ae1429c1f0f0d26074c7feb448fffeb5eebdf23850e2291477c8142"
+    },
+    {
+      "path": "dataset\\00_raw_datasets\\training_llama2_70b_lora\\16node\\nvml_wattameter_emissions_parsed_slurmid_10742842_node_x3107c0s21b0n0.log",
+      "sha256": "9fa17b4e63144e2bd3fbb488584222a2137a32c020dd4f2fe0b7f145f4550872"
+    },
+    {
+      "path": "dataset\\00_raw_datasets\\training_llama2_70b_lora\\16node\\nvml_wattameter_emissions_parsed_slurmid_10742842_node_x3107c0s29b0n0.log",
+      "sha256": "44ba0f4fdb96ebd13e28273b3f733e7975a730771222bb393d4ecd1984a05b50"
+    },
+    {
+      "path": "dataset\\00_raw_datasets\\training_llama2_70b_lora\\16node\\nvml_wattameter_emissions_parsed_slurmid_10742842_node_x3107c0s37b0n0.log",
+      "sha256": "22da30878f203d713547fc7c7dc148ac3659b287be924502aa8e7ddff1b105e2"
+    },
+    {
+      "path": "dataset\\00_raw_datasets\\training_llama2_70b_lora\\16node\\nvml_wattameter_emissions_parsed_slurmid_10742842_node_x3107c0s5b0n0.log",
+      "sha256": "9f94d06d0a9c379660120392b5f92f5ca61e74be25880b3e6f3a03cedb703e84"
+    },
+    {
+      "path": "dataset\\00_raw_datasets\\training_llama2_70b_lora\\16node\\nvml_wattameter_emissions_parsed_slurmid_10742842_node_x3108c0s25b0n0.log",
+      "sha256": "33dfa5ead40f4c96ef4f8577e6f4f1591c12880e6bce4ac28ed62be341f5297a"
+    },
+    {
+      "path": "dataset\\00_raw_datasets\\training_llama2_70b_lora\\16node\\nvml_wattameter_emissions_parsed_slurmid_10742842_node_x3108c0s5b0n0.log",
+      "sha256": "0f5e0b20cda87c340e7820551917e04c154cc355e3bb65160dd13f2686c1adfd"
+    },
+    {
+      "path": "dataset\\00_raw_datasets\\training_llama2_70b_lora\\16node\\nvml_wattameter_emissions_parsed_slurmid_10742842_node_x3108c0s9b0n0.log",
+      "sha256": "c1a2928e9ab045d9d2087e570df9d58f07147c97841836285c196e41a85b8d42"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "diploee_facility_stress",
+      "source_type": "simulated_facility",
+      "window_index_zero_based": 287407,
+      "source_step_s": 60,
+      "raw_min_W": 573404.3341947722,
+      "raw_max_W": 773841.4062097393,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "maximum amplitude",
+      "csv": "diploee_facility_stress.csv",
+      "sha256": "c4290a0ba0dba795db113c00a2503b94d94cb1ae8d9ea272e347d9cf36ae1b52"
+    },
+    {
+      "id": "diploee_facility_window01",
+      "source_type": "simulated_facility",
+      "window_index_zero_based": 298278,
+      "source_step_s": 60,
+      "raw_min_W": 354676.5274721235,
+      "raw_max_W": 409157.52546695876,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "diploee_facility_window01.csv",
+      "sha256": "725a4eb54be758fede278478aadedf36bf5f927e79aeffca977f1b1d480c24c1"
+    },
+    {
+      "id": "diploee_facility_window02",
+      "source_type": "simulated_facility",
+      "window_index_zero_based": 26765,
+      "source_step_s": 60,
+      "raw_min_W": 477930.3911480821,
+      "raw_max_W": 535019.301144367,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "diploee_facility_window02.csv",
+      "sha256": "755cdc548cb8a1e15e6fb664fc2448b83d66b9093d0f023900377255a65c2ae2"
+    },
+    {
+      "id": "diploee_facility_window03",
+      "source_type": "simulated_facility",
+      "window_index_zero_based": 130273,
+      "source_step_s": 60,
+      "raw_min_W": 224799.90093199577,
+      "raw_max_W": 261201.8744346327,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "diploee_facility_window03.csv",
+      "sha256": "f7b5645b14e317567fa1e998f4a5efe631fc1e26bc3a552dc5a5241a2ecaad8e"
+    },
+    {
+      "id": "diploee_facility_window04",
+      "source_type": "simulated_facility",
+      "window_index_zero_based": 417795,
+      "source_step_s": 60,
+      "raw_min_W": 292264.10049276927,
+      "raw_max_W": 332611.5829843386,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "diploee_facility_window04.csv",
+      "sha256": "4e5b04001ee334d679deb6d24060d83eb90897dfd53700836504984315e4daf3"
+    },
+    {
+      "id": "diploee_facility_window05",
+      "source_type": "simulated_facility",
+      "window_index_zero_based": 54352,
+      "source_step_s": 60,
+      "raw_min_W": 441214.5978498629,
+      "raw_max_W": 506111.50638757856,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "diploee_facility_window05.csv",
+      "sha256": "15a402aa66f13950991152828dc50e44734fd9db0ad8a4c87f3efb2508835e20"
+    },
+    {
+      "id": "diploee_facility_window06",
+      "source_type": "simulated_facility",
+      "window_index_zero_based": 71950,
+      "source_step_s": 60,
+      "raw_min_W": 291844.8633385333,
+      "raw_max_W": 322368.81697264913,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "diploee_facility_window06.csv",
+      "sha256": "d801f189c6109ef53215c34775177c1517a7fedbe80954cf2725bae430be52ad"
+    },
+    {
+      "id": "diploee_facility_window07",
+      "source_type": "simulated_facility",
+      "window_index_zero_based": 442832,
+      "source_step_s": 60,
+      "raw_min_W": 225131.58616790746,
+      "raw_max_W": 251640.31037446274,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "diploee_facility_window07.csv",
+      "sha256": "9567dc7d30e2d6d3d3df9ba71d6e5b8610c6386d4866d78a74889f64d725a07e"
+    },
+    {
+      "id": "diploee_facility_window08",
+      "source_type": "simulated_facility",
+      "window_index_zero_based": 525046,
+      "source_step_s": 60,
+      "raw_min_W": 647782.2125715159,
+      "raw_max_W": 757635.9674526397,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "diploee_facility_window08.csv",
+      "sha256": "3890a7fe009ba1af75b36203df608166ff1b1c62fa8629a1f5e1af57a584efb2"
+    },
+    {
+      "id": "diploee_facility_window09",
+      "source_type": "simulated_facility",
+      "window_index_zero_based": 26082,
+      "source_step_s": 60,
+      "raw_min_W": 329318.55586816825,
+      "raw_max_W": 387838.0457869769,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "diploee_facility_window09.csv",
+      "sha256": "f518adf666282705742d1ed87d67655e9fc044925da76d03206fcbb3f600351d"
+    },
+    {
+      "id": "diploee_facility_window10",
+      "source_type": "simulated_facility",
+      "window_index_zero_based": 197701,
+      "source_step_s": 60,
+      "raw_min_W": 334422.3496409395,
+      "raw_max_W": 387951.81147950154,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "diploee_facility_window10.csv",
+      "sha256": "32df8dbc8b38ef5f0fb0703fca2311865324331ddefabf2204e62b98461ed890"
+    },
+    {
+      "id": "diploee_facility_window11",
+      "source_type": "simulated_facility",
+      "window_index_zero_based": 240850,
+      "source_step_s": 60,
+      "raw_min_W": 220540.25244602788,
+      "raw_max_W": 241962.38688132784,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "diploee_facility_window11.csv",
+      "sha256": "ff1e7e50e70002f4aecad4a935403c2e840d76c45707b1730f1896f00e6a163d"
+    },
+    {
+      "id": "diploee_facility_window12",
+      "source_type": "simulated_facility",
+      "window_index_zero_based": 459275,
+      "source_step_s": 60,
+      "raw_min_W": 318440.5576373082,
+      "raw_max_W": 363767.004227159,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "diploee_facility_window12.csv",
+      "sha256": "fa01aef08d52f9f1665011beccff2a31f31432b2fa9059ce3d451f7395e1cd78"
+    },
+    {
+      "id": "diploee_facility_window13",
+      "source_type": "simulated_facility",
+      "window_index_zero_based": 330279,
+      "source_step_s": 60,
+      "raw_min_W": 266230.2762000357,
+      "raw_max_W": 324854.5472020579,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "diploee_facility_window13.csv",
+      "sha256": "e8dd54b899ebf9757e97fa38bc7172c0285411abd593090f8ad63f3825e4b3a6"
+    },
+    {
+      "id": "diploee_facility_window14",
+      "source_type": "simulated_facility",
+      "window_index_zero_based": 6127,
+      "source_step_s": 60,
+      "raw_min_W": 344517.2146675717,
+      "raw_max_W": 403363.11680777447,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "diploee_facility_window14.csv",
+      "sha256": "cc0140337f11d3365a78acc840fdc060221891aa0d1274276943344c965dad97"
+    },
+    {
+      "id": "diploee_facility_window15",
+      "source_type": "simulated_facility",
+      "window_index_zero_based": 439752,
+      "source_step_s": 60,
+      "raw_min_W": 313845.8594943034,
+      "raw_max_W": 346889.02026870055,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "diploee_facility_window15.csv",
+      "sha256": "184b7c16e234b82d9736ffbea14e0c89b383f7330ddb6ff1f22882816e5455ca"
+    },
+    {
+      "id": "diploee_facility_window16",
+      "source_type": "simulated_facility",
+      "window_index_zero_based": 306335,
+      "source_step_s": 60,
+      "raw_min_W": 638422.4817421428,
+      "raw_max_W": 738912.4511256859,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "diploee_facility_window16.csv",
+      "sha256": "d86316edce0f060b4a5a48b800a2ef89f54aa6787f5ca33e2687ee37bdf00316"
+    },
+    {
+      "id": "diploee_facility_window17",
+      "source_type": "simulated_facility",
+      "window_index_zero_based": 46609,
+      "source_step_s": 60,
+      "raw_min_W": 293365.6229304756,
+      "raw_max_W": 330005.24346539535,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "diploee_facility_window17.csv",
+      "sha256": "bbca1f60ee5a91cd64cbb41fa00ee39185d2e2d098fcee7d0ac436b7d076649b"
+    },
+    {
+      "id": "diploee_facility_window18",
+      "source_type": "simulated_facility",
+      "window_index_zero_based": 400086,
+      "source_step_s": 60,
+      "raw_min_W": 442381.04705366475,
+      "raw_max_W": 522420.3958604002,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "diploee_facility_window18.csv",
+      "sha256": "03d5a553d423e62c272b0ecad12c2b5bd29714e548fc685301fe07c292df5c9d"
+    },
+    {
+      "id": "diploee_facility_window19",
+      "source_type": "simulated_facility",
+      "window_index_zero_based": 139934,
+      "source_step_s": 60,
+      "raw_min_W": 208339.99671566524,
+      "raw_max_W": 242043.22140414675,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "diploee_facility_window19.csv",
+      "sha256": "0bf9dc17915b721c900e6bd3f58249bc0d0011c6a1ff6a155b808377ec96d646"
+    },
+    {
+      "id": "diploee_facility_window20",
+      "source_type": "simulated_facility",
+      "window_index_zero_based": 244361,
+      "source_step_s": 60,
+      "raw_min_W": 542788.5474829443,
+      "raw_max_W": 635161.4117656329,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "diploee_facility_window20.csv",
+      "sha256": "f619d43658767a73700ab8241d807c6a51c57b4425aa850652691edc2efd0d9c"
+    },
+    {
+      "id": "nvml_llama2_stress",
+      "source_type": "measured_gpu_power",
+      "window_index_zero_based": 0,
+      "source_step_s": 1,
+      "raw_min_W": 4705.705509443158,
+      "raw_max_W": 44119.789660127026,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "maximum amplitude",
+      "csv": "nvml_llama2_stress.csv",
+      "sha256": "5b4f1a14e460b7c5858106beb4f7ea4c6f38813c6536cb338a594d521c554bc1"
+    },
+    {
+      "id": "nvml_llama2_window01",
+      "source_type": "measured_gpu_power",
+      "window_index_zero_based": 720,
+      "source_step_s": 1,
+      "raw_min_W": 27093.029912783313,
+      "raw_max_W": 44070.84743620608,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "nvml_llama2_window01.csv",
+      "sha256": "020a155c075de649150f90789dca018c8a64dae643ead308254ad3512bc683a7"
+    },
+    {
+      "id": "nvml_llama2_window02",
+      "source_type": "measured_gpu_power",
+      "window_index_zero_based": 468,
+      "source_step_s": 1,
+      "raw_min_W": 27093.029912783313,
+      "raw_max_W": 44119.789660127026,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "nvml_llama2_window02.csv",
+      "sha256": "27c2b7cbf81a4f57f2d85923f63f35937424f10f98a70b39663a7aeb092fe2b4"
+    },
+    {
+      "id": "nvml_llama2_window03",
+      "source_type": "measured_gpu_power",
+      "window_index_zero_based": 284,
+      "source_step_s": 1,
+      "raw_min_W": 7775.712159590266,
+      "raw_max_W": 44119.789660127026,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "nvml_llama2_window03.csv",
+      "sha256": "e75761316f8b724607780bcf1a6568dcb286a24bc5acf5e002cc2480a1cc4eea"
+    },
+    {
+      "id": "nvml_llama2_window04",
+      "source_type": "measured_gpu_power",
+      "window_index_zero_based": 111,
+      "source_step_s": 1,
+      "raw_min_W": 4713.339615167661,
+      "raw_max_W": 44119.789660127026,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "nvml_llama2_window04.csv",
+      "sha256": "28d060a8a1098f1a9a6bd4e156d50df3213492d04becf4e50f71089a5ec35596"
+    },
+    {
+      "id": "nvml_llama2_window05",
+      "source_type": "measured_gpu_power",
+      "window_index_zero_based": 349,
+      "source_step_s": 1,
+      "raw_min_W": 23850.698743232668,
+      "raw_max_W": 44119.789660127026,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "nvml_llama2_window05.csv",
+      "sha256": "42df4d2c0f46bf93988ab01f0cc3bdc975e6d3154cf23a45b5c36580f5b175d2"
+    },
+    {
+      "id": "nvml_llama2_window06",
+      "source_type": "measured_gpu_power",
+      "window_index_zero_based": 688,
+      "source_step_s": 1,
+      "raw_min_W": 27093.029912783313,
+      "raw_max_W": 44070.84743620608,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "nvml_llama2_window06.csv",
+      "sha256": "936b09c00a916c325605ce21ec45d6258eb31d83a5f8bc6ea0d18cea45eb0b88"
+    },
+    {
+      "id": "nvml_llama2_window07",
+      "source_type": "measured_gpu_power",
+      "window_index_zero_based": 379,
+      "source_step_s": 1,
+      "raw_min_W": 23850.698743232668,
+      "raw_max_W": 44119.789660127026,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "nvml_llama2_window07.csv",
+      "sha256": "7deea7a99fe63288eb7142c55a5fe3626ddc0626056a64f19e02b97a680be3db"
+    },
+    {
+      "id": "nvml_llama2_window08",
+      "source_type": "measured_gpu_power",
+      "window_index_zero_based": 847,
+      "source_step_s": 1,
+      "raw_min_W": 27093.029912783313,
+      "raw_max_W": 44104.16008211688,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "nvml_llama2_window08.csv",
+      "sha256": "e6f9918beae6f4b770c3ba10b2250e3007f1ae520d6e43f8ef8dd4e36a1ed63f"
+    },
+    {
+      "id": "nvml_llama2_window09",
+      "source_type": "measured_gpu_power",
+      "window_index_zero_based": 313,
+      "source_step_s": 1,
+      "raw_min_W": 23850.698743232668,
+      "raw_max_W": 44119.789660127026,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "nvml_llama2_window09.csv",
+      "sha256": "13dc4bd1977897e5e3faa75e2923b87952e952170347aded2d2399d5721f43f6"
+    },
+    {
+      "id": "nvml_llama2_window10",
+      "source_type": "measured_gpu_power",
+      "window_index_zero_based": 351,
+      "source_step_s": 1,
+      "raw_min_W": 23850.698743232668,
+      "raw_max_W": 44119.789660127026,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "nvml_llama2_window10.csv",
+      "sha256": "d61d5f61205279b8a9a4f6bd9dff734258ed0103321a6175d139d8dfc8bac2d6"
+    },
+    {
+      "id": "nvml_llama2_window11",
+      "source_type": "measured_gpu_power",
+      "window_index_zero_based": 764,
+      "source_step_s": 1,
+      "raw_min_W": 27093.029912783313,
+      "raw_max_W": 44104.16008211688,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "nvml_llama2_window11.csv",
+      "sha256": "1e80c6ee884f8a5b668556178f003863b6d36fc6b5a3c4fb47ba5f02fc91466d"
+    },
+    {
+      "id": "nvml_llama2_window12",
+      "source_type": "measured_gpu_power",
+      "window_index_zero_based": 57,
+      "source_step_s": 1,
+      "raw_min_W": 4708.923413182094,
+      "raw_max_W": 44119.789660127026,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "nvml_llama2_window12.csv",
+      "sha256": "8933f4ccc13e0b346746fc37ba9b8896787e49b085a00c1ffbafc05f861640fd"
+    },
+    {
+      "id": "nvml_llama2_window13",
+      "source_type": "measured_gpu_power",
+      "window_index_zero_based": 235,
+      "source_step_s": 1,
+      "raw_min_W": 7763.855229142034,
+      "raw_max_W": 44119.789660127026,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "nvml_llama2_window13.csv",
+      "sha256": "35a3dce12a30dec7fd648314a787c7b055b8e8a6b32ed01bad18224aeebb86bf"
+    },
+    {
+      "id": "nvml_llama2_window14",
+      "source_type": "measured_gpu_power",
+      "window_index_zero_based": 467,
+      "source_step_s": 1,
+      "raw_min_W": 27093.029912783313,
+      "raw_max_W": 44119.789660127026,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "nvml_llama2_window14.csv",
+      "sha256": "af6d13a4b61ed32bd2103ff5e6494eeecf7b71431a52370f70d3197b06270152"
+    },
+    {
+      "id": "nvml_llama2_window15",
+      "source_type": "measured_gpu_power",
+      "window_index_zero_based": 790,
+      "source_step_s": 1,
+      "raw_min_W": 27093.029912783313,
+      "raw_max_W": 44104.16008211688,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "nvml_llama2_window15.csv",
+      "sha256": "824bd750008edc72c5ca1733f7936e2c8475cfbf21114dfe94a284f9e12948cc"
+    },
+    {
+      "id": "nvml_llama2_window16",
+      "source_type": "measured_gpu_power",
+      "window_index_zero_based": 402,
+      "source_step_s": 1,
+      "raw_min_W": 23850.698743232668,
+      "raw_max_W": 44119.789660127026,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "nvml_llama2_window16.csv",
+      "sha256": "5816d6d0e1f840cb9991131b365db1ecdb0d175cd04ab7bafd1b41703b230f83"
+    },
+    {
+      "id": "nvml_llama2_window17",
+      "source_type": "measured_gpu_power",
+      "window_index_zero_based": 141,
+      "source_step_s": 1,
+      "raw_min_W": 7734.168176033318,
+      "raw_max_W": 44119.789660127026,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "nvml_llama2_window17.csv",
+      "sha256": "d93cd179b1b5c087776fc2eaed6346a4b695b786ef096a7d7f4323629500d893"
+    },
+    {
+      "id": "nvml_llama2_window18",
+      "source_type": "measured_gpu_power",
+      "window_index_zero_based": 571,
+      "source_step_s": 1,
+      "raw_min_W": 27093.029912783313,
+      "raw_max_W": 44119.789660127026,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "nvml_llama2_window18.csv",
+      "sha256": "d0355542d61a74537e679a5218d331efb98dde89b3d2e06b7fa5a49bf350ab57"
+    },
+    {
+      "id": "nvml_llama2_window19",
+      "source_type": "measured_gpu_power",
+      "window_index_zero_based": 817,
+      "source_step_s": 1,
+      "raw_min_W": 27093.029912783313,
+      "raw_max_W": 44104.16008211688,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "nvml_llama2_window19.csv",
+      "sha256": "30c4d4fdb2e5e851e988bc6c0403e7e6655c4a647ff40495a6ae5d69457607a5"
+    },
+    {
+      "id": "nvml_llama2_window20",
+      "source_type": "measured_gpu_power",
+      "window_index_zero_based": 331,
+      "source_step_s": 1,
+      "raw_min_W": 23850.698743232668,
+      "raw_max_W": 44119.789660127026,
+      "transform": "linear interpolation to 1s; per-window affine [600,950] kW",
+      "selection": "seeded random without replacement; overlap possible",
+      "csv": "nvml_llama2_window20.csv",
+      "sha256": "4fc0b5afb7868b3d28d128e5c616a9c2043cfe558a8ed8beb1d0915deaad0e0e"
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "role": "official_until_solver_gate",
+  "n_files": 26,
+  "files": [
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/ablacao_isolada.csv",
+      "sha256": "538c574d6e6d2713f1d70f698640606bdb34fe01adcff2b09eb0a28dadcc5060",
+      "bytes": 9039
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/auditoria.json",
+      "sha256": "12cbf7530611240557513005cb049e00e2a769d430c1ab3f3cd08ac408b22a61",
+      "bytes": 2074
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/consolidation_snapshot.py",
+      "sha256": "ba2840d98d471b6fae27a7c1cf8b9801d9890f389b106b413539778af50c0406",
+      "bytes": 8696
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/fallback_eventos.csv",
+      "sha256": "1104c214f4785654448701f854009ceb0a3ebec4dd7dc7ea402a1f1893b51d8a",
+      "bytes": 1081173
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/grupo_ablacao.csv",
+      "sha256": "e292491dfda9d8d7937f85fd0578b01399f3c5d1d94b1010d6eb83ebe64e78e6",
+      "bytes": 18120
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/grupo_alarm.csv",
+      "sha256": "66819e30de9c2c4488164075b3d3fb829eead5c9b2f86851345206121a74129d",
+      "bytes": 5574
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/grupo_detection.csv",
+      "sha256": "9fa9bd137319f290854fc8df18d2b9f135774f1e27e32fd63e73d3b39cc037d7",
+      "bytes": 8401
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/grupo_fairness.csv",
+      "sha256": "74d1d9c57b4bd3cef41250ce18892a8544a3cf3f61db4024d9b85557610b4ece",
+      "bytes": 61680
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/grupo_gate.csv",
+      "sha256": "73ee2fee13251ab158cc7c9bf48f4f0e7e536998a59af3aae97c851daf5ca71f",
+      "bytes": 2524
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/grupo_long_outage.csv",
+      "sha256": "0a3ce0c8913dcf3079f942a025f3cb94f37390a48d348ccbd8e952499c0c024a",
+      "bytes": 1641
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/grupo_magnitude.csv",
+      "sha256": "f7e2e97fe8709ab593620f6cb1b2e223088d72e10fe068acc3cc457179efb896",
+      "bytes": 13902
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/grupo_montecarlo.csv",
+      "sha256": "61ef8ca18650d513b87953d9e733c5eb255c8d9d9e3d1eabb45c57de469548a5",
+      "bytes": 554327
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/grupo_pesos.csv",
+      "sha256": "ab190b43c0da0f16f9749131432c1ff53689f0bc6fd5a68f42eb176c435e4cc5",
+      "bytes": 19556
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/grupo_plant_sensitivity.csv",
+      "sha256": "61fa90617cc48d79aaf9ba27f6464c4d2e8d5febe70d01820c01a878490708c7",
+      "bytes": 50361
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/grupo_principal.csv",
+      "sha256": "b1cb5d69cc2fb1cf060b28d4f8f05cab6fa1e41930bbdd220c5b0dd7300bc04e",
+      "bytes": 18250
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/grupo_probabilities.csv",
+      "sha256": "754a001e02faf21870f046f051b2ad5d5ef9be0b39e50c0d502af0e227940370",
+      "bytes": 5084
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/grupo_timing.csv",
+      "sha256": "fc5570648009f1d901e42feaf3fd2d6eea84268e247ff81364d8961bafec87e3",
+      "bytes": 108155
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/grupo_windows.csv",
+      "sha256": "63f1dc4ec0b69e9c32a7e1eeb22e0e3dd1eb4a2449506eddcf848d22525da5d1",
+      "bytes": 99392
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/montecarlo_diferencas_pareadas.csv",
+      "sha256": "cbbc39b9500b1eef187873cb514163148e9f87096cbacd013be3fe47aae386c7",
+      "bytes": 5540
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/montecarlo_picos_reserva.png",
+      "sha256": "b38b4560fa35056283341923b5d2a72ccad2f9d7f401a3a797d9a7a894b8c137",
+      "bytes": 101497
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/montecarlo_resumo.csv",
+      "sha256": "dd85c9b88ca41a73c6107f6d2b6352525c5258a7d34928dcca23a23d8bcc4b23",
+      "bytes": 966
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/proveniencia.csv",
+      "sha256": "e5099f63103e1c1b3f440116ae31278462ed7ba37d38691f71768e8826042188",
+      "bytes": 249621
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/recuperacao_eventos.csv",
+      "sha256": "0a4ab711350ca1a86cb02ff9d60d7c7acff945a2454619f52ddc841be50ed4f9",
+      "bytes": 785906
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/resultados_consolidados.csv",
+      "sha256": "21db1e0ed9ebde9cf049483384b127edab6f6796b09871a5704202cf690bac44",
+      "bytes": 971109
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/status.json",
+      "sha256": "506bdbd2a719ba03cdad18133ffb7b9bebc467a0c6f7c0a896ae25c4a5e0a5cc",
+      "bytes": 263
+    },
+    {
+      "path": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1/tabela_P_unserved.csv",
+      "sha256": "97962f88edcce1194e1f9d6a2cdf5565df96f9db52d1ab1fc8ea45ad1efe4365",
+      "bytes": 876
+    }
+  ]
+}

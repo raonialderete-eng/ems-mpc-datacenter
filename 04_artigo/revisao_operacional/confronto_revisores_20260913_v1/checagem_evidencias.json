@@ -1,0 +1,1500 @@
+{
+  "sources": {
+    "consolidated_csv": "21db1e0ed9ebde9cf049483384b127edab6f6796b09871a5704202cf690bac44",
+    "review_pdf": "757454f808a76a7adf980fb1434273871ec923f1917618d1b124cad3e98590c1"
+  },
+  "case_count": 1755,
+  "groups": {
+    "ablacao": 28,
+    "alarm": 10,
+    "detection": 15,
+    "fairness": 105,
+    "gate": 3,
+    "long_outage": 2,
+    "magnitude": 25,
+    "montecarlo": 1000,
+    "pesos": 30,
+    "plant_sensitivity": 90,
+    "principal": 35,
+    "probabilities": 7,
+    "timing": 205,
+    "windows": 200
+  },
+  "timing": {
+    "mpc_qp_v5": {
+      "min_peak": 350.0000051652537,
+      "max_peak": 511.7572078530094,
+      "shifts_worse_than_heuristic": [],
+      "shifts_with_peak_within_1kW_of_350": [
+        -20,
+        -19,
+        -18,
+        -17,
+        -16,
+        -15,
+        -14,
+        -13,
+        -12,
+        -11,
+        -10,
+        -9,
+        -8,
+        -7,
+        -6,
+        -5,
+        -4,
+        -3,
+        -2,
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "selected": [
+        {
+          "forecast_shift": "-20",
+          "P_raw_kW": "350.0000077437967",
+          "SOC_final": "56.79947351473136",
+          "fallback_pct": "2.3333333333333335"
+        },
+        {
+          "forecast_shift": "-10",
+          "P_raw_kW": "350.00089682861125",
+          "SOC_final": "56.90028254620591",
+          "fallback_pct": "1.8333333333333333"
+        },
+        {
+          "forecast_shift": "0",
+          "P_raw_kW": "350.0673643906158",
+          "SOC_final": "57.09765980475696",
+          "fallback_pct": "1.5833333333333335"
+        },
+        {
+          "forecast_shift": "10",
+          "P_raw_kW": "355.57470106781705",
+          "SOC_final": "57.226160619443775",
+          "fallback_pct": "1.9166666666666665"
+        },
+        {
+          "forecast_shift": "20",
+          "P_raw_kW": "511.7572078530094",
+          "SOC_final": "57.028680121720946",
+          "fallback_pct": "1.3333333333333335"
+        }
+      ]
+    },
+    "mpc_qp_estocastico_3cen": {
+      "min_peak": 350.0000000011361,
+      "max_peak": 352.423873451961,
+      "shifts_worse_than_heuristic": [],
+      "shifts_with_peak_within_1kW_of_350": [
+        -20,
+        -19,
+        -18,
+        -17,
+        -16,
+        -15,
+        -14,
+        -13,
+        -12,
+        -11,
+        -10,
+        -9,
+        -8,
+        -7,
+        -6,
+        -5,
+        -4,
+        -3,
+        -2,
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        18,
+        19
+      ],
+      "selected": [
+        {
+          "forecast_shift": "-20",
+          "P_raw_kW": "350.0000000441902",
+          "SOC_final": "49.18944666227664",
+          "fallback_pct": "0.16666666666666669"
+        },
+        {
+          "forecast_shift": "-10",
+          "P_raw_kW": "350.00000079559294",
+          "SOC_final": "49.35654103850222",
+          "fallback_pct": "0.08333333333333334"
+        },
+        {
+          "forecast_shift": "0",
+          "P_raw_kW": "350.0000079452134",
+          "SOC_final": "49.403721718446974",
+          "fallback_pct": "0"
+        },
+        {
+          "forecast_shift": "10",
+          "P_raw_kW": "350.0011791212286",
+          "SOC_final": "49.42130639387311",
+          "fallback_pct": "0"
+        },
+        {
+          "forecast_shift": "20",
+          "P_raw_kW": "352.423873451961",
+          "SOC_final": "49.540252840361994",
+          "fallback_pct": "0.16666666666666669"
+        }
+      ]
+    }
+  },
+  "main_soc_diagnostics": [
+    {
+      "id": "j00004",
+      "ctrl": "mpc_qp_v5",
+      "scenario": "carga_faixas",
+      "accepted_steps": 1200,
+      "steps_with_sign_mismatch": 10,
+      "summed_horizon_sign_mismatches": 489,
+      "max_soc_error_pp": 0.014627091341246512,
+      "max_piecewise_soc_violation_pp": 0,
+      "source": "05_resultados\\revisao_operacional\\campanha_v1\\j00004.mat",
+      "sha256": "942c3db7736924e97310a8853fe70aca1f622fce337537afa5dec0f8718ccad5"
+    },
+    {
+      "id": "j00005",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "scenario": "carga_faixas",
+      "accepted_steps": 1200,
+      "steps_with_sign_mismatch": 18,
+      "summed_horizon_sign_mismatches": 860,
+      "max_soc_error_pp": 0.014640261611127414,
+      "max_piecewise_soc_violation_pp": 0,
+      "source": "05_resultados\\revisao_operacional\\campanha_v1\\j00005.mat",
+      "sha256": "e770154d3efc25642e15f432a2a45afcf2c4d747fa69043db464686cd66ce006"
+    },
+    {
+      "id": "j00009",
+      "ctrl": "mpc_qp_v5",
+      "scenario": "limite_fonte",
+      "accepted_steps": 1200,
+      "steps_with_sign_mismatch": 0,
+      "summed_horizon_sign_mismatches": 0,
+      "max_soc_error_pp": 7.105427357601002e-15,
+      "max_piecewise_soc_violation_pp": 0,
+      "source": "05_resultados\\revisao_operacional\\campanha_v1\\j00009.mat",
+      "sha256": "e8e30c1d2a2cef997aa1b6e859ac2a76f471858a404761bea0c5f5bf801ee583"
+    },
+    {
+      "id": "j00010",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "scenario": "limite_fonte",
+      "accepted_steps": 1200,
+      "steps_with_sign_mismatch": 0,
+      "summed_horizon_sign_mismatches": 0,
+      "max_soc_error_pp": 7.105427357601002e-15,
+      "max_piecewise_soc_violation_pp": 0,
+      "source": "05_resultados\\revisao_operacional\\campanha_v1\\j00010.mat",
+      "sha256": "a4f265050b9dd81699c33e1cad3effdf22b451f2d4f7a81264c245bf1f764557"
+    },
+    {
+      "id": "j00014",
+      "ctrl": "mpc_qp_v5",
+      "scenario": "perda_fonte",
+      "accepted_steps": 1181,
+      "steps_with_sign_mismatch": 16,
+      "summed_horizon_sign_mismatches": 733,
+      "max_soc_error_pp": 0.014570765323362878,
+      "max_piecewise_soc_violation_pp": 0,
+      "source": "05_resultados\\revisao_operacional\\campanha_v1\\j00014.mat",
+      "sha256": "8abede21bfbf279eab03a67f9c8fc7d6424a76c8b11987574655e30f3d10a0c2"
+    },
+    {
+      "id": "j00015",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "scenario": "perda_fonte",
+      "accepted_steps": 1200,
+      "steps_with_sign_mismatch": 0,
+      "summed_horizon_sign_mismatches": 0,
+      "max_soc_error_pp": 7.105427357601002e-15,
+      "max_piecewise_soc_violation_pp": 0,
+      "source": "05_resultados\\revisao_operacional\\evento_adiantado_corrigido_v1\\j00015.mat",
+      "sha256": "1a3e1fe9e19dbf98f12f700076a7ca0331159741beb50c8c492698aa956c3246"
+    },
+    {
+      "id": "j00019",
+      "ctrl": "mpc_qp_v5",
+      "scenario": "retorno_fonte",
+      "accepted_steps": 1172,
+      "steps_with_sign_mismatch": 16,
+      "summed_horizon_sign_mismatches": 733,
+      "max_soc_error_pp": 0.014570942238293583,
+      "max_piecewise_soc_violation_pp": 0,
+      "source": "05_resultados\\revisao_operacional\\campanha_v1\\j00019.mat",
+      "sha256": "276853b7299c9e36eb793bdb31c808d99fb673048b39796581bb253b6861e6cb"
+    },
+    {
+      "id": "j00020",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "scenario": "retorno_fonte",
+      "accepted_steps": 1200,
+      "steps_with_sign_mismatch": 0,
+      "summed_horizon_sign_mismatches": 0,
+      "max_soc_error_pp": 7.105427357601002e-15,
+      "max_piecewise_soc_violation_pp": 0,
+      "source": "05_resultados\\revisao_operacional\\evento_adiantado_corrigido_v1\\j00020.mat",
+      "sha256": "31a1da2381629e1033e7a1d9bd941283c669b8b7ca62a2f48eabfe9f33704d58"
+    },
+    {
+      "id": "j00024",
+      "ctrl": "mpc_qp_v5",
+      "scenario": "multi_burst",
+      "accepted_steps": 1200,
+      "steps_with_sign_mismatch": 41,
+      "summed_horizon_sign_mismatches": 1983,
+      "max_soc_error_pp": 0.04372173386293099,
+      "max_piecewise_soc_violation_pp": 0,
+      "source": "05_resultados\\revisao_operacional\\campanha_v1\\j00024.mat",
+      "sha256": "dfc51b917427386bc9e66c45d6091716257683e1694af69270da3db569301348"
+    },
+    {
+      "id": "j00025",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "scenario": "multi_burst",
+      "accepted_steps": 1200,
+      "steps_with_sign_mismatch": 38,
+      "summed_horizon_sign_mismatches": 1908,
+      "max_soc_error_pp": 0.09935640732840056,
+      "max_piecewise_soc_violation_pp": 0,
+      "source": "05_resultados\\revisao_operacional\\campanha_v1\\j00025.mat",
+      "sha256": "77cd766495db1f3aae08911a78cb3f0c314db8b8b999f0179fd7b5ebd789e970"
+    },
+    {
+      "id": "j00029",
+      "ctrl": "mpc_qp_v5",
+      "scenario": "diploee_facility_stress",
+      "accepted_steps": 1200,
+      "steps_with_sign_mismatch": 17,
+      "summed_horizon_sign_mismatches": 842,
+      "max_soc_error_pp": 3.395371521719426e-06,
+      "max_piecewise_soc_violation_pp": 0,
+      "source": "05_resultados\\revisao_operacional\\campanha_v1\\j00029.mat",
+      "sha256": "2ce563d2f76c99d24706b892dbec3e8a241d037f4f5f535033a3cb805b4bc05c"
+    },
+    {
+      "id": "j00030",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "scenario": "diploee_facility_stress",
+      "accepted_steps": 1200,
+      "steps_with_sign_mismatch": 0,
+      "summed_horizon_sign_mismatches": 0,
+      "max_soc_error_pp": 7.105427357601002e-15,
+      "max_piecewise_soc_violation_pp": 0,
+      "source": "05_resultados\\revisao_operacional\\campanha_v1\\j00030.mat",
+      "sha256": "7484064b59fbb3235abf1d23b11ddbe1f612eab82be88c1acdc82eeeec2ea47e"
+    },
+    {
+      "id": "j00034",
+      "ctrl": "mpc_qp_v5",
+      "scenario": "nvml_llama2_stress",
+      "accepted_steps": 1200,
+      "steps_with_sign_mismatch": 0,
+      "summed_horizon_sign_mismatches": 0,
+      "max_soc_error_pp": 7.105427357601002e-15,
+      "max_piecewise_soc_violation_pp": 0,
+      "source": "05_resultados\\revisao_operacional\\campanha_v1\\j00034.mat",
+      "sha256": "49080a9dbb0b6c05eaa4c1e08761f25ddb95ea1f704a837f8bce6b3929ef6a6d"
+    },
+    {
+      "id": "j00035",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "scenario": "nvml_llama2_stress",
+      "accepted_steps": 1200,
+      "steps_with_sign_mismatch": 0,
+      "summed_horizon_sign_mismatches": 0,
+      "max_soc_error_pp": 7.105427357601002e-15,
+      "max_piecewise_soc_violation_pp": 0,
+      "source": "05_resultados\\revisao_operacional\\campanha_v1\\j00035.mat",
+      "sha256": "6bee2983045b2235f5b245c462607cbe6c5eb20367a4b83ea6710ee57f62e08f"
+    }
+  ],
+  "main_peak_locations": [
+    {
+      "id": "j00001",
+      "ctrl": "heuristico",
+      "scenario": "carga_faixas",
+      "step_0based": 400,
+      "peak": 90.97959895689502,
+      "load": 950.0,
+      "limit": 800.0
+    },
+    {
+      "id": "j00002",
+      "ctrl": "heuristico_foresight",
+      "scenario": "carga_faixas",
+      "step_0based": 400,
+      "peak": 4.67481628589934,
+      "load": 950.0,
+      "limit": 800.0
+    },
+    {
+      "id": "j00003",
+      "ctrl": "miope_qp",
+      "scenario": "carga_faixas",
+      "step_0based": 400,
+      "peak": 102.78268126816418,
+      "load": 950.0,
+      "limit": 800.0
+    },
+    {
+      "id": "j00004",
+      "ctrl": "mpc_qp_v5",
+      "scenario": "carga_faixas",
+      "step_0based": 649,
+      "peak": 0.018079005862091435,
+      "load": 950.0,
+      "limit": 800.0
+    },
+    {
+      "id": "j00005",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "scenario": "carga_faixas",
+      "step_0based": 162,
+      "peak": 5.684341886080802e-14,
+      "load": 600.0,
+      "limit": 800.0
+    },
+    {
+      "id": "j00006",
+      "ctrl": "heuristico",
+      "scenario": "limite_fonte",
+      "step_0based": 200,
+      "peak": 90.97959895689502,
+      "load": 950.0,
+      "limit": 800.0
+    },
+    {
+      "id": "j00007",
+      "ctrl": "heuristico_foresight",
+      "scenario": "limite_fonte",
+      "step_0based": 200,
+      "peak": 4.67481628589934,
+      "load": 950.0,
+      "limit": 800.0
+    },
+    {
+      "id": "j00008",
+      "ctrl": "miope_qp",
+      "scenario": "limite_fonte",
+      "step_0based": 200,
+      "peak": 102.78262296256007,
+      "load": 950.0,
+      "limit": 800.0
+    },
+    {
+      "id": "j00009",
+      "ctrl": "mpc_qp_v5",
+      "scenario": "limite_fonte",
+      "step_0based": 155,
+      "peak": 5.684341886080802e-14,
+      "load": 750.0,
+      "limit": 800.0
+    },
+    {
+      "id": "j00010",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "scenario": "limite_fonte",
+      "step_0based": 6,
+      "peak": 5.684341886080802e-14,
+      "load": 750.0,
+      "limit": 800.0
+    },
+    {
+      "id": "j00011",
+      "ctrl": "heuristico",
+      "scenario": "perda_fonte",
+      "step_0based": 500,
+      "peak": 592.6122638850534,
+      "load": 750.0,
+      "limit": 0.0
+    },
+    {
+      "id": "j00012",
+      "ctrl": "heuristico_foresight",
+      "scenario": "perda_fonte",
+      "step_0based": 500,
+      "peak": 362.4661767623983,
+      "load": 750.0,
+      "limit": 0.0
+    },
+    {
+      "id": "j00013",
+      "ctrl": "miope_qp",
+      "scenario": "perda_fonte",
+      "step_0based": 500,
+      "peak": 592.6116232891053,
+      "load": 750.0,
+      "limit": 0.0
+    },
+    {
+      "id": "j00014",
+      "ctrl": "mpc_qp_v5",
+      "scenario": "perda_fonte",
+      "step_0based": 500,
+      "peak": 350.0673643906158,
+      "load": 750.0,
+      "limit": 0.0
+    },
+    {
+      "id": "j00015",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "scenario": "perda_fonte",
+      "step_0based": 500,
+      "peak": 350.0000079452134,
+      "load": 750.0,
+      "limit": 0.0
+    },
+    {
+      "id": "j00016",
+      "ctrl": "heuristico",
+      "scenario": "retorno_fonte",
+      "step_0based": 400,
+      "peak": 592.6122638850534,
+      "load": 750.0,
+      "limit": 0.0
+    },
+    {
+      "id": "j00017",
+      "ctrl": "heuristico_foresight",
+      "scenario": "retorno_fonte",
+      "step_0based": 400,
+      "peak": 362.4661767623983,
+      "load": 750.0,
+      "limit": 0.0
+    },
+    {
+      "id": "j00018",
+      "ctrl": "miope_qp",
+      "scenario": "retorno_fonte",
+      "step_0based": 400,
+      "peak": 592.6116232812492,
+      "load": 750.0,
+      "limit": 0.0
+    },
+    {
+      "id": "j00019",
+      "ctrl": "mpc_qp_v5",
+      "scenario": "retorno_fonte",
+      "step_0based": 400,
+      "peak": 350.0896660016482,
+      "load": 750.0,
+      "limit": 0.0
+    },
+    {
+      "id": "j00020",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "scenario": "retorno_fonte",
+      "step_0based": 400,
+      "peak": 350.0000079439794,
+      "load": 750.0,
+      "limit": 0.0
+    },
+    {
+      "id": "j00021",
+      "ctrl": "heuristico",
+      "scenario": "multi_burst",
+      "step_0based": 220,
+      "peak": 90.97959895689502,
+      "load": 950.0,
+      "limit": 800.0
+    },
+    {
+      "id": "j00022",
+      "ctrl": "heuristico_foresight",
+      "scenario": "multi_burst",
+      "step_0based": 450,
+      "peak": 60.65306596721214,
+      "load": 750.0,
+      "limit": 800.0
+    },
+    {
+      "id": "j00023",
+      "ctrl": "miope_qp",
+      "scenario": "multi_burst",
+      "step_0based": 340,
+      "peak": 108.89876702879235,
+      "load": 950.0,
+      "limit": 800.0
+    },
+    {
+      "id": "j00024",
+      "ctrl": "mpc_qp_v5",
+      "scenario": "multi_burst",
+      "step_0based": 779,
+      "peak": 0.018156780309027454,
+      "load": 950.0,
+      "limit": 800.0
+    },
+    {
+      "id": "j00025",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "scenario": "multi_burst",
+      "step_0based": 64,
+      "peak": 5.684341886080802e-14,
+      "load": 600.0,
+      "limit": 800.0
+    },
+    {
+      "id": "j00026",
+      "ctrl": "heuristico",
+      "scenario": "diploee_facility_stress",
+      "step_0based": 1199,
+      "peak": 2.6737464414123338,
+      "load": 948.2654838109968,
+      "limit": 800.0
+    },
+    {
+      "id": "j00027",
+      "ctrl": "heuristico_foresight",
+      "scenario": "diploee_facility_stress",
+      "step_0based": 1199,
+      "peak": 2.6737464414123338,
+      "load": 948.2654838109968,
+      "limit": 800.0
+    },
+    {
+      "id": "j00028",
+      "ctrl": "miope_qp",
+      "scenario": "diploee_facility_stress",
+      "step_0based": 1199,
+      "peak": 6.974137104975853e-05,
+      "load": 948.2654838109968,
+      "limit": 800.0
+    },
+    {
+      "id": "j00029",
+      "ctrl": "mpc_qp_v5",
+      "scenario": "diploee_facility_stress",
+      "step_0based": 1020,
+      "peak": 0.0022154515462489144,
+      "load": 872.406619796394,
+      "limit": 800.0
+    },
+    {
+      "id": "j00030",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "scenario": "diploee_facility_stress",
+      "step_0based": 113,
+      "peak": 5.684341886080802e-14,
+      "load": 647.5427185331254,
+      "limit": 800.0
+    },
+    {
+      "id": "j00031",
+      "ctrl": "heuristico",
+      "scenario": "nvml_llama2_stress",
+      "step_0based": 315,
+      "peak": 52.733566283621286,
+      "load": 948.2262053176378,
+      "limit": 800.0
+    },
+    {
+      "id": "j00032",
+      "ctrl": "heuristico_foresight",
+      "scenario": "nvml_llama2_stress",
+      "step_0based": 546,
+      "peak": 48.5074773029627,
+      "load": 947.7688263766252,
+      "limit": 800.0
+    },
+    {
+      "id": "j00033",
+      "ctrl": "miope_qp",
+      "scenario": "nvml_llama2_stress",
+      "step_0based": 672,
+      "peak": 28.37485229782584,
+      "load": 943.9022156921665,
+      "limit": 800.0
+    },
+    {
+      "id": "j00034",
+      "ctrl": "mpc_qp_v5",
+      "scenario": "nvml_llama2_stress",
+      "step_0based": 315,
+      "peak": 0.006557596080881467,
+      "load": 948.2262053176378,
+      "limit": 800.0
+    },
+    {
+      "id": "j00035",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "scenario": "nvml_llama2_stress",
+      "step_0based": 233,
+      "peak": 5.684341886080802e-14,
+      "load": 630.9683469271208,
+      "limit": 800.0
+    }
+  ],
+  "plant_sensitivity": [
+    {
+      "id": "j00457",
+      "scenario": "perda_fonte",
+      "ctrl": "heuristico",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 1}",
+      "P_raw_kW": "515.545748527149",
+      "SOC_min": "27.81705737971979",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00458",
+      "scenario": "perda_fonte",
+      "ctrl": "heuristico_foresight",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 1}",
+      "P_raw_kW": "352.85463020931036",
+      "SOC_min": "27.34761830585587",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00459",
+      "scenario": "perda_fonte",
+      "ctrl": "miope_qp",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 1}",
+      "P_raw_kW": "547.151088509795",
+      "SOC_min": "27.79075824303367",
+      "fallback_pct": "12.333333333333334"
+    },
+    {
+      "id": "j00460",
+      "scenario": "perda_fonte",
+      "ctrl": "mpc_qp_v5",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 1}",
+      "P_raw_kW": "350.00499625313813",
+      "SOC_min": "26.82037740207719",
+      "fallback_pct": "1.25"
+    },
+    {
+      "id": "j00461",
+      "scenario": "perda_fonte",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 1}",
+      "P_raw_kW": "350.0000002960781",
+      "SOC_min": "20.002969909227613",
+      "fallback_pct": "0.25"
+    },
+    {
+      "id": "j00462",
+      "scenario": "multi_burst",
+      "ctrl": "heuristico",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 1}",
+      "P_raw_kW": "110.3638323514327",
+      "SOC_min": "30",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00463",
+      "scenario": "multi_burst",
+      "ctrl": "heuristico_foresight",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 1}",
+      "P_raw_kW": "36.787944117144235",
+      "SOC_min": "30",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00464",
+      "scenario": "multi_burst",
+      "ctrl": "miope_qp",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 1}",
+      "P_raw_kW": "133.72941121983592",
+      "SOC_min": "29.99395328899493",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00465",
+      "scenario": "multi_burst",
+      "ctrl": "mpc_qp_v5",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 1}",
+      "P_raw_kW": "0.017985226638103313",
+      "SOC_min": "28.3206070734214",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00466",
+      "scenario": "multi_burst",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 1}",
+      "P_raw_kW": "5.684341886080802e-14",
+      "SOC_min": "22.400660289624472",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00467",
+      "scenario": "perda_fonte",
+      "ctrl": "heuristico",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 2}",
+      "P_raw_kW": "622.938796870685",
+      "SOC_min": "27.82379055097922",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00468",
+      "scenario": "perda_fonte",
+      "ctrl": "heuristico_foresight",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 2}",
+      "P_raw_kW": "362.46619205751426",
+      "SOC_min": "27.353572998012528",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00469",
+      "scenario": "perda_fonte",
+      "ctrl": "miope_qp",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 2}",
+      "P_raw_kW": "642.611580563883",
+      "SOC_min": "27.80175024765932",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00470",
+      "scenario": "perda_fonte",
+      "ctrl": "mpc_qp_v5",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 2}",
+      "P_raw_kW": "350.18176396315994",
+      "SOC_min": "27.045476406767477",
+      "fallback_pct": "2.5"
+    },
+    {
+      "id": "j00471",
+      "scenario": "perda_fonte",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 2}",
+      "P_raw_kW": "350.00017643230194",
+      "SOC_min": "20.002702341870457",
+      "fallback_pct": "0.08333333333333334"
+    },
+    {
+      "id": "j00472",
+      "scenario": "multi_burst",
+      "ctrl": "heuristico",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 2}",
+      "P_raw_kW": "181.95919791379004",
+      "SOC_min": "30",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00473",
+      "scenario": "multi_burst",
+      "ctrl": "heuristico_foresight",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 2}",
+      "P_raw_kW": "60.653065971263345",
+      "SOC_min": "30",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00474",
+      "scenario": "multi_burst",
+      "ctrl": "miope_qp",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 2}",
+      "P_raw_kW": "158.5381947588547",
+      "SOC_min": "29.966298523741926",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00475",
+      "scenario": "multi_burst",
+      "ctrl": "mpc_qp_v5",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 2}",
+      "P_raw_kW": "0.018618173461305787",
+      "SOC_min": "28.32092560720833",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00476",
+      "scenario": "multi_burst",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 2}",
+      "P_raw_kW": "5.684341886080802e-14",
+      "SOC_min": "22.387023283579616",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00477",
+      "scenario": "perda_fonte",
+      "ctrl": "heuristico",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 4}",
+      "P_raw_kW": "700.4603523821322",
+      "SOC_min": "27.837312508383683",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00478",
+      "scenario": "perda_fonte",
+      "ctrl": "heuristico_foresight",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 4}",
+      "P_raw_kW": "386.5692096796387",
+      "SOC_min": "27.366361796727844",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00479",
+      "scenario": "perda_fonte",
+      "ctrl": "miope_qp",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 4}",
+      "P_raw_kW": "711.5196654882585",
+      "SOC_min": "27.83040920604453",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00480",
+      "scenario": "perda_fonte",
+      "ctrl": "mpc_qp_v5",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 4}",
+      "P_raw_kW": "350.00359070357877",
+      "SOC_min": "26.411581767529334",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00481",
+      "scenario": "perda_fonte",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 4}",
+      "P_raw_kW": "350.00076437573784",
+      "SOC_min": "20.001690178477887",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00482",
+      "scenario": "multi_burst",
+      "ctrl": "heuristico",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 4}",
+      "P_raw_kW": "233.64023492033988",
+      "SOC_min": "30",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00483",
+      "scenario": "multi_burst",
+      "ctrl": "heuristico_foresight",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 4}",
+      "P_raw_kW": "77.88007830712894",
+      "SOC_min": "30",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00484",
+      "scenario": "multi_burst",
+      "ctrl": "miope_qp",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 4}",
+      "P_raw_kW": "176.60407904438432",
+      "SOC_min": "29.93135482927984",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00485",
+      "scenario": "multi_burst",
+      "ctrl": "mpc_qp_v5",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 4}",
+      "P_raw_kW": "0.020000025671436106",
+      "SOC_min": "28.32774556173971",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00486",
+      "scenario": "multi_burst",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "params_json": "{\"SOC_initial\": 30, \"tau_b\": 4}",
+      "P_raw_kW": "5.684341886080802e-14",
+      "SOC_min": "22.3788907582986",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00487",
+      "scenario": "perda_fonte",
+      "ctrl": "heuristico",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 1}",
+      "P_raw_kW": "515.545748527149",
+      "SOC_min": "42.817057379719785",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00488",
+      "scenario": "perda_fonte",
+      "ctrl": "heuristico_foresight",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 1}",
+      "P_raw_kW": "352.85463020931036",
+      "SOC_min": "42.34761830585586",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00489",
+      "scenario": "perda_fonte",
+      "ctrl": "miope_qp",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 1}",
+      "P_raw_kW": "547.1510132741696",
+      "SOC_min": "42.790756254954594",
+      "fallback_pct": "12.333333333333334"
+    },
+    {
+      "id": "j00490",
+      "scenario": "perda_fonte",
+      "ctrl": "mpc_qp_v5",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 1}",
+      "P_raw_kW": "350.0144236515712",
+      "SOC_min": "41.9042575268889",
+      "fallback_pct": "1.5"
+    },
+    {
+      "id": "j00491",
+      "scenario": "perda_fonte",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 1}",
+      "P_raw_kW": "350.00000027754436",
+      "SOC_min": "34.61230099527341",
+      "fallback_pct": "0.08333333333333334"
+    },
+    {
+      "id": "j00492",
+      "scenario": "multi_burst",
+      "ctrl": "heuristico",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 1}",
+      "P_raw_kW": "110.3638323514327",
+      "SOC_min": "45",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00493",
+      "scenario": "multi_burst",
+      "ctrl": "heuristico_foresight",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 1}",
+      "P_raw_kW": "36.787944117144235",
+      "SOC_min": "45",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00494",
+      "scenario": "multi_burst",
+      "ctrl": "miope_qp",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 1}",
+      "P_raw_kW": "133.70468212267036",
+      "SOC_min": "44.99388407191752",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00495",
+      "scenario": "multi_burst",
+      "ctrl": "mpc_qp_v5",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 1}",
+      "P_raw_kW": "0.017787807394455513",
+      "SOC_min": "43.318669294371425",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00496",
+      "scenario": "multi_burst",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 1}",
+      "P_raw_kW": "5.684341886080802e-14",
+      "SOC_min": "37.39958082121423",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00497",
+      "scenario": "perda_fonte",
+      "ctrl": "heuristico",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 2}",
+      "P_raw_kW": "622.938796870685",
+      "SOC_min": "42.82379055097923",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00498",
+      "scenario": "perda_fonte",
+      "ctrl": "heuristico_foresight",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 2}",
+      "P_raw_kW": "362.46619205751426",
+      "SOC_min": "42.35357299801254",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00499",
+      "scenario": "perda_fonte",
+      "ctrl": "miope_qp",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 2}",
+      "P_raw_kW": "642.6115029286309",
+      "SOC_min": "42.80174819712154",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00500",
+      "scenario": "perda_fonte",
+      "ctrl": "mpc_qp_v5",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 2}",
+      "P_raw_kW": "350.1214115940347",
+      "SOC_min": "42.05217884256789",
+      "fallback_pct": "2.166666666666667"
+    },
+    {
+      "id": "j00501",
+      "scenario": "perda_fonte",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 2}",
+      "P_raw_kW": "350.0000079743852",
+      "SOC_min": "34.498499132437395",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00502",
+      "scenario": "multi_burst",
+      "ctrl": "heuristico",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 2}",
+      "P_raw_kW": "181.95919791379004",
+      "SOC_min": "45",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00503",
+      "scenario": "multi_burst",
+      "ctrl": "heuristico_foresight",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 2}",
+      "P_raw_kW": "60.653065971263345",
+      "SOC_min": "45",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00504",
+      "scenario": "multi_burst",
+      "ctrl": "miope_qp",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 2}",
+      "P_raw_kW": "158.51337465116143",
+      "SOC_min": "44.966224488772866",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00505",
+      "scenario": "multi_burst",
+      "ctrl": "mpc_qp_v5",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 2}",
+      "P_raw_kW": "0.01839150174095039",
+      "SOC_min": "43.31888366198727",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00506",
+      "scenario": "multi_burst",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 2}",
+      "P_raw_kW": "5.684341886080802e-14",
+      "SOC_min": "37.38600130758999",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00507",
+      "scenario": "perda_fonte",
+      "ctrl": "heuristico",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 4}",
+      "P_raw_kW": "700.4603523821322",
+      "SOC_min": "42.8373125083837",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00508",
+      "scenario": "perda_fonte",
+      "ctrl": "heuristico_foresight",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 4}",
+      "P_raw_kW": "386.5692096796387",
+      "SOC_min": "42.36636179672784",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00509",
+      "scenario": "perda_fonte",
+      "ctrl": "miope_qp",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 4}",
+      "P_raw_kW": "711.5195431085499",
+      "SOC_min": "42.83040598485587",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00510",
+      "scenario": "perda_fonte",
+      "ctrl": "mpc_qp_v5",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 4}",
+      "P_raw_kW": "350.00358786535395",
+      "SOC_min": "41.411468233283074",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00511",
+      "scenario": "perda_fonte",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 4}",
+      "P_raw_kW": "350.0007640483266",
+      "SOC_min": "34.3986874349725",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00512",
+      "scenario": "multi_burst",
+      "ctrl": "heuristico",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 4}",
+      "P_raw_kW": "233.64023492033988",
+      "SOC_min": "45",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00513",
+      "scenario": "multi_burst",
+      "ctrl": "heuristico_foresight",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 4}",
+      "P_raw_kW": "77.88007830712894",
+      "SOC_min": "45",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00514",
+      "scenario": "multi_burst",
+      "ctrl": "miope_qp",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 4}",
+      "P_raw_kW": "176.57920160730342",
+      "SOC_min": "44.931187530720884",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00515",
+      "scenario": "multi_burst",
+      "ctrl": "mpc_qp_v5",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 4}",
+      "P_raw_kW": "0.019730280955428725",
+      "SOC_min": "43.325637096401216",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00516",
+      "scenario": "multi_burst",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "params_json": "{\"SOC_initial\": 45, \"tau_b\": 4}",
+      "P_raw_kW": "5.684341886080802e-14",
+      "SOC_min": "37.377947386731115",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00517",
+      "scenario": "perda_fonte",
+      "ctrl": "heuristico",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 1}",
+      "P_raw_kW": "497.15177646857694",
+      "SOC_min": "56.49744702086331",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00518",
+      "scenario": "perda_fonte",
+      "ctrl": "heuristico_foresight",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 1}",
+      "P_raw_kW": "352.8546302093057",
+      "SOC_min": "56.10454449079022",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00519",
+      "scenario": "perda_fonte",
+      "ctrl": "miope_qp",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 1}",
+      "P_raw_kW": "497.1513942629863",
+      "SOC_min": "56.46674786070409",
+      "fallback_pct": "12.333333333333334"
+    },
+    {
+      "id": "j00520",
+      "scenario": "perda_fonte",
+      "ctrl": "mpc_qp_v5",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 1}",
+      "P_raw_kW": "350.0049954682016",
+      "SOC_min": "55.774755588186004",
+      "fallback_pct": "2"
+    },
+    {
+      "id": "j00521",
+      "scenario": "perda_fonte",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 1}",
+      "P_raw_kW": "350.0000002774251",
+      "SOC_min": "49.58525274223615",
+      "fallback_pct": "0.08333333333333334"
+    },
+    {
+      "id": "j00522",
+      "scenario": "multi_burst",
+      "ctrl": "heuristico",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 1}",
+      "P_raw_kW": "55.18191617571635",
+      "SOC_min": "58.81457210031389",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00523",
+      "scenario": "multi_burst",
+      "ctrl": "heuristico_foresight",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 1}",
+      "P_raw_kW": "36.787944117144235",
+      "SOC_min": "58.665458081459946",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00524",
+      "scenario": "multi_burst",
+      "ctrl": "miope_qp",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 1}",
+      "P_raw_kW": "84.09502012504943",
+      "SOC_min": "59.06231849632725",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00525",
+      "scenario": "multi_burst",
+      "ctrl": "mpc_qp_v5",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 1}",
+      "P_raw_kW": "0.017568631591018402",
+      "SOC_min": "57.86929284454764",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00526",
+      "scenario": "multi_burst",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 1}",
+      "P_raw_kW": "5.684341886080802e-14",
+      "SOC_min": "52.05069019069201",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00527",
+      "scenario": "perda_fonte",
+      "ctrl": "heuristico",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 2}",
+      "P_raw_kW": "592.6122638850534",
+      "SOC_min": "56.5039066455025",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00528",
+      "scenario": "perda_fonte",
+      "ctrl": "heuristico_foresight",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 2}",
+      "P_raw_kW": "362.4661767623983",
+      "SOC_min": "56.110329959008375",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00529",
+      "scenario": "perda_fonte",
+      "ctrl": "miope_qp",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 2}",
+      "P_raw_kW": "592.6116232891053",
+      "SOC_min": "56.47501255161039",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00530",
+      "scenario": "perda_fonte",
+      "ctrl": "mpc_qp_v5",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 2}",
+      "P_raw_kW": "350.0673643906158",
+      "SOC_min": "55.703914844740474",
+      "fallback_pct": "1.5833333333333335"
+    },
+    {
+      "id": "j00531",
+      "scenario": "perda_fonte",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 2}",
+      "P_raw_kW": "350.0000079452134",
+      "SOC_min": "49.403721718446974",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00532",
+      "scenario": "multi_burst",
+      "ctrl": "heuristico",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 2}",
+      "P_raw_kW": "90.97959895689502",
+      "SOC_min": "58.829675043486894",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00533",
+      "scenario": "multi_burst",
+      "ctrl": "heuristico_foresight",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 2}",
+      "P_raw_kW": "60.65306596721214",
+      "SOC_min": "58.67376804474655",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00534",
+      "scenario": "multi_burst",
+      "ctrl": "miope_qp",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 2}",
+      "P_raw_kW": "108.89876702879235",
+      "SOC_min": "59.04874506715448",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00535",
+      "scenario": "multi_burst",
+      "ctrl": "mpc_qp_v5",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 2}",
+      "P_raw_kW": "0.018156780309027454",
+      "SOC_min": "57.868900645312216",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00536",
+      "scenario": "multi_burst",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 2}",
+      "P_raw_kW": "5.684341886080802e-14",
+      "SOC_min": "52.0414967353629",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00537",
+      "scenario": "perda_fonte",
+      "ctrl": "heuristico",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 4}",
+      "P_raw_kW": "661.5203132285619",
+      "SOC_min": "56.51686432377183",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00538",
+      "scenario": "perda_fonte",
+      "ctrl": "heuristico_foresight",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 4}",
+      "P_raw_kW": "386.5415554611312",
+      "SOC_min": "56.12273376792944",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00539",
+      "scenario": "perda_fonte",
+      "ctrl": "miope_qp",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 4}",
+      "P_raw_kW": "661.5195158741905",
+      "SOC_min": "56.49900410352201",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00540",
+      "scenario": "perda_fonte",
+      "ctrl": "mpc_qp_v5",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 4}",
+      "P_raw_kW": "350.0206644118924",
+      "SOC_min": "55.31988818982572",
+      "fallback_pct": "0.08333333333333334"
+    },
+    {
+      "id": "j00541",
+      "scenario": "perda_fonte",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 4}",
+      "P_raw_kW": "350.0007637244156",
+      "SOC_min": "49.246655674237985",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00542",
+      "scenario": "multi_burst",
+      "ctrl": "heuristico",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 4}",
+      "P_raw_kW": "116.82011746071073",
+      "SOC_min": "58.84863995511495",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00543",
+      "scenario": "multi_burst",
+      "ctrl": "heuristico_foresight",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 4}",
+      "P_raw_kW": "77.8789957232829",
+      "SOC_min": "58.69192822284753",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00544",
+      "scenario": "multi_burst",
+      "ctrl": "miope_qp",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 4}",
+      "P_raw_kW": "126.9660049436929",
+      "SOC_min": "59.0341543684284",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00545",
+      "scenario": "multi_burst",
+      "ctrl": "mpc_qp_v5",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 4}",
+      "P_raw_kW": "0.019450806396037024",
+      "SOC_min": "57.87469673369364",
+      "fallback_pct": "0"
+    },
+    {
+      "id": "j00546",
+      "scenario": "multi_burst",
+      "ctrl": "mpc_qp_estocastico_3cen",
+      "params_json": "{\"SOC_initial\": 60, \"tau_b\": 4}",
+      "P_raw_kW": "5.684341886080802e-14",
+      "SOC_min": "52.04152700062758",
+      "fallback_pct": "0"
+    }
+  ],
+  "long_outage": [
+    {
+      "id": "j01754",
+      "ctrl": "heuristico",
+      "SOC_min": "20",
+      "SOC_final": "24.745932168393256",
+      "E_raw_kWh": "1309.9490548980596",
+      "recovery_s": "7200",
+      "SOC_at_events": "60",
+      "throughput_kWh": "215.02953546190517"
+    },
+    {
+      "id": "j01755",
+      "ctrl": "mpc_qp_v5",
+      "SOC_min": "20",
+      "SOC_final": "24.72899531022528",
+      "E_raw_kWh": "1312.325816733268",
+      "recovery_s": "7200",
+      "SOC_at_events": "59.50115040962632",
+      "throughput_kWh": "214.93316782219222"
+    }
+  ],
+  "numerical_summary": {
+    "mpc_qp_v5": {
+      "soc_prediction_violation_pp": 6.807866270719387e-09,
+      "constraint_gram_cond": 4843142611315303.0,
+      "cycle_p99_s": 0.0825047
+    },
+    "mpc_qp_estocastico_3cen": {
+      "soc_prediction_violation_pp": 0.0,
+      "constraint_gram_cond": 9686285222630616.0,
+      "cycle_p99_s": 0.16205560000000002
+    }
+  }
+}

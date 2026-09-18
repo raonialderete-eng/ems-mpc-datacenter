@@ -1,0 +1,14 @@
+controle,cenario,Np,Nc,Nprep,foresight,Pnao_max,E_nao_kWh,SOC_final,t_qp_med_s,t_qp_max_s,t_qp_p95_s,n_fallback,pct_fallback,wall_s,fonte
+Heuristico,carga_faixas,12,4,12,1,90.979599,0.063796,59.512764,NaN,NaN,NaN,0,0,0.808,sil_matlab_fpga
+MPC-QP-FPGA,carga_faixas,12,4,12,1,0.000000,0.000000,59.062196,0.011168,0.517275,0.028609,0,0,21.895,sil_matlab_fpga
+MPC-QP-V5,carga_faixas,60,15,30,1,0.000000,0.000000,58.800152,0.036837,0.322374,NaN,0,0,54.840,revisao_ieee_applied
+Heuristico,limite_fonte,12,4,12,1,90.979599,0.063796,51.241592,NaN,NaN,NaN,0,0,0.140,sil_matlab_fpga
+MPC-QP-FPGA,limite_fonte,12,4,12,1,0.000000,0.000000,51.095579,0.008425,0.097316,0.015796,0,0,17.038,sil_matlab_fpga
+MPC-QP-V5,limite_fonte,60,15,30,1,0.000000,0.000000,50.830582,0.046446,0.131098,NaN,0,0,65.130,revisao_ieee_applied
+Heuristico,perda_fonte,12,4,12,1,592.612264,14.754610,57.939785,NaN,NaN,NaN,0,0,0.096,sil_matlab_fpga
+MPC-QP-FPGA,perda_fonte,12,4,12,1,351.169468,14.584159,57.572734,0.007880,0.041210,0.016422,0,0,11.590,sil_matlab_fpga
+MPC-QP-V5,perda_fonte,60,15,30,1,350.082025,14.583391,57.309016,0.043612,0.192389,NaN,28,2.333,62.564,revisao_ieee_applied
+MPC-QP-V5,perda_fonte,60,15,30,0,592.567985,14.754579,57.813191,0.036940,0.090139,NaN,0,0,53.349,revisao_ieee_applied
+Heuristico,retorno_fonte,12,4,12,1,592.612264,24.476833,55.600604,NaN,NaN,NaN,0,0,0.110,sil_matlab_fpga
+MPC-QP-FPGA,retorno_fonte,12,4,12,1,351.169484,24.306381,55.233718,0.007438,0.019059,0.013140,0,0,10.926,sil_matlab_fpga
+MPC-QP-V5,retorno_fonte,60,15,30,1,350.046096,24.305588,54.941948,0.041830,0.193835,NaN,26,2.167,59.622,revisao_ieee_applied

@@ -1,0 +1,66 @@
+[
+  {
+    "id": "p0001",
+    "group": "A1_pilot",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "pilot": true,
+    "params": {
+      "information_policy": "legacy",
+      "mpc_foresight_grid": false
+    },
+    "reviewers": [
+      "R2.3",
+      "R2.4",
+      "R5.1"
+    ]
+  },
+  {
+    "id": "p0002",
+    "group": "A1_pilot",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "pilot": true,
+    "params": {
+      "information_policy": "legacy",
+      "mpc_foresight_grid": false
+    },
+    "reviewers": [
+      "R2.3",
+      "R2.4",
+      "R5.1"
+    ]
+  },
+  {
+    "id": "p0003",
+    "group": "A1_pilot",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "pilot": true,
+    "params": {
+      "information_policy": "persistence",
+      "mpc_foresight_grid": false
+    },
+    "reviewers": [
+      "R2.3",
+      "R2.4",
+      "R5.1"
+    ]
+  },
+  {
+    "id": "p0004",
+    "group": "A1_pilot",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "pilot": true,
+    "params": {
+      "information_policy": "persistence",
+      "mpc_foresight_grid": false
+    },
+    "reviewers": [
+      "R2.3",
+      "R2.4",
+      "R5.1"
+    ]
+  }
+]

@@ -1,0 +1,18 @@
+\begin{table*}[t]
+\centering
+\small
+\caption{Raw peak unserved power (kW). Inequality-only ablation preserves references, costs, limits and fallback.}
+\begin{tabular}{lrrr}
+\hline
+Scenario & Complete MPC & Inequality removed & Legacy coupled ablation \\
+\hline
+Load bands & 0.018079 & 0.218306 & 0.218292 \\
+Source limit & $5.684\times10^{-14}$ & 0.050819 & 0.093801 \\
+Source loss & 350.067364 & 350.129102 & 351.634708 \\
+Source return & 350.089666 & 350.129102 & 351.634709 \\
+Multiple bursts & 0.018157 & 0.218956 & 0.218896 \\
+DIPLOEE stress & 0.002215 & 0.025616 & 0.025591 \\
+NVML stress & 0.006558 & 0.077516 & 0.082634 \\
+\hline
+\end{tabular}
+\end{table*}

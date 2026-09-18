@@ -1,0 +1,306 @@
+[
+  {
+    "id": "a1_0001",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "variant": "announced",
+    "params": {
+      "information_policy": "legacy"
+    }
+  },
+  {
+    "id": "a1_0002",
+    "group": "A1",
+    "scenario": "retorno_fonte",
+    "ctrl": "mpc_qp_v5",
+    "variant": "announced",
+    "params": {
+      "information_policy": "legacy"
+    }
+  },
+  {
+    "id": "a1_0003",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "variant": "load_only",
+    "params": {
+      "information_policy": "legacy",
+      "mpc_foresight_grid": false
+    }
+  },
+  {
+    "id": "a1_0004",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "variant": "no_preview",
+    "params": {
+      "information_policy": "legacy",
+      "mpc_foresight_grid": false,
+      "mpc_foresight_load": false
+    }
+  },
+  {
+    "id": "a1_0005",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "event_mode": "detection_delay",
+    "delay": 1,
+    "params": {
+      "information_policy": "legacy"
+    }
+  },
+  {
+    "id": "a1_0006",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "event_mode": "detection_delay",
+    "delay": 5,
+    "params": {
+      "information_policy": "legacy"
+    }
+  },
+  {
+    "id": "a1_0007",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "event_mode": "detection_delay",
+    "delay": 10,
+    "params": {
+      "information_policy": "legacy"
+    }
+  },
+  {
+    "id": "a1_0008",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "variant": "announced",
+    "params": {
+      "information_policy": "legacy"
+    }
+  },
+  {
+    "id": "a1_0009",
+    "group": "A1",
+    "scenario": "retorno_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "variant": "announced",
+    "params": {
+      "information_policy": "legacy"
+    }
+  },
+  {
+    "id": "a1_0010",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "variant": "load_only",
+    "params": {
+      "information_policy": "legacy",
+      "mpc_foresight_grid": false
+    }
+  },
+  {
+    "id": "a1_0011",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "variant": "no_preview",
+    "params": {
+      "information_policy": "legacy",
+      "mpc_foresight_grid": false,
+      "mpc_foresight_load": false
+    }
+  },
+  {
+    "id": "a1_0012",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "event_mode": "detection_delay",
+    "delay": 1,
+    "params": {
+      "information_policy": "legacy"
+    }
+  },
+  {
+    "id": "a1_0013",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "event_mode": "detection_delay",
+    "delay": 5,
+    "params": {
+      "information_policy": "legacy"
+    }
+  },
+  {
+    "id": "a1_0014",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "event_mode": "detection_delay",
+    "delay": 10,
+    "params": {
+      "information_policy": "legacy"
+    }
+  },
+  {
+    "id": "a1_0015",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "variant": "announced",
+    "params": {
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "a1_0016",
+    "group": "A1",
+    "scenario": "retorno_fonte",
+    "ctrl": "mpc_qp_v5",
+    "variant": "announced",
+    "params": {
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "a1_0017",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "variant": "load_only",
+    "params": {
+      "information_policy": "persistence",
+      "mpc_foresight_grid": false
+    }
+  },
+  {
+    "id": "a1_0018",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "variant": "no_preview",
+    "params": {
+      "information_policy": "persistence",
+      "mpc_foresight_grid": false,
+      "mpc_foresight_load": false
+    }
+  },
+  {
+    "id": "a1_0019",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "event_mode": "detection_delay",
+    "delay": 1,
+    "params": {
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "a1_0020",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "event_mode": "detection_delay",
+    "delay": 5,
+    "params": {
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "a1_0021",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "event_mode": "detection_delay",
+    "delay": 10,
+    "params": {
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "a1_0022",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "variant": "announced",
+    "params": {
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "a1_0023",
+    "group": "A1",
+    "scenario": "retorno_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "variant": "announced",
+    "params": {
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "a1_0024",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "variant": "load_only",
+    "params": {
+      "information_policy": "persistence",
+      "mpc_foresight_grid": false
+    }
+  },
+  {
+    "id": "a1_0025",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "variant": "no_preview",
+    "params": {
+      "information_policy": "persistence",
+      "mpc_foresight_grid": false,
+      "mpc_foresight_load": false
+    }
+  },
+  {
+    "id": "a1_0026",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "event_mode": "detection_delay",
+    "delay": 1,
+    "params": {
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "a1_0027",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "event_mode": "detection_delay",
+    "delay": 5,
+    "params": {
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "a1_0028",
+    "group": "A1",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "event_mode": "detection_delay",
+    "delay": 10,
+    "params": {
+      "information_policy": "persistence"
+    }
+  }
+]

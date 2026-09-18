@@ -1,0 +1,19 @@
+{
+  "seed": 20260914,
+  "alpha_aging_per_kWh": 0.1,
+  "beta_aging_per_EFC": 50,
+  "information_policy_default_after_A1": "persistence",
+  "noise": {"sigma_L_kW": 5.0, "sigma_SOC_pp": 0.2, "n_realizations": 20},
+  "generator": {"delays_s": [10, 30, 60], "Pgen_kW": 400, "long_delay_s": 30},
+  "converter_dP_max_kW": 80,
+  "second_event": {"SOC_initial": 30, "extra_outage_s": [900, 1050]},
+  "solver": {
+    "objective_scale": 0.001,
+    "max_first_action_diff_kW": 0.1,
+    "max_eq_residual_kW": 0.001,
+    "algorithm": "interior-point-convex",
+    "X0": "empty"
+  },
+  "detection_mc": {"n": 40, "sigma_s": 6, "clip": [0, 20]},
+  "notes": "Criteria frozen before KPIs. Do not retune to beat the heuristic."
+}

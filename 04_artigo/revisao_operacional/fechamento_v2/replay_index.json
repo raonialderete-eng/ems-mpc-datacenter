@@ -1,0 +1,77 @@
+[
+  {
+    "mat": "C:/Users/Rauni/Documents/MPC_DATACENTER/05_resultados/revisao_operacional/campanha_v1/j00014.mat",
+    "step": 463,
+    "stratum": "flag_-6"
+  },
+  {
+    "mat": "C:/Users/Rauni/Documents/MPC_DATACENTER/05_resultados/revisao_operacional/campanha_v1/j00292.mat",
+    "step": 474,
+    "stratum": "flag_-6"
+  },
+  {
+    "mat": "C:/Users/Rauni/Documents/MPC_DATACENTER/05_resultados/revisao_operacional/campanha_v1/j00795.mat",
+    "step": 493,
+    "stratum": "flag_-6"
+  },
+  {
+    "mat": "C:/Users/Rauni/Documents/MPC_DATACENTER/05_resultados/revisao_operacional/campanha_v1/j01035.mat",
+    "step": 459,
+    "stratum": "flag_-6"
+  },
+  {
+    "mat": "C:/Users/Rauni/Documents/MPC_DATACENTER/05_resultados/revisao_operacional/campanha_v1/j01265.mat",
+    "step": 459,
+    "stratum": "flag_-6"
+  },
+  {
+    "mat": "C:/Users/Rauni/Documents/MPC_DATACENTER/05_resultados/revisao_operacional/campanha_v1/j01510.mat",
+    "step": 473,
+    "stratum": "flag_-6"
+  },
+  {
+    "mat": "C:/Users/Rauni/Documents/MPC_DATACENTER/05_resultados/revisao_operacional/campanha_v1/j00785.mat",
+    "step": 492,
+    "stratum": "flag_0"
+  },
+  {
+    "mat": "C:/Users/Rauni/Documents/MPC_DATACENTER/05_resultados/revisao_operacional/campanha_v1/j00820.mat",
+    "step": 493,
+    "stratum": "flag_0"
+  },
+  {
+    "mat": "C:/Users/Rauni/Documents/MPC_DATACENTER/05_resultados/revisao_operacional/campanha_v1/j01625.mat",
+    "step": 491,
+    "stratum": "flag_0"
+  },
+  {
+    "mat": "C:/Users/Rauni/Documents/MPC_DATACENTER/05_resultados/revisao_operacional/campanha_v1/j00950.mat",
+    "step": 482,
+    "stratum": "flag_-2"
+  },
+  {
+    "mat": "C:/Users/Rauni/Documents/MPC_DATACENTER/05_resultados/revisao_operacional/campanha_v1/j01265.mat",
+    "step": 482,
+    "stratum": "flag_-2"
+  },
+  {
+    "mat": "C:/Users/Rauni/Documents/MPC_DATACENTER/05_resultados/revisao_operacional/campanha_v1/j01755.mat",
+    "step": 3889,
+    "stratum": "flag_-2"
+  },
+  {
+    "mat": "C:/Users/Rauni/Documents/MPC_DATACENTER/05_resultados/revisao_operacional/campanha_v1/j01755.mat",
+    "step": 3890,
+    "stratum": "flag_-2"
+  },
+  {
+    "mat": "C:/Users/Rauni/Documents/MPC_DATACENTER/05_resultados/revisao_operacional/campanha_v1/j00014.mat",
+    "step": 1,
+    "stratum": "control_k1"
+  },
+  {
+    "mat": "C:/Users/Rauni/Documents/MPC_DATACENTER/05_resultados/revisao_operacional/campanha_v1/j00014.mat",
+    "step": 200,
+    "stratum": "control_mid"
+  }
+]

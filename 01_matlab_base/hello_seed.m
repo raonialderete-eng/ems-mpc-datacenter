@@ -1,0 +1,1 @@
+fprintf('hello_seed\n');

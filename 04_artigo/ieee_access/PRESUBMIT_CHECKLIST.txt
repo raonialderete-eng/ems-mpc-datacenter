@@ -1,0 +1,52 @@
+IEEE Access — PRE-SUBMIT CHECKLIST (EN manuscript)
+=================================================
+
+Date of audit: 2026-08-04
+Canonical file: artigo_ems_mpc_datacenter_access.tex
+
+1) TEMPLATE PLACEHOLDERS — KEEP AS-IS FOR FIRST SUBMISSION
+----------------------------------------------------------
+[x] \history{Date of publication xxxx 00, 0000, date of current version xxxx 00, 0000.}
+[x] \doi{10.1109/ACCESS.2026.DOI}   (template placeholder; do NOT invent a real DOI)
+[x] Footer VOLUME 4, 2026           (from ieeeaccess.cls + \setyear{2026}; production updates)
+Note: After acceptance, IEEE galley proof replaces dates/DOI/volume.
+
+2) REFERENCE AUDIT — DOIs / RETRACTION
+------------------------------------------------------
+RETRACTED (removed 2026-09-07, reviewer flag):
+  - sheng2026power  Energies 19(3):722, doi 10.3390/en19030722
+    Replaced by iea2025electricity (IEA Electricity 2025) and
+    ieee2025gridready (IEEE SA grid-readiness report).
+
+CORRECTED in the first-submission pass:
+  - zhang2025flex: vol. 320 -> vol. 316 (Energy, Art. no. 134511)  [VERIFIED]
+  - teague2025ups: A. Karki -> A. Karaki                            [VERIFIED]
+  - mughees2025forecast / li2025aiload: Y. W. Li -> Y. R. Li       [VERIFIED]
+  - iqbal2026reliability: A. Sarwat -> A. I. Sarwat                [VERIFIED]
+
+VERIFIED OK (DOI resolves / metadata matches):
+  - noland2024ai          ACCESS.2024.3440217
+  - mughees2025forecast   PESGM52009.2025.11225317
+  - teague2025ups         CPE-POWERENG63314.2025.11027304
+  - iqbal2026reliability  ACCESS.2026.3696227, vol.14, pp.79227-79252
+  - mou2026stochastic     TIA.2026.3677229, early access
+  - azizi2026gf           ijepes.2026.111638
+  - zhang2025flex         energy.2025.134511, vol.316
+  - alapera2018flexibility Appl. Energy 229:69-79
+  - sepehrzad2023mpc      J. Energy Storage 74:109282
+  - parisio2014mpc, wang2023hierarchical, nair2020mpc, paananen2023grid,
+    cioara2016dr, kez2021ffr, zhang2024reliability, zhao2023bess, aghmadi2024ess
+
+BOOKS (no DOI; normal for IEEE):
+  - rossiter2003mpc, wang2009mpc, camacho2007mpc, passino1998fuzzy, astrom1997computer
+
+arXiv KEPT (allowed; IEEE preprint style):
+  - li2025aiload           arXiv:2502.01647   [exists]
+  - vercellino2026measurement arXiv:2604.07345 [exists]
+  Prefer published venue if one appears later; 2 preprints is acceptable.
+
+3) SUBMIT PACKAGE
+-----------------
+PDF:  artigo_ems_mpc_datacenter_access_FINAL.pdf
+ZIP:  ../ieee_access_submission.zip
+Overleaf mirror: ../overleaf_upload/ieee_access/

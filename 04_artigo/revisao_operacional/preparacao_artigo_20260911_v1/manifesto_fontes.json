@@ -1,0 +1,141 @@
+{
+  "scope": "Preparation only; canonical manuscript untouched. Solver-scale results remain auxiliary.",
+  "source_files": [
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\tabela_P_unserved.csv",
+      "sha256": "97962f88edcce1194e1f9d6a2cdf5565df96f9db52d1ab1fc8ea45ad1efe4365"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\montecarlo_resumo.csv",
+      "sha256": "dd85c9b88ca41a73c6107f6d2b6352525c5258a7d34928dcca23a23d8bcc4b23"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\montecarlo_diferencas_pareadas.csv",
+      "sha256": "cbbc39b9500b1eef187873cb514163148e9f87096cbacd013be3fe47aae386c7"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\ablacao_isolada.csv",
+      "sha256": "538c574d6e6d2713f1d70f698640606bdb34fe01adcff2b09eb0a28dadcc5060"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\auditoria.json",
+      "sha256": "12cbf7530611240557513005cb049e00e2a769d430c1ab3f3cd08ac408b22a61"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\proveniencia.csv",
+      "sha256": "e5099f63103e1c1b3f440116ae31278462ed7ba37d38691f71768e8826042188"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\solver_escala_20260910_194805_009\\closed_loop.csv",
+      "sha256": "88cbd1ba228f1dfe1467a1a32daeb9644c7084eefff6e262a67b404eccac86e5"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\solver_escala_20260910_194805_009\\replay.csv",
+      "sha256": "ec4d3c9b4d107788e2b386e8d7c315ad9bfb83e3b9c2b4b5b391004663ad88f0"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\solver_escala_20260910_194805_009\\metadata.json",
+      "sha256": "9f64625bd8713e0c50657ae922d57bb4bf67d0c5834bc72119f1b84634db2751"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\solver_escala_20260910_194722_777\\status.json",
+      "sha256": "bf9e15f23d69850ba66e4010a3aedea283f60f3b5da05aa9d4a1b413809a8093"
+    },
+    {
+      "path": "01_matlab_base\\parametros.m",
+      "sha256": "1418481a183b9f8ceb48bac0d081cf40485295924052bce6396fbe7e445b5bcb"
+    },
+    {
+      "path": "01_matlab_base\\planta_bess.m",
+      "sha256": "a8e18b11a46d841024e9d2f9aca74039b154f1e2e78e3740ed71cf6c35da5d81"
+    },
+    {
+      "path": "01_matlab_base\\revisao_operacional\\montar_qp_auditado.m",
+      "sha256": "87576d5a20021a34f2b2d735ffa3a75d55c63f33bca652ee7ef9fdac92fee279"
+    },
+    {
+      "path": "01_matlab_base\\revisao_operacional\\controle_mpc_auditado.m",
+      "sha256": "de5c51cc522744da6b06cdbdbec9778697f58b6cc971d855ada3b33650c11ef6"
+    },
+    {
+      "path": "01_matlab_base\\revisao_operacional\\simular_ems_auditado.m",
+      "sha256": "3213bc946920c7280dbed9b46394dd4342f88f6c8aa42a418977a117c21939bf"
+    },
+    {
+      "path": "01_matlab_base\\revisao_operacional\\metricas_auditadas.m",
+      "sha256": "da635c1952e17ad8f361a7573a565318d6490c1d266baa72d003bf6c1111ee29"
+    },
+    {
+      "path": "01_matlab_base\\experimentos\\solver_escala\\avaliar_escala_solver.m",
+      "sha256": "3a51293fb61cacd79214607842f5d7348cd6163860ae3c304ff5c356852218fd"
+    },
+    {
+      "path": "04_artigo\\revisao_operacional\\preparacao_artigo_20260911_v1\\FORMULACAO_QP.md",
+      "sha256": "232294a1c6ee4a9c569888e8b868d77b3b83774479658d30114387c3eb2a3796"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "tabelas\\01_picos_principais.tex",
+      "sha256": "e86e2bbf41c2d8f356437aa727997f872ebf9633678c9235af7364829f59fefc"
+    },
+    {
+      "path": "tabelas\\02_montecarlo_picos.tex",
+      "sha256": "b775166613be893924aab4e742a2f6d78facaf93bb86994ac6635943892c46ec"
+    },
+    {
+      "path": "tabelas\\03_montecarlo_reserva.tex",
+      "sha256": "d56e2a41fbbb82eaab4b6f010ec7ecb982c1f4cd062961289f9c29ea13050921"
+    },
+    {
+      "path": "tabelas\\04_ablacao_isolada.tex",
+      "sha256": "06352c69173e568542d0ccee4b3c860f3df074d5a4403ab17f28e564f4328ee2"
+    },
+    {
+      "path": "tabelas\\05_escala_solver.tex",
+      "sha256": "0fb6050f705da7fd940134353d1e4bc16aa2a09ae913bc8726cf3085da9cfb93"
+    },
+    {
+      "path": "tabelas\\ablacao_isolada.csv",
+      "sha256": "538c574d6e6d2713f1d70f698640606bdb34fe01adcff2b09eb0a28dadcc5060"
+    },
+    {
+      "path": "tabelas\\auditoria.json",
+      "sha256": "12cbf7530611240557513005cb049e00e2a769d430c1ab3f3cd08ac408b22a61"
+    },
+    {
+      "path": "tabelas\\equacoes_qp.tex",
+      "sha256": "147384fd75799f39eeb514e5a5f51b604871dae327c0e10b239708c769e70479"
+    },
+    {
+      "path": "tabelas\\montecarlo_diferencas_pareadas.csv",
+      "sha256": "cbbc39b9500b1eef187873cb514163148e9f87096cbacd013be3fe47aae386c7"
+    },
+    {
+      "path": "tabelas\\montecarlo_resumo.csv",
+      "sha256": "dd85c9b88ca41a73c6107f6d2b6352525c5258a7d34928dcca23a23d8bcc4b23"
+    },
+    {
+      "path": "tabelas\\proveniencia.csv",
+      "sha256": "e5099f63103e1c1b3f440116ae31278462ed7ba37d38691f71768e8826042188"
+    },
+    {
+      "path": "tabelas\\solver_escala_closed_loop.csv",
+      "sha256": "88cbd1ba228f1dfe1467a1a32daeb9644c7084eefff6e262a67b404eccac86e5"
+    },
+    {
+      "path": "tabelas\\solver_escala_metadata.json",
+      "sha256": "9f64625bd8713e0c50657ae922d57bb4bf67d0c5834bc72119f1b84634db2751"
+    },
+    {
+      "path": "tabelas\\solver_escala_replay.csv",
+      "sha256": "ec4d3c9b4d107788e2b386e8d7c315ad9bfb83e3b9c2b4b5b391004663ad88f0"
+    },
+    {
+      "path": "tabelas\\tabela_P_unserved.csv",
+      "sha256": "97962f88edcce1194e1f9d6a2cdf5565df96f9db52d1ab1fc8ea45ad1efe4365"
+    }
+  ],
+  "latex_compilation": "not executed; fragments require integration and layout verification",
+  "equation_blocks": 13
+}

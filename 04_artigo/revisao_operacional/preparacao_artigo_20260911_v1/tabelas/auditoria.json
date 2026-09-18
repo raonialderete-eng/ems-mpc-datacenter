@@ -1,0 +1,85 @@
+{
+  "cases": 1755,
+  "corrected_replacements": 266,
+  "unchanged_cases": 1489,
+  "ablation_cases": 21,
+  "paired_MC_trials": 200,
+  "metrics_recalculated": true,
+  "corrected_physical_inputs_and_params_identical": true,
+  "diagnostics": {
+    "heuristico": {
+      "steps": 414000,
+      "fallback": 0,
+      "flags": {},
+      "accepted_eq_max": 0.0,
+      "accepted_ineq_max": 0.0,
+      "accepted_soc_error_max": 0.0,
+      "overruns": [],
+      "soc_clipping_steps": 1
+    },
+    "heuristico_foresight": {
+      "steps": 404400,
+      "fallback": 0,
+      "flags": {},
+      "accepted_eq_max": 0.0,
+      "accepted_ineq_max": 0.0,
+      "accepted_soc_error_max": 0.0,
+      "overruns": [],
+      "soc_clipping_steps": 0
+    },
+    "miope_qp": {
+      "steps": 404400,
+      "fallback": 444,
+      "flags": {
+        "-2": 444
+      },
+      "accepted_eq_max": 0.0,
+      "accepted_ineq_max": 0.0,
+      "accepted_soc_error_max": 0.0,
+      "overruns": [],
+      "soc_clipping_steps": 0
+    },
+    "mpc_qp_v5": {
+      "steps": 487200,
+      "fallback": 6261,
+      "flags": {
+        "-6": 6254,
+        "0": 3,
+        "-2": 4
+      },
+      "accepted_eq_max": 0.007917951740012086,
+      "accepted_ineq_max": 1.437292826422798e-07,
+      "accepted_soc_error_max": 0.12004414074193903,
+      "overruns": [],
+      "soc_clipping_steps": 1
+    },
+    "mpc_qp_estocastico_3cen": {
+      "steps": 412800,
+      "fallback": 653,
+      "flags": {
+        "-6": 653
+      },
+      "accepted_eq_max": 0.00783102801278801,
+      "accepted_ineq_max": 0.0,
+      "accepted_soc_error_max": 0.1325407082044734,
+      "overruns": [
+        {
+          "id": "j00154",
+          "step_0based": 0,
+          "seconds": 1.1688671
+        },
+        {
+          "id": "j00253",
+          "step_0based": 0,
+          "seconds": 1.1408007
+        },
+        {
+          "id": "j00363",
+          "step_0based": 0,
+          "seconds": 1.2380995
+        }
+      ],
+      "soc_clipping_steps": 0
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "source": "01_matlab_base/controle_mpc_qp_v5.m",
+  "source_sha256": "c90e37b12f939bead87dddb01108a7215449d5599bf28fbcad3e5bfaae17d955",
+  "derived": "01_matlab_base/revisao_operacional/montar_qp_auditado.m",
+  "note": "V5 sections 0-15; fixed normalization override; event-constraint ablation. Original untouched."
+}

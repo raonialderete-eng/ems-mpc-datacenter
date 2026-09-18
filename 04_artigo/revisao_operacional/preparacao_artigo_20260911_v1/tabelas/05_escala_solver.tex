@@ -1,0 +1,15 @@
+\begin{table*}[t]
+\centering
+\small
+\caption{Auxiliary source-loss experiment, excluded from the main rankings. Scaled objective uses a factor of 0.001.}
+\begin{tabular}{lrrrr}
+\hline
+Controller / scaled & Peak (kW) & Final SOC (\%) & Throughput (kWh) & Fallback count \\
+\hline
+Deterministic MPC / 0 & 350.067364 & 57.09766 & 27.741904 & 19 \\
+Deterministic MPC / 1 & 350.000303 & 56.697553 & 29.385379 & 0 \\
+Scenario MPC / 0 & 350.000008 & 49.403722 & 50.332322 & 0 \\
+Scenario MPC / 1 & 350.000008 & 49.404001 & 50.330995 & 0 \\
+\hline
+\end{tabular}
+\end{table*}

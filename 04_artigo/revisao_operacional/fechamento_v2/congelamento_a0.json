@@ -1,0 +1,689 @@
+{
+  "version": "v2",
+  "historical_files": [
+    {
+      "path": "01_matlab_base\\atualiza_tabelas_tex_revisao.m",
+      "sha256": "54b7603e5f51af92c31c2005a293d779122e9ef39f7bb2848dc0000905c13112"
+    },
+    {
+      "path": "01_matlab_base\\audit_consistencia_planta.m",
+      "sha256": "a37278cd497f27e7fa37b06afa88b6b3266a74bb49e85f7f2e6433eeeb8db9fa"
+    },
+    {
+      "path": "01_matlab_base\\calcular_metricas.m",
+      "sha256": "b5ffde2e7b72031e63f42e92055af9d1104503df3ed47741da7d11bbf80877bc"
+    },
+    {
+      "path": "01_matlab_base\\calcula_metricas.m",
+      "sha256": "58fdc043c5300724cf43ea5f6d6650f6cb87c364aebd72d7f485d11b87aacc6e"
+    },
+    {
+      "path": "01_matlab_base\\classificar_exitflag_qp.m",
+      "sha256": "18ef893c3b6440bdfcdb4c9a26311775f24d02b3bed194a4a93a9871edaa2bfe"
+    },
+    {
+      "path": "01_matlab_base\\clear_mpc_qp_fpga_cache.m",
+      "sha256": "02c7df87a390b83800ea8f95fa1728b0a45350a627fef0ec36fd9868d4d6b727"
+    },
+    {
+      "path": "01_matlab_base\\clear_mpc_qp_v5_cache.m",
+      "sha256": "7e169a72b2a18c8195b70d60b5ea4a9217b68561785ba742b92cf5412ba1aaf9"
+    },
+    {
+      "path": "01_matlab_base\\compara_heuristico_miope_mpc.m",
+      "sha256": "c32fe0e7f576f9f4a2356206c83030c49935723e15ee0b6b884a91c37123e34b"
+    },
+    {
+      "path": "01_matlab_base\\controle_heuristico.m",
+      "sha256": "c607ebf29d441c7672fd1f9f476e054e3087da91ee149a5f6d724c7402479a02"
+    },
+    {
+      "path": "01_matlab_base\\controle_heuristico_foresight.m",
+      "sha256": "aad9ed35dedfee8d311a23145301f8497373db4b83d5fb2723d90756dea27579"
+    },
+    {
+      "path": "01_matlab_base\\controle_miope_qp.m",
+      "sha256": "2a48a741710ebb9c6bba8c15d79ed043dd1800d0a211b04d5bb396d77dce2453"
+    },
+    {
+      "path": "01_matlab_base\\controle_mpc_qp_fpga.m",
+      "sha256": "3a1a23052b6f0e9ce26c1e0750c779f9e3446f60470f6f2d2b2d42656e9e0381"
+    },
+    {
+      "path": "01_matlab_base\\controle_mpc_qp_v2.m",
+      "sha256": "4b414d013fe652e0b60e471902aa21b3dfa4383cb7b12cb243ca80c5838d3a02"
+    },
+    {
+      "path": "01_matlab_base\\controle_mpc_qp_v3.m",
+      "sha256": "0be850ead455e888698d941a40f1c414f08064dd8356e7195cef5161dd38bc44"
+    },
+    {
+      "path": "01_matlab_base\\controle_mpc_qp_v4.m",
+      "sha256": "792a8b212a7a884f6dbc5987a6a37b387a0e330951ee99f81b295141e0c4fd8a"
+    },
+    {
+      "path": "01_matlab_base\\controle_mpc_qp_v5.m",
+      "sha256": "c90e37b12f939bead87dddb01108a7215449d5599bf28fbcad3e5bfaae17d955"
+    },
+    {
+      "path": "01_matlab_base\\diag_mpc_crash.m",
+      "sha256": "d4fb45fa57336f54dd6de54a820a9e124c17f4ba5800146557ab46f853bd9b2b"
+    },
+    {
+      "path": "01_matlab_base\\finish_figs.m",
+      "sha256": "89695e19c519a139f2f383602cebb57ffa20c79e0bc31b7a68c06a2eb4dae71c"
+    },
+    {
+      "path": "01_matlab_base\\gerar_evidencia_ieee_fpga.m",
+      "sha256": "45bff239647b5476183157c39cebc306ee0974ec991e4905618b5b13a7aaccf3"
+    },
+    {
+      "path": "01_matlab_base\\gerar_figuras_revisao.m",
+      "sha256": "726615471378db62ae8a2baf146cc3acd628f9cc5b82da44ce12acfa8e740ce3"
+    },
+    {
+      "path": "01_matlab_base\\gerar_graficos_comparativos.m",
+      "sha256": "3eb3cc216cba0f6819c628e4b1825e6e8e55c86cabe7899076e97c4b71d9f211"
+    },
+    {
+      "path": "01_matlab_base\\gerar_traces_revisao.m",
+      "sha256": "dd77e92c8c2441e8e0991845953ec815211f73a3b086a63debf52347c8e157a6"
+    },
+    {
+      "path": "01_matlab_base\\gera_cenario.m",
+      "sha256": "d36f0d79cb93bb23579d0a13af9feac2659fc8da79f64c27c84515533ec56bb2"
+    },
+    {
+      "path": "01_matlab_base\\hello_seed.m",
+      "sha256": "6da9b9b35b8b8940833186e0f5ce3fdd093acb6ba430e061e4945757d90057d0"
+    },
+    {
+      "path": "01_matlab_base\\hil_loop_de2115.m",
+      "sha256": "db87f08a346fddde76e3551c15400c44ddd3a4a34708f6ec472200b421c841dd"
+    },
+    {
+      "path": "01_matlab_base\\main_comparacao_controladores.m",
+      "sha256": "37159aaaf33e8b199c2664e24f6896c06f8e7c38f307d497026ea92040c010af"
+    },
+    {
+      "path": "01_matlab_base\\main_estudo_revista.m",
+      "sha256": "fa5347ce32b0d1321876026477141c3cf959b0edfc0b575b866c031ad03de047"
+    },
+    {
+      "path": "01_matlab_base\\main_miope_todos_cenarios.m",
+      "sha256": "4e5e3813908a798ebe3fe0377c073e421328ac2e70358bd511e81a3efa1e0838"
+    },
+    {
+      "path": "01_matlab_base\\main_revisao_fase1.m",
+      "sha256": "c46553fbf6dd1323885935be64c99637f97c6e0f3b6bcc4e1655405b1258badd"
+    },
+    {
+      "path": "01_matlab_base\\main_revisao_ieee_applied.m",
+      "sha256": "fbe21293135e815c76a632553903c6ed3f0d2a12567cbf5b50cf4ee503037751"
+    },
+    {
+      "path": "01_matlab_base\\main_revisao_lote.m",
+      "sha256": "7c04b00ae95e4d7c459c3e73dd4b43839dfb39556a17019015e99d923e93a60a"
+    },
+    {
+      "path": "01_matlab_base\\main_revisao_traces_dataset.m",
+      "sha256": "51a04807711db89ad0296df273585d8f06e38e2341195c97c068b12cc29f1df6"
+    },
+    {
+      "path": "01_matlab_base\\main_sil_hil_fpga.m",
+      "sha256": "29b305ba8f09269b32b294a8b9e82f1047367ab15d8358094b8482cf320ebc87"
+    },
+    {
+      "path": "01_matlab_base\\main_sim.m",
+      "sha256": "7f757381bc36eede7ecbda5e9f065534fbac71ded15ce1f9699a436c416acaae"
+    },
+    {
+      "path": "01_matlab_base\\main_todos_cenarios.m",
+      "sha256": "83d07320685c3d983bc7f6bf89c500e0da5c8f3f9c36049559a78bf2a92acaa1"
+    },
+    {
+      "path": "01_matlab_base\\main_todos_cenarios_4.m",
+      "sha256": "7ff00b9797e91ea51c3017807d87c7e92a57ba0cf76c5e6bb1eb8e664d935abf"
+    },
+    {
+      "path": "01_matlab_base\\main_todos_cenarios_backup.m",
+      "sha256": "a2e7634b4a28e1da32121152994b2f6247f0bac9bdd989755e43c097e3391559"
+    },
+    {
+      "path": "01_matlab_base\\main_validar_mpc_fpga.m",
+      "sha256": "e9310c5aa5df0952a29ad84cacfe588b467927cc705cd99c004315396c4a3457"
+    },
+    {
+      "path": "01_matlab_base\\parametros.m",
+      "sha256": "1418481a183b9f8ceb48bac0d081cf40485295924052bce6396fbe7e445b5bcb"
+    },
+    {
+      "path": "01_matlab_base\\parametros_fpga.m",
+      "sha256": "503d95edffa675e6bbd334109c71f0317e107aaaf205fd958b8387900f44387c"
+    },
+    {
+      "path": "01_matlab_base\\planta_bess.m",
+      "sha256": "a8e18b11a46d841024e9d2f9aca74039b154f1e2e78e3740ed71cf6c35da5d81"
+    },
+    {
+      "path": "01_matlab_base\\profile_qp_um_passo.m",
+      "sha256": "a2f0f575bfdb00d675668cb69c60c236280dd1bbb70198ac10545c5e247f4335"
+    },
+    {
+      "path": "01_matlab_base\\seed_checkpoint.m",
+      "sha256": "88c68d1c0cc1a1ea0c9e790ff91225b4db51c770ce4612d022174274dc8c9cc7"
+    },
+    {
+      "path": "01_matlab_base\\simular_ems.m",
+      "sha256": "0c273f8fe5345f17185bd769f91bdbc089990311349f48d196d37d531e013372"
+    },
+    {
+      "path": "01_matlab_base\\teste_c_golden.m",
+      "sha256": "c0c97b051e392251c722d6cef99eabbc1bc9daffbddb60818a857025bc24cc58"
+    },
+    {
+      "path": "01_matlab_base\\teste_rapido_v5_perda_fonte.m",
+      "sha256": "73b0944aa9374f4bdd1cd0dc0bc541fa2f47d46565c04a9b54e92ec716e43139"
+    },
+    {
+      "path": "01_matlab_base\\_seed_checkpoint.m",
+      "sha256": "92805b28a2aa42ba4d41de07cafbc036af0b08db43cf40feba58a955c4d10f44"
+    },
+    {
+      "path": "01_matlab_base\\revisao_operacional\\caso_auditado.m",
+      "sha256": "5355508396f5b8ee6060ae6ecf6205558a02cb5dc7fcb89345376034b572f428"
+    },
+    {
+      "path": "01_matlab_base\\revisao_operacional\\controle_miope_auditado.m",
+      "sha256": "ed984ac251b4fa9338d6d0fb74b935f9ee8e0e6a7e79c7af6afdff0284d332f4"
+    },
+    {
+      "path": "01_matlab_base\\revisao_operacional\\controle_mpc_auditado.m",
+      "sha256": "de5c51cc522744da6b06cdbdbec9778697f58b6cc971d855ada3b33650c11ef6"
+    },
+    {
+      "path": "01_matlab_base\\revisao_operacional\\controle_mpc_qp_estocastico_3cen.m",
+      "sha256": "9a9ceb41adf250b27e3c949fcb780f5b1bafd02e65d45a54e3c6383a00435e3a"
+    },
+    {
+      "path": "01_matlab_base\\revisao_operacional\\executar_campanha.m",
+      "sha256": "aac8b7a070b363e986565c5dedd99af8bb87548abcfbdf0e98f82c96a2ade492"
+    },
+    {
+      "path": "01_matlab_base\\revisao_operacional\\metricas_auditadas.m",
+      "sha256": "da635c1952e17ad8f361a7573a565318d6490c1d266baa72d003bf6c1111ee29"
+    },
+    {
+      "path": "01_matlab_base\\revisao_operacional\\montar_qp_auditado.m",
+      "sha256": "87576d5a20021a34f2b2d735ffa3a75d55c63f33bca652ee7ef9fdac92fee279"
+    },
+    {
+      "path": "01_matlab_base\\revisao_operacional\\simular_ems_auditado.m",
+      "sha256": "3213bc946920c7280dbed9b46394dd4342f88f6c8aa42a418977a117c21939bf"
+    },
+    {
+      "path": "01_matlab_base\\revisao_operacional\\testar_revisao.m",
+      "sha256": "39a9b1559fa9520cabc3d70b47db6ee819607d49dfa61c9497b204bb5f89c596"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\ablacao_isolada.csv",
+      "sha256": "538c574d6e6d2713f1d70f698640606bdb34fe01adcff2b09eb0a28dadcc5060"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\auditoria.json",
+      "sha256": "12cbf7530611240557513005cb049e00e2a769d430c1ab3f3cd08ac408b22a61"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\consolidation_snapshot.py",
+      "sha256": "ba2840d98d471b6fae27a7c1cf8b9801d9890f389b106b413539778af50c0406"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\fallback_eventos.csv",
+      "sha256": "1104c214f4785654448701f854009ceb0a3ebec4dd7dc7ea402a1f1893b51d8a"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\grupo_ablacao.csv",
+      "sha256": "e292491dfda9d8d7937f85fd0578b01399f3c5d1d94b1010d6eb83ebe64e78e6"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\grupo_alarm.csv",
+      "sha256": "66819e30de9c2c4488164075b3d3fb829eead5c9b2f86851345206121a74129d"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\grupo_detection.csv",
+      "sha256": "9fa9bd137319f290854fc8df18d2b9f135774f1e27e32fd63e73d3b39cc037d7"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\grupo_fairness.csv",
+      "sha256": "74d1d9c57b4bd3cef41250ce18892a8544a3cf3f61db4024d9b85557610b4ece"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\grupo_gate.csv",
+      "sha256": "73ee2fee13251ab158cc7c9bf48f4f0e7e536998a59af3aae97c851daf5ca71f"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\grupo_long_outage.csv",
+      "sha256": "0a3ce0c8913dcf3079f942a025f3cb94f37390a48d348ccbd8e952499c0c024a"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\grupo_magnitude.csv",
+      "sha256": "f7e2e97fe8709ab593620f6cb1b2e223088d72e10fe068acc3cc457179efb896"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\grupo_montecarlo.csv",
+      "sha256": "61ef8ca18650d513b87953d9e733c5eb255c8d9d9e3d1eabb45c57de469548a5"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\grupo_pesos.csv",
+      "sha256": "ab190b43c0da0f16f9749131432c1ff53689f0bc6fd5a68f42eb176c435e4cc5"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\grupo_plant_sensitivity.csv",
+      "sha256": "61fa90617cc48d79aaf9ba27f6464c4d2e8d5febe70d01820c01a878490708c7"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\grupo_principal.csv",
+      "sha256": "b1cb5d69cc2fb1cf060b28d4f8f05cab6fa1e41930bbdd220c5b0dd7300bc04e"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\grupo_probabilities.csv",
+      "sha256": "754a001e02faf21870f046f051b2ad5d5ef9be0b39e50c0d502af0e227940370"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\grupo_timing.csv",
+      "sha256": "fc5570648009f1d901e42feaf3fd2d6eea84268e247ff81364d8961bafec87e3"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\grupo_windows.csv",
+      "sha256": "63f1dc4ec0b69e9c32a7e1eeb22e0e3dd1eb4a2449506eddcf848d22525da5d1"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\montecarlo_diferencas_pareadas.csv",
+      "sha256": "cbbc39b9500b1eef187873cb514163148e9f87096cbacd013be3fe47aae386c7"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\montecarlo_picos_reserva.png",
+      "sha256": "b38b4560fa35056283341923b5d2a72ccad2f9d7f401a3a797d9a7a894b8c137"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\montecarlo_resumo.csv",
+      "sha256": "dd85c9b88ca41a73c6107f6d2b6352525c5258a7d34928dcca23a23d8bcc4b23"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\proveniencia.csv",
+      "sha256": "e5099f63103e1c1b3f440116ae31278462ed7ba37d38691f71768e8826042188"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\recuperacao_eventos.csv",
+      "sha256": "0a4ab711350ca1a86cb02ff9d60d7c7acff945a2454619f52ddc841be50ed4f9"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\resultados_consolidados.csv",
+      "sha256": "21db1e0ed9ebde9cf049483384b127edab6f6796b09871a5704202cf690bac44"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\status.json",
+      "sha256": "506bdbd2a719ba03cdad18133ffb7b9bebc467a0c6f7c0a896ae25c4a5e0a5cc"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\consolidacao_corrigida_20260911_v1\\tabela_P_unserved.csv",
+      "sha256": "97962f88edcce1194e1f9d6a2cdf5565df96f9db52d1ab1fc8ea45ad1efe4365"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_stress.csv",
+      "sha256": "c4290a0ba0dba795db113c00a2503b94d94cb1ae8d9ea272e347d9cf36ae1b52"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_stress.mat",
+      "sha256": "5a7379220264a000b80c5c19175f4df280ec0683e25df2511c3bf45fe4f897ab"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window01.csv",
+      "sha256": "725a4eb54be758fede278478aadedf36bf5f927e79aeffca977f1b1d480c24c1"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window01.mat",
+      "sha256": "2a2ac968b3f5b524c39609c0a4a299f35448306d820ada219015021e54e61020"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window02.csv",
+      "sha256": "755cdc548cb8a1e15e6fb664fc2448b83d66b9093d0f023900377255a65c2ae2"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window02.mat",
+      "sha256": "96dbeab2166319547db2000593297c04bf54efa537ff214c5afae0684624f1fa"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window03.csv",
+      "sha256": "f7b5645b14e317567fa1e998f4a5efe631fc1e26bc3a552dc5a5241a2ecaad8e"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window03.mat",
+      "sha256": "f2e4a8b4693f4eb1d78486ba8de54603ac05eee097c5dc73c5739c26647eea34"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window04.csv",
+      "sha256": "4e5b04001ee334d679deb6d24060d83eb90897dfd53700836504984315e4daf3"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window04.mat",
+      "sha256": "fcf1a7ed4647299a8937c814a83fdee419e065f806a575fa5b9ba34a709666ab"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window05.csv",
+      "sha256": "15a402aa66f13950991152828dc50e44734fd9db0ad8a4c87f3efb2508835e20"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window05.mat",
+      "sha256": "c3b1ac26308da41414f56e6b5ebc8c45e475ff4603ca63be28e52405936fe686"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window06.csv",
+      "sha256": "d801f189c6109ef53215c34775177c1517a7fedbe80954cf2725bae430be52ad"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window06.mat",
+      "sha256": "d90643474033d73e7bfe72e8ce6713e57991e6aff20ed1f4e092c14c5c3ba776"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window07.csv",
+      "sha256": "9567dc7d30e2d6d3d3df9ba71d6e5b8610c6386d4866d78a74889f64d725a07e"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window07.mat",
+      "sha256": "a7c4109235926c5863c57f87299f577746f91f74fa3e757a4b287df3b2fff766"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window08.csv",
+      "sha256": "3890a7fe009ba1af75b36203df608166ff1b1c62fa8629a1f5e1af57a584efb2"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window08.mat",
+      "sha256": "6a78af811f26125a0d640fbc56e695f4250cfcc3fa34a8f26dc1863d0ea6dbb4"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window09.csv",
+      "sha256": "f518adf666282705742d1ed87d67655e9fc044925da76d03206fcbb3f600351d"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window09.mat",
+      "sha256": "d1fc744e3b2d68d24f61667380652cc1621d04c956405fee49b913203b46a1bf"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window10.csv",
+      "sha256": "32df8dbc8b38ef5f0fb0703fca2311865324331ddefabf2204e62b98461ed890"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window10.mat",
+      "sha256": "415096fc4de1412c736111b0668e86f17abbdc0650dbd56bbe9c869dab42c47d"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window11.csv",
+      "sha256": "ff1e7e50e70002f4aecad4a935403c2e840d76c45707b1730f1896f00e6a163d"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window11.mat",
+      "sha256": "df4d0b3f45610daa9e791083b95ee019239fa81a630875d52b2436be7ab93e5f"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window12.csv",
+      "sha256": "fa01aef08d52f9f1665011beccff2a31f31432b2fa9059ce3d451f7395e1cd78"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window12.mat",
+      "sha256": "db4fee42896a44874edf18d8da0723a5331967df2c7ab263a3720fcd9902dcec"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window13.csv",
+      "sha256": "e8dd54b899ebf9757e97fa38bc7172c0285411abd593090f8ad63f3825e4b3a6"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window13.mat",
+      "sha256": "a83bb1c0a857e66170bdd895ac16a4ff9f5c8cd035b2bb635854a68f832d3ff3"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window14.csv",
+      "sha256": "cc0140337f11d3365a78acc840fdc060221891aa0d1274276943344c965dad97"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window14.mat",
+      "sha256": "7108eab0b8f3228de07a7f58cb7e1fa1f50cd66905008ebcc2470bbb261953e0"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window15.csv",
+      "sha256": "184b7c16e234b82d9736ffbea14e0c89b383f7330ddb6ff1f22882816e5455ca"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window15.mat",
+      "sha256": "6db89cacfe0551a05a9af5d66cc40dd5b2aef4f451994621a56c4f0b48a2ffdf"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window16.csv",
+      "sha256": "d86316edce0f060b4a5a48b800a2ef89f54aa6787f5ca33e2687ee37bdf00316"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window16.mat",
+      "sha256": "ba9eed7ae3b2b3225cd335bb2ba80d0bf75c01352f4a9bb53bd46fe3131182ec"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window17.csv",
+      "sha256": "bbca1f60ee5a91cd64cbb41fa00ee39185d2e2d098fcee7d0ac436b7d076649b"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window17.mat",
+      "sha256": "632c309110d222e4130b1f8fd6b2be82950a9f92ead44e3e7751dba7dab304a5"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window18.csv",
+      "sha256": "03d5a553d423e62c272b0ecad12c2b5bd29714e548fc685301fe07c292df5c9d"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window18.mat",
+      "sha256": "1fb60031d327f1de26ecd39365006069b78a5958bb35614caf60fd819c164660"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window19.csv",
+      "sha256": "0bf9dc17915b721c900e6bd3f58249bc0d0011c6a1ff6a155b808377ec96d646"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window19.mat",
+      "sha256": "5cedcc906fa653c4b2ceab42a831f84fd8e53fe976a0924e354494a4ab1764d5"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window20.csv",
+      "sha256": "f619d43658767a73700ab8241d807c6a51c57b4425aa850652691edc2efd0d9c"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\diploee_facility_window20.mat",
+      "sha256": "dfe4a688e0845ee637fb5753d2cb39724d0d8890846dc21d627c8e09415004e4"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\manifest.json",
+      "sha256": "03a3fe5f22af59397642ce2d735ce064018d35dbcb0e6428117b815279b4f579"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_stress.csv",
+      "sha256": "5b4f1a14e460b7c5858106beb4f7ea4c6f38813c6536cb338a594d521c554bc1"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_stress.mat",
+      "sha256": "8a03bc0ae78ac600bdfa0b3cf2f5f5cf6298ed8f755a7530621096141ecf19cf"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window01.csv",
+      "sha256": "020a155c075de649150f90789dca018c8a64dae643ead308254ad3512bc683a7"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window01.mat",
+      "sha256": "f9b83e9c863fdb42c084379388f73dd93943e08fb371ddb53780a1a0c762dfdf"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window02.csv",
+      "sha256": "27c2b7cbf81a4f57f2d85923f63f35937424f10f98a70b39663a7aeb092fe2b4"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window02.mat",
+      "sha256": "5692a8f5cd5793694daf215d253dfb7a73bc08aca9d4b1f5c9e2484bb522256c"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window03.csv",
+      "sha256": "e75761316f8b724607780bcf1a6568dcb286a24bc5acf5e002cc2480a1cc4eea"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window03.mat",
+      "sha256": "288caf6ab93ce2b9ac0fa3ed68d08ae4892a8e8975ffd8b2f746349ee1e2ec0f"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window04.csv",
+      "sha256": "28d060a8a1098f1a9a6bd4e156d50df3213492d04becf4e50f71089a5ec35596"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window04.mat",
+      "sha256": "f52089a865cfd572353ebc78f9ea83425a53af076f6206731531ebed2f46bb77"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window05.csv",
+      "sha256": "42df4d2c0f46bf93988ab01f0cc3bdc975e6d3154cf23a45b5c36580f5b175d2"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window05.mat",
+      "sha256": "c2d931b815abe430d4f7515576bca16b631775e78ca3ea4b65cf192946c60a87"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window06.csv",
+      "sha256": "936b09c00a916c325605ce21ec45d6258eb31d83a5f8bc6ea0d18cea45eb0b88"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window06.mat",
+      "sha256": "1e5cd387768a4d22d25869c5b49a406375435e2c50d9e5ea953f6a45092d8665"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window07.csv",
+      "sha256": "7deea7a99fe63288eb7142c55a5fe3626ddc0626056a64f19e02b97a680be3db"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window07.mat",
+      "sha256": "2d0dea0eb939048c531105a1a962cf7c507a6fa4c744c6d3f0c65341263b56a2"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window08.csv",
+      "sha256": "e6f9918beae6f4b770c3ba10b2250e3007f1ae520d6e43f8ef8dd4e36a1ed63f"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window08.mat",
+      "sha256": "1decd21034c1b02b23a0f279d24e73f01f1cdae8c93b6353f288c902b5280643"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window09.csv",
+      "sha256": "13dc4bd1977897e5e3faa75e2923b87952e952170347aded2d2399d5721f43f6"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window09.mat",
+      "sha256": "bc23e53dfeb9c6ce4b832f4c29ad6121c8a1e849261af0d71167f599ca0c6d41"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window10.csv",
+      "sha256": "d61d5f61205279b8a9a4f6bd9dff734258ed0103321a6175d139d8dfc8bac2d6"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window10.mat",
+      "sha256": "bb56a710b46569674b3c7f8a73c5f2e299bf8f27468f1922ad9aee42f40dafde"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window11.csv",
+      "sha256": "1e80c6ee884f8a5b668556178f003863b6d36fc6b5a3c4fb47ba5f02fc91466d"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window11.mat",
+      "sha256": "06773a3e164167b924bbb8402feb2c4866a85c21ca38273c5d4af01599b6f65a"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window12.csv",
+      "sha256": "8933f4ccc13e0b346746fc37ba9b8896787e49b085a00c1ffbafc05f861640fd"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window12.mat",
+      "sha256": "9edd1adc295a9592251550b2c6fe8d68e3e4d28a8bb14bb954829b49ac208218"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window13.csv",
+      "sha256": "35a3dce12a30dec7fd648314a787c7b055b8e8a6b32ed01bad18224aeebb86bf"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window13.mat",
+      "sha256": "369ec423c64c49b6dbe7cbc33f89b9232085a3609c1900d89757cc766fb19740"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window14.csv",
+      "sha256": "af6d13a4b61ed32bd2103ff5e6494eeecf7b71431a52370f70d3197b06270152"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window14.mat",
+      "sha256": "09ec0f6135e58433648ed85685e8ca9577187ae08214b9f30884e4dc28fc87e4"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window15.csv",
+      "sha256": "824bd750008edc72c5ca1733f7936e2c8475cfbf21114dfe94a284f9e12948cc"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window15.mat",
+      "sha256": "21caefc7682999621a9fe1abb91884392a2bc5d943e1b8f91c95b2a69ac656d0"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window16.csv",
+      "sha256": "5816d6d0e1f840cb9991131b365db1ecdb0d175cd04ab7bafd1b41703b230f83"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window16.mat",
+      "sha256": "08d7d48f099414ae5677049ad0cc4f652ead0286cf6ff7176cbfbd1d5b8438e0"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window17.csv",
+      "sha256": "d93cd179b1b5c087776fc2eaed6346a4b695b786ef096a7d7f4323629500d893"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window17.mat",
+      "sha256": "059e1f43a7d1b413f56aa72be2e54c2be09988d0668b883157611641be2213f3"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window18.csv",
+      "sha256": "d0355542d61a74537e679a5218d331efb98dde89b3d2e06b7fa5a49bf350ab57"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window18.mat",
+      "sha256": "0d4622b4592e8dec6c84ba64edebc7da8fba2ef8367b4a93dbfca9eb761b6fad"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window19.csv",
+      "sha256": "30c4d4fdb2e5e851e988bc6c0403e7e6655c4a647ff40495a6ae5d69457607a5"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window19.mat",
+      "sha256": "cfd8f9fe240514ed2f85a378154968bc9d13016aae71e2bea7b337d2e26479a9"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window20.csv",
+      "sha256": "4fc0b5afb7868b3d28d128e5c616a9c2043cfe558a8ed8beb1d0915deaad0e0e"
+    },
+    {
+      "path": "05_resultados\\revisao_operacional\\dataset_v1\\nvml_llama2_window20.mat",
+      "sha256": "0b914afc92b24d253a1c2c594af480bcabf16a9d2dbf499c7722bb4418e33286"
+    },
+    {
+      "path": "04_artigo\\IEEE_ACESS_PARECER.pdf",
+      "sha256": "757454f808a76a7adf980fb1434273871ec923f1917618d1b124cad3e98590c1"
+    },
+    {
+      "path": "04_artigo\\ieee_access\\artigo_ems_mpc_datacenter_access.tex",
+      "sha256": "6dfae1af548baa27c3115f9841aaff4ae633ebaf22c661e7ec0cc10e0b6a7181"
+    },
+    {
+      "path": "04_artigo\\ieee_access\\cover_letter_access.tex",
+      "sha256": "d542efd32537b21e07f0bbd4ece5c07980b9dfb3c7a73545c32bd9b426234021"
+    },
+    {
+      "path": "04_artigo\\ieee_access\\response_to_reviewers.tex",
+      "sha256": "5c54ba9fb4ebdd01fbfc82cfea34361c7f75e5c31f06df6a34da3f29df0fb469"
+    }
+  ]
+}

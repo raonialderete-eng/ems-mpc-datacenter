@@ -1,0 +1,6 @@
+MATLAB: 25.2.0.2998904 (R2025b)
+Computer: PCWIN64
+Quartus: ausente neste PC (somente laboratorio da faculdade)
+FPGA golden MATLAB: Np=12 Nc=4 Nprep=12
+SIL backend: matlab_fpga (mesmo protocolo UART; sem bitstream)
+V5 reference: 05_resultados/revisao_ieee_applied/01_comparacao_controladores.csv

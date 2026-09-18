@@ -1,0 +1,80 @@
+# Git exclusions for the IEEE Access reproduction pack
+
+# Python / local tools
+.venv/
+.venv_revisao/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+
+# MATLAB junk
+*.asv
+*.autosave
+slprj/
+*.slxc
+*.mexw64
+*.mexa64
+*_backup_*/
+*.bak
+*.antes_*
+
+# Huge campaign binaries (CSVs are the archival numbers)
+*.mat
+!05_resultados/hil_de2115/**/*.mat
+
+# Quartus / Intel FPGA build products and time-limited bitstreams
+**/output_files/
+**/db/
+**/incremental_db/
+**/*.sof
+**/*.pof
+**/*.jic
+**/*.qws
+**/*.qdf
+**/greybox_tmp/
+**/simulation/modelsim/
+
+# Nios object dumps (sources stay)
+**/obj/
+**/*.objdump
+**/*.map
+**/*.elf
+**/*.o
+**/*.d
+
+# Secrets / editor
+.env
+.env.*
+*.pem
+credentials.json
+.cursor/
+.vscode/
+*.swp
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Unrelated local material — never publish
+catarina_alfabetizacao/
+
+# Raw ~GB traces (derived copies live in dataset_v1)
+dataset/
+tmp/
+_tmp_foto_pdf/
+06_referencias/
+06_suplementar.zip
+
+# Integrity snapshots and venv copies called out by the pack list
+**/integridade_inicio_*/
+**/auditoria_integridade_01/
+**/backups_fechamento_*/
+
+# PDF/build of the paper (TeX is enough; compiled PDF optional)
+04_artigo/ieee_access/*.aux
+04_artigo/ieee_access/*.log
+04_artigo/ieee_access/*.out
+04_artigo/ieee_access/*.synctex.gz
+04_artigo/ieee_access/*.blg

@@ -1,0 +1,16 @@
+\begin{table*}[t]
+\centering
+\small
+\caption{Mean battery utilization and unserved energy over the same 200 realizations. SOC is in percent.}
+\begin{tabular}{lrrrr}
+\hline
+Controller & Unserved energy (kWh) & Final SOC (\%) & Throughput (kWh) & Fallback (\%) \\
+\hline
+Heuristic & 14.75461 & 57.939785 & 24.163699 & 0 \\
+Heuristic + forecast & 14.629472 & 55.814029 & 28.240476 & 0 \\
+Myopic QP & 14.75461 & 57.914767 & 24.321344 & 0 \\
+Deterministic MPC & 14.591373 & 54.998499 & 31.473739 & 1.82125 \\
+Scenario MPC & 14.583858 & 48.668736 & 56.16898 & 0.240833 \\
+\hline
+\end{tabular}
+\end{table*}

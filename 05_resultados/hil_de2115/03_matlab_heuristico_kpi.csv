@@ -1,0 +1,9 @@
+cenario,controle,Pnao_max,SOC_final
+carga_faixas,heur,90.9795989569,59.5127637524
+carga_faixas,heur_fs,11.6702649149,59.5214764529
+limite_fonte,heur,90.9795989569,51.2415920534
+limite_fonte,heur_fs,11.6702649149,51.1853055036
+perda_fonte,heur,592.6122638851,57.9397852886
+perda_fonte,heur_fs,381.1207064396,57.7533389495
+retorno_fonte,heur,592.6122638851,55.6006040020
+retorno_fonte,heur_fs,381.1207064396,55.4141576630

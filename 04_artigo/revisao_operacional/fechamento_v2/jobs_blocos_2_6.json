@@ -1,0 +1,3191 @@
+[
+  {
+    "id": "B2_ff_0001",
+    "group": "B2_ff",
+    "scenario": "carga_faixas",
+    "ctrl": "ff_feedback",
+    "params": {
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "B2_ff_0002",
+    "group": "B2_ff",
+    "scenario": "limite_fonte",
+    "ctrl": "ff_feedback",
+    "params": {
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "B2_ff_0003",
+    "group": "B2_ff",
+    "scenario": "perda_fonte",
+    "ctrl": "ff_feedback",
+    "params": {
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "B2_ff_0004",
+    "group": "B2_ff",
+    "scenario": "retorno_fonte",
+    "ctrl": "ff_feedback",
+    "params": {
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "B2_ff_0005",
+    "group": "B2_ff",
+    "scenario": "multi_burst",
+    "ctrl": "ff_feedback",
+    "params": {
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "B2_ff_0006",
+    "group": "B2_ff",
+    "scenario": "diploee_facility_stress",
+    "ctrl": "ff_feedback",
+    "params": {
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "B2_ff_0007",
+    "group": "B2_ff",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "ff_feedback",
+    "params": {
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "B2_ablacao_0008",
+    "group": "B2_ablacao",
+    "scenario": "carga_faixas",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence",
+      "mpc_foresight_grid": false
+    },
+    "variant": "load_only"
+  },
+  {
+    "id": "B2_ablacao_0009",
+    "group": "B2_ablacao",
+    "scenario": "carga_faixas",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "params": {
+      "information_policy": "persistence",
+      "mpc_foresight_grid": false
+    },
+    "variant": "load_only"
+  },
+  {
+    "id": "B2_ablacao_0010",
+    "group": "B2_ablacao",
+    "scenario": "carga_faixas",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence",
+      "mpc_foresight_grid": false,
+      "mpc_foresight_load": false
+    },
+    "variant": "no_preview"
+  },
+  {
+    "id": "B2_ablacao_0011",
+    "group": "B2_ablacao",
+    "scenario": "carga_faixas",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "params": {
+      "information_policy": "persistence",
+      "mpc_foresight_grid": false,
+      "mpc_foresight_load": false
+    },
+    "variant": "no_preview"
+  },
+  {
+    "id": "B2_ablacao_0012",
+    "group": "B2_ablacao",
+    "scenario": "carga_faixas",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence",
+      "Np_mpc": 1,
+      "Nc_mpc": 1
+    },
+    "variant": "horizon1"
+  },
+  {
+    "id": "B2_ablacao_0013",
+    "group": "B2_ablacao",
+    "scenario": "multi_burst",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence",
+      "mpc_foresight_grid": false
+    },
+    "variant": "load_only"
+  },
+  {
+    "id": "B2_ablacao_0014",
+    "group": "B2_ablacao",
+    "scenario": "multi_burst",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "params": {
+      "information_policy": "persistence",
+      "mpc_foresight_grid": false
+    },
+    "variant": "load_only"
+  },
+  {
+    "id": "B2_ablacao_0015",
+    "group": "B2_ablacao",
+    "scenario": "multi_burst",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence",
+      "mpc_foresight_grid": false,
+      "mpc_foresight_load": false
+    },
+    "variant": "no_preview"
+  },
+  {
+    "id": "B2_ablacao_0016",
+    "group": "B2_ablacao",
+    "scenario": "multi_burst",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "params": {
+      "information_policy": "persistence",
+      "mpc_foresight_grid": false,
+      "mpc_foresight_load": false
+    },
+    "variant": "no_preview"
+  },
+  {
+    "id": "B2_ablacao_0017",
+    "group": "B2_ablacao",
+    "scenario": "multi_burst",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence",
+      "Np_mpc": 1,
+      "Nc_mpc": 1
+    },
+    "variant": "horizon1"
+  },
+  {
+    "id": "B2_ablacao_0018",
+    "group": "B2_ablacao",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence",
+      "mpc_foresight_grid": false
+    },
+    "variant": "load_only"
+  },
+  {
+    "id": "B2_ablacao_0019",
+    "group": "B2_ablacao",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "params": {
+      "information_policy": "persistence",
+      "mpc_foresight_grid": false
+    },
+    "variant": "load_only"
+  },
+  {
+    "id": "B2_ablacao_0020",
+    "group": "B2_ablacao",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence",
+      "mpc_foresight_grid": false,
+      "mpc_foresight_load": false
+    },
+    "variant": "no_preview"
+  },
+  {
+    "id": "B2_ablacao_0021",
+    "group": "B2_ablacao",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "params": {
+      "information_policy": "persistence",
+      "mpc_foresight_grid": false,
+      "mpc_foresight_load": false
+    },
+    "variant": "no_preview"
+  },
+  {
+    "id": "B2_ablacao_0022",
+    "group": "B2_ablacao",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence",
+      "Np_mpc": 1,
+      "Nc_mpc": 1
+    },
+    "variant": "horizon1"
+  },
+  {
+    "id": "B3_miope_0023",
+    "group": "B3_miope",
+    "scenario": "carga_faixas",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 5,
+      "dPBESS_ref_max": 120,
+      "dPBESS_ref_max_evento": 120,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 5,
+    "dU": 120
+  },
+  {
+    "id": "B3_miope_0024",
+    "group": "B3_miope",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 5,
+      "dPBESS_ref_max": 120,
+      "dPBESS_ref_max_evento": 120,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 5,
+    "dU": 120
+  },
+  {
+    "id": "B3_miope_0025",
+    "group": "B3_miope",
+    "scenario": "perda_fonte",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 5,
+      "dPBESS_ref_max": 120,
+      "dPBESS_ref_max_evento": 120,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 5,
+    "dU": 120
+  },
+  {
+    "id": "B3_miope_0026",
+    "group": "B3_miope",
+    "scenario": "carga_faixas",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 5,
+      "dPBESS_ref_max": 200,
+      "dPBESS_ref_max_evento": 200,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 5,
+    "dU": 200
+  },
+  {
+    "id": "B3_miope_0027",
+    "group": "B3_miope",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 5,
+      "dPBESS_ref_max": 200,
+      "dPBESS_ref_max_evento": 200,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 5,
+    "dU": 200
+  },
+  {
+    "id": "B3_miope_0028",
+    "group": "B3_miope",
+    "scenario": "perda_fonte",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 5,
+      "dPBESS_ref_max": 200,
+      "dPBESS_ref_max_evento": 200,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 5,
+    "dU": 200
+  },
+  {
+    "id": "B3_miope_0029",
+    "group": "B3_miope",
+    "scenario": "carga_faixas",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 5,
+      "dPBESS_ref_max": 400,
+      "dPBESS_ref_max_evento": 400,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 5,
+    "dU": 400
+  },
+  {
+    "id": "B3_miope_0030",
+    "group": "B3_miope",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 5,
+      "dPBESS_ref_max": 400,
+      "dPBESS_ref_max_evento": 400,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 5,
+    "dU": 400
+  },
+  {
+    "id": "B3_miope_0031",
+    "group": "B3_miope",
+    "scenario": "perda_fonte",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 5,
+      "dPBESS_ref_max": 400,
+      "dPBESS_ref_max_evento": 400,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 5,
+    "dU": 400
+  },
+  {
+    "id": "B3_miope_0032",
+    "group": "B3_miope",
+    "scenario": "carga_faixas",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 50,
+      "dPBESS_ref_max": 120,
+      "dPBESS_ref_max_evento": 120,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 50,
+    "dU": 120
+  },
+  {
+    "id": "B3_miope_0033",
+    "group": "B3_miope",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 50,
+      "dPBESS_ref_max": 120,
+      "dPBESS_ref_max_evento": 120,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 50,
+    "dU": 120
+  },
+  {
+    "id": "B3_miope_0034",
+    "group": "B3_miope",
+    "scenario": "perda_fonte",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 50,
+      "dPBESS_ref_max": 120,
+      "dPBESS_ref_max_evento": 120,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 50,
+    "dU": 120
+  },
+  {
+    "id": "B3_miope_0035",
+    "group": "B3_miope",
+    "scenario": "carga_faixas",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 50,
+      "dPBESS_ref_max": 200,
+      "dPBESS_ref_max_evento": 200,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 50,
+    "dU": 200
+  },
+  {
+    "id": "B3_miope_0036",
+    "group": "B3_miope",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 50,
+      "dPBESS_ref_max": 200,
+      "dPBESS_ref_max_evento": 200,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 50,
+    "dU": 200
+  },
+  {
+    "id": "B3_miope_0037",
+    "group": "B3_miope",
+    "scenario": "perda_fonte",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 50,
+      "dPBESS_ref_max": 200,
+      "dPBESS_ref_max_evento": 200,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 50,
+    "dU": 200
+  },
+  {
+    "id": "B3_miope_0038",
+    "group": "B3_miope",
+    "scenario": "carga_faixas",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 50,
+      "dPBESS_ref_max": 400,
+      "dPBESS_ref_max_evento": 400,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 50,
+    "dU": 400
+  },
+  {
+    "id": "B3_miope_0039",
+    "group": "B3_miope",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 50,
+      "dPBESS_ref_max": 400,
+      "dPBESS_ref_max_evento": 400,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 50,
+    "dU": 400
+  },
+  {
+    "id": "B3_miope_0040",
+    "group": "B3_miope",
+    "scenario": "perda_fonte",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 50,
+      "dPBESS_ref_max": 400,
+      "dPBESS_ref_max_evento": 400,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 50,
+    "dU": 400
+  },
+  {
+    "id": "B3_miope_0041",
+    "group": "B3_miope",
+    "scenario": "carga_faixas",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 200,
+      "dPBESS_ref_max": 120,
+      "dPBESS_ref_max_evento": 120,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 200,
+    "dU": 120
+  },
+  {
+    "id": "B3_miope_0042",
+    "group": "B3_miope",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 200,
+      "dPBESS_ref_max": 120,
+      "dPBESS_ref_max_evento": 120,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 200,
+    "dU": 120
+  },
+  {
+    "id": "B3_miope_0043",
+    "group": "B3_miope",
+    "scenario": "perda_fonte",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 200,
+      "dPBESS_ref_max": 120,
+      "dPBESS_ref_max_evento": 120,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 200,
+    "dU": 120
+  },
+  {
+    "id": "B3_miope_0044",
+    "group": "B3_miope",
+    "scenario": "carga_faixas",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 200,
+      "dPBESS_ref_max": 200,
+      "dPBESS_ref_max_evento": 200,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 200,
+    "dU": 200
+  },
+  {
+    "id": "B3_miope_0045",
+    "group": "B3_miope",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 200,
+      "dPBESS_ref_max": 200,
+      "dPBESS_ref_max_evento": 200,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 200,
+    "dU": 200
+  },
+  {
+    "id": "B3_miope_0046",
+    "group": "B3_miope",
+    "scenario": "perda_fonte",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 200,
+      "dPBESS_ref_max": 200,
+      "dPBESS_ref_max_evento": 200,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 200,
+    "dU": 200
+  },
+  {
+    "id": "B3_miope_0047",
+    "group": "B3_miope",
+    "scenario": "carga_faixas",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 200,
+      "dPBESS_ref_max": 400,
+      "dPBESS_ref_max_evento": 400,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 200,
+    "dU": 400
+  },
+  {
+    "id": "B3_miope_0048",
+    "group": "B3_miope",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 200,
+      "dPBESS_ref_max": 400,
+      "dPBESS_ref_max_evento": 400,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 200,
+    "dU": 400
+  },
+  {
+    "id": "B3_miope_0049",
+    "group": "B3_miope",
+    "scenario": "perda_fonte",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 200,
+      "dPBESS_ref_max": 400,
+      "dPBESS_ref_max_evento": 400,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 200,
+    "dU": 400
+  },
+  {
+    "id": "B3_miope_0050",
+    "group": "B3_miope",
+    "scenario": "carga_faixas",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 500,
+      "dPBESS_ref_max": 120,
+      "dPBESS_ref_max_evento": 120,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 500,
+    "dU": 120
+  },
+  {
+    "id": "B3_miope_0051",
+    "group": "B3_miope",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 500,
+      "dPBESS_ref_max": 120,
+      "dPBESS_ref_max_evento": 120,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 500,
+    "dU": 120
+  },
+  {
+    "id": "B3_miope_0052",
+    "group": "B3_miope",
+    "scenario": "perda_fonte",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 500,
+      "dPBESS_ref_max": 120,
+      "dPBESS_ref_max_evento": 120,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 500,
+    "dU": 120
+  },
+  {
+    "id": "B3_miope_0053",
+    "group": "B3_miope",
+    "scenario": "carga_faixas",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 500,
+      "dPBESS_ref_max": 200,
+      "dPBESS_ref_max_evento": 200,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 500,
+    "dU": 200
+  },
+  {
+    "id": "B3_miope_0054",
+    "group": "B3_miope",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 500,
+      "dPBESS_ref_max": 200,
+      "dPBESS_ref_max_evento": 200,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 500,
+    "dU": 200
+  },
+  {
+    "id": "B3_miope_0055",
+    "group": "B3_miope",
+    "scenario": "perda_fonte",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 500,
+      "dPBESS_ref_max": 200,
+      "dPBESS_ref_max_evento": 200,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 500,
+    "dU": 200
+  },
+  {
+    "id": "B3_miope_0056",
+    "group": "B3_miope",
+    "scenario": "carga_faixas",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 500,
+      "dPBESS_ref_max": 400,
+      "dPBESS_ref_max_evento": 400,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 500,
+    "dU": 400
+  },
+  {
+    "id": "B3_miope_0057",
+    "group": "B3_miope",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 500,
+      "dPBESS_ref_max": 400,
+      "dPBESS_ref_max_evento": 400,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 500,
+    "dU": 400
+  },
+  {
+    "id": "B3_miope_0058",
+    "group": "B3_miope",
+    "scenario": "perda_fonte",
+    "ctrl": "miope_qp",
+    "params": {
+      "w_mpc_delta_u": 500,
+      "dPBESS_ref_max": 400,
+      "dPBESS_ref_max_evento": 400,
+      "common_slew": true,
+      "information_policy": "persistence"
+    },
+    "w_du": 500,
+    "dU": 400
+  },
+  {
+    "id": "B3_heur_0059",
+    "group": "B3_heur",
+    "scenario": "carga_faixas",
+    "ctrl": "heuristico",
+    "params": {
+      "information_policy": "persistence",
+      "heur_P_carga_max": 50
+    },
+    "variant": "recharge_cap_50"
+  },
+  {
+    "id": "B3_heur_0060",
+    "group": "B3_heur",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "heuristico",
+    "params": {
+      "information_policy": "persistence",
+      "heur_P_carga_max": 50
+    },
+    "variant": "recharge_cap_50"
+  },
+  {
+    "id": "B3_heur_0061",
+    "group": "B3_heur",
+    "scenario": "perda_fonte",
+    "ctrl": "heuristico",
+    "params": {
+      "information_policy": "persistence",
+      "heur_P_carga_max": 50
+    },
+    "variant": "recharge_cap_50"
+  },
+  {
+    "id": "B3_heur_0062",
+    "group": "B3_heur",
+    "scenario": "carga_faixas",
+    "ctrl": "heuristico",
+    "params": {
+      "information_policy": "persistence",
+      "heur_banda_SOC": 2.0
+    },
+    "variant": "soc_band_2pct"
+  },
+  {
+    "id": "B3_heur_0063",
+    "group": "B3_heur",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "heuristico",
+    "params": {
+      "information_policy": "persistence",
+      "heur_banda_SOC": 2.0
+    },
+    "variant": "soc_band_2pct"
+  },
+  {
+    "id": "B3_heur_0064",
+    "group": "B3_heur",
+    "scenario": "perda_fonte",
+    "ctrl": "heuristico",
+    "params": {
+      "information_policy": "persistence",
+      "heur_banda_SOC": 2.0
+    },
+    "variant": "soc_band_2pct"
+  },
+  {
+    "id": "B3_heur_0065",
+    "group": "B3_heur",
+    "scenario": "carga_faixas",
+    "ctrl": "heuristico",
+    "params": {
+      "information_policy": "persistence",
+      "common_slew": true
+    },
+    "variant": "slew_supervised"
+  },
+  {
+    "id": "B3_heur_0066",
+    "group": "B3_heur",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "heuristico",
+    "params": {
+      "information_policy": "persistence",
+      "common_slew": true
+    },
+    "variant": "slew_supervised"
+  },
+  {
+    "id": "B3_heur_0067",
+    "group": "B3_heur",
+    "scenario": "perda_fonte",
+    "ctrl": "heuristico",
+    "params": {
+      "information_policy": "persistence",
+      "common_slew": true
+    },
+    "variant": "slew_supervised"
+  },
+  {
+    "id": "B4_alarmes_0068",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "heuristico",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 420,
+        "t1": 440
+      },
+      {
+        "t0": 500,
+        "t1": 520
+      },
+      {
+        "t0": 620,
+        "t1": 640
+      }
+    ],
+    "pattern": "three_short"
+  },
+  {
+    "id": "B4_alarmes_0069",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "heuristico_foresight",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 420,
+        "t1": 440
+      },
+      {
+        "t0": 500,
+        "t1": 520
+      },
+      {
+        "t0": 620,
+        "t1": 640
+      }
+    ],
+    "pattern": "three_short"
+  },
+  {
+    "id": "B4_alarmes_0070",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "miope_qp",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 420,
+        "t1": 440
+      },
+      {
+        "t0": 500,
+        "t1": 520
+      },
+      {
+        "t0": 620,
+        "t1": 640
+      }
+    ],
+    "pattern": "three_short"
+  },
+  {
+    "id": "B4_alarmes_0071",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 420,
+        "t1": 440
+      },
+      {
+        "t0": 500,
+        "t1": 520
+      },
+      {
+        "t0": 620,
+        "t1": 640
+      }
+    ],
+    "pattern": "three_short"
+  },
+  {
+    "id": "B4_alarmes_0072",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 420,
+        "t1": 440
+      },
+      {
+        "t0": 500,
+        "t1": 520
+      },
+      {
+        "t0": 620,
+        "t1": 640
+      }
+    ],
+    "pattern": "three_short"
+  },
+  {
+    "id": "B4_alarmes_0073",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "ff_feedback",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 420,
+        "t1": 440
+      },
+      {
+        "t0": 500,
+        "t1": 520
+      },
+      {
+        "t0": 620,
+        "t1": 640
+      }
+    ],
+    "pattern": "three_short"
+  },
+  {
+    "id": "B4_alarmes_0074",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "heuristico",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 380,
+        "t1": 410
+      },
+      {
+        "t0": 560,
+        "t1": 590
+      }
+    ],
+    "pattern": "two_medium"
+  },
+  {
+    "id": "B4_alarmes_0075",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "heuristico_foresight",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 380,
+        "t1": 410
+      },
+      {
+        "t0": 560,
+        "t1": 590
+      }
+    ],
+    "pattern": "two_medium"
+  },
+  {
+    "id": "B4_alarmes_0076",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "miope_qp",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 380,
+        "t1": 410
+      },
+      {
+        "t0": 560,
+        "t1": 590
+      }
+    ],
+    "pattern": "two_medium"
+  },
+  {
+    "id": "B4_alarmes_0077",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 380,
+        "t1": 410
+      },
+      {
+        "t0": 560,
+        "t1": 590
+      }
+    ],
+    "pattern": "two_medium"
+  },
+  {
+    "id": "B4_alarmes_0078",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 380,
+        "t1": 410
+      },
+      {
+        "t0": 560,
+        "t1": 590
+      }
+    ],
+    "pattern": "two_medium"
+  },
+  {
+    "id": "B4_alarmes_0079",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "ff_feedback",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 380,
+        "t1": 410
+      },
+      {
+        "t0": 560,
+        "t1": 590
+      }
+    ],
+    "pattern": "two_medium"
+  },
+  {
+    "id": "B4_alarmes_0080",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "heuristico",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 450,
+        "t1": 470
+      },
+      {
+        "t0": 480,
+        "t1": 500
+      },
+      {
+        "t0": 510,
+        "t1": 530
+      },
+      {
+        "t0": 540,
+        "t1": 560
+      }
+    ],
+    "pattern": "dense_prep"
+  },
+  {
+    "id": "B4_alarmes_0081",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "heuristico_foresight",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 450,
+        "t1": 470
+      },
+      {
+        "t0": 480,
+        "t1": 500
+      },
+      {
+        "t0": 510,
+        "t1": 530
+      },
+      {
+        "t0": 540,
+        "t1": 560
+      }
+    ],
+    "pattern": "dense_prep"
+  },
+  {
+    "id": "B4_alarmes_0082",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "miope_qp",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 450,
+        "t1": 470
+      },
+      {
+        "t0": 480,
+        "t1": 500
+      },
+      {
+        "t0": 510,
+        "t1": 530
+      },
+      {
+        "t0": 540,
+        "t1": 560
+      }
+    ],
+    "pattern": "dense_prep"
+  },
+  {
+    "id": "B4_alarmes_0083",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 450,
+        "t1": 470
+      },
+      {
+        "t0": 480,
+        "t1": 500
+      },
+      {
+        "t0": 510,
+        "t1": 530
+      },
+      {
+        "t0": 540,
+        "t1": 560
+      }
+    ],
+    "pattern": "dense_prep"
+  },
+  {
+    "id": "B4_alarmes_0084",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 450,
+        "t1": 470
+      },
+      {
+        "t0": 480,
+        "t1": 500
+      },
+      {
+        "t0": 510,
+        "t1": 530
+      },
+      {
+        "t0": 540,
+        "t1": 560
+      }
+    ],
+    "pattern": "dense_prep"
+  },
+  {
+    "id": "B4_alarmes_0085",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "ff_feedback",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 450,
+        "t1": 470
+      },
+      {
+        "t0": 480,
+        "t1": 500
+      },
+      {
+        "t0": 510,
+        "t1": 530
+      },
+      {
+        "t0": 540,
+        "t1": 560
+      }
+    ],
+    "pattern": "dense_prep"
+  },
+  {
+    "id": "B4_alarmes_0086",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "heuristico",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 700,
+        "t1": 730
+      },
+      {
+        "t0": 800,
+        "t1": 820
+      }
+    ],
+    "pattern": "late_burst"
+  },
+  {
+    "id": "B4_alarmes_0087",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "heuristico_foresight",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 700,
+        "t1": 730
+      },
+      {
+        "t0": 800,
+        "t1": 820
+      }
+    ],
+    "pattern": "late_burst"
+  },
+  {
+    "id": "B4_alarmes_0088",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "miope_qp",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 700,
+        "t1": 730
+      },
+      {
+        "t0": 800,
+        "t1": 820
+      }
+    ],
+    "pattern": "late_burst"
+  },
+  {
+    "id": "B4_alarmes_0089",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 700,
+        "t1": 730
+      },
+      {
+        "t0": 800,
+        "t1": 820
+      }
+    ],
+    "pattern": "late_burst"
+  },
+  {
+    "id": "B4_alarmes_0090",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 700,
+        "t1": 730
+      },
+      {
+        "t0": 800,
+        "t1": 820
+      }
+    ],
+    "pattern": "late_burst"
+  },
+  {
+    "id": "B4_alarmes_0091",
+    "group": "B4_alarmes",
+    "scenario": "perda_fonte",
+    "ctrl": "ff_feedback",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "false_alarm_repeated",
+    "pulses": [
+      {
+        "t0": 700,
+        "t1": 730
+      },
+      {
+        "t0": 800,
+        "t1": 820
+      }
+    ],
+    "pattern": "late_burst"
+  },
+  {
+    "id": "B4_deteccao_0092",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 6,
+    "trial": 1
+  },
+  {
+    "id": "B4_deteccao_0093",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 4,
+    "trial": 2
+  },
+  {
+    "id": "B4_deteccao_0094",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 2,
+    "trial": 3
+  },
+  {
+    "id": "B4_deteccao_0095",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 2,
+    "trial": 4
+  },
+  {
+    "id": "B4_deteccao_0096",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 1,
+    "trial": 5
+  },
+  {
+    "id": "B4_deteccao_0097",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 5,
+    "trial": 6
+  },
+  {
+    "id": "B4_deteccao_0098",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 4,
+    "trial": 7
+  },
+  {
+    "id": "B4_deteccao_0099",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 10,
+    "trial": 8
+  },
+  {
+    "id": "B4_deteccao_0100",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 12,
+    "trial": 9
+  },
+  {
+    "id": "B4_deteccao_0101",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 1,
+    "trial": 10
+  },
+  {
+    "id": "B4_deteccao_0102",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 18,
+    "trial": 11
+  },
+  {
+    "id": "B4_deteccao_0103",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 10,
+    "trial": 12
+  },
+  {
+    "id": "B4_deteccao_0104",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 11,
+    "trial": 13
+  },
+  {
+    "id": "B4_deteccao_0105",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 7,
+    "trial": 14
+  },
+  {
+    "id": "B4_deteccao_0106",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 2,
+    "trial": 15
+  },
+  {
+    "id": "B4_deteccao_0107",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 8,
+    "trial": 16
+  },
+  {
+    "id": "B4_deteccao_0108",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 1,
+    "trial": 17
+  },
+  {
+    "id": "B4_deteccao_0109",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 1,
+    "trial": 18
+  },
+  {
+    "id": "B4_deteccao_0110",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 7,
+    "trial": 19
+  },
+  {
+    "id": "B4_deteccao_0111",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 1,
+    "trial": 20
+  },
+  {
+    "id": "B4_deteccao_0112",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 3,
+    "trial": 21
+  },
+  {
+    "id": "B4_deteccao_0113",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 0,
+    "trial": 22
+  },
+  {
+    "id": "B4_deteccao_0114",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 8,
+    "trial": 23
+  },
+  {
+    "id": "B4_deteccao_0115",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 6,
+    "trial": 24
+  },
+  {
+    "id": "B4_deteccao_0116",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 2,
+    "trial": 25
+  },
+  {
+    "id": "B4_deteccao_0117",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 9,
+    "trial": 26
+  },
+  {
+    "id": "B4_deteccao_0118",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 3,
+    "trial": 27
+  },
+  {
+    "id": "B4_deteccao_0119",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 0,
+    "trial": 28
+  },
+  {
+    "id": "B4_deteccao_0120",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 7,
+    "trial": 29
+  },
+  {
+    "id": "B4_deteccao_0121",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 9,
+    "trial": 30
+  },
+  {
+    "id": "B4_deteccao_0122",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 3,
+    "trial": 31
+  },
+  {
+    "id": "B4_deteccao_0123",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 2,
+    "trial": 32
+  },
+  {
+    "id": "B4_deteccao_0124",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 3,
+    "trial": 33
+  },
+  {
+    "id": "B4_deteccao_0125",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 2,
+    "trial": 34
+  },
+  {
+    "id": "B4_deteccao_0126",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 3,
+    "trial": 35
+  },
+  {
+    "id": "B4_deteccao_0127",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 0,
+    "trial": 36
+  },
+  {
+    "id": "B4_deteccao_0128",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 4,
+    "trial": 37
+  },
+  {
+    "id": "B4_deteccao_0129",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 3,
+    "trial": 38
+  },
+  {
+    "id": "B4_deteccao_0130",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 19,
+    "trial": 39
+  },
+  {
+    "id": "B4_deteccao_0131",
+    "group": "B4_deteccao",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "information_policy": "persistence"
+    },
+    "event_mode": "detection_delay",
+    "delay": 1,
+    "trial": 40
+  },
+  {
+    "id": "B5_pesos_0132",
+    "group": "B5_pesos",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "w_mpc_source_tracking": 300.0,
+      "information_policy": "persistence"
+    },
+    "weight": "source_tracking",
+    "factor": 0.1
+  },
+  {
+    "id": "B5_pesos_0133",
+    "group": "B5_pesos",
+    "scenario": "carga_faixas",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "w_mpc_source_tracking": 300.0,
+      "information_policy": "persistence"
+    },
+    "weight": "source_tracking",
+    "factor": 0.1
+  },
+  {
+    "id": "B5_pesos_0134",
+    "group": "B5_pesos",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "w_mpc_source_tracking": 30000,
+      "information_policy": "persistence"
+    },
+    "weight": "source_tracking",
+    "factor": 10
+  },
+  {
+    "id": "B5_pesos_0135",
+    "group": "B5_pesos",
+    "scenario": "carga_faixas",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "w_mpc_source_tracking": 30000,
+      "information_policy": "persistence"
+    },
+    "weight": "source_tracking",
+    "factor": 10
+  },
+  {
+    "id": "B5_pesos_0136",
+    "group": "B5_pesos",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "w_mpc_rampa": 30.0,
+      "information_policy": "persistence"
+    },
+    "weight": "rampa",
+    "factor": 0.1
+  },
+  {
+    "id": "B5_pesos_0137",
+    "group": "B5_pesos",
+    "scenario": "carga_faixas",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "w_mpc_rampa": 30.0,
+      "information_policy": "persistence"
+    },
+    "weight": "rampa",
+    "factor": 0.1
+  },
+  {
+    "id": "B5_pesos_0138",
+    "group": "B5_pesos",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "w_mpc_rampa": 3000,
+      "information_policy": "persistence"
+    },
+    "weight": "rampa",
+    "factor": 10
+  },
+  {
+    "id": "B5_pesos_0139",
+    "group": "B5_pesos",
+    "scenario": "carga_faixas",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "w_mpc_rampa": 3000,
+      "information_policy": "persistence"
+    },
+    "weight": "rampa",
+    "factor": 10
+  },
+  {
+    "id": "B5_pesos_0140",
+    "group": "B5_pesos",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "w_mpc_soc": 120.0,
+      "information_policy": "persistence"
+    },
+    "weight": "soc",
+    "factor": 0.1
+  },
+  {
+    "id": "B5_pesos_0141",
+    "group": "B5_pesos",
+    "scenario": "carga_faixas",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "w_mpc_soc": 120.0,
+      "information_policy": "persistence"
+    },
+    "weight": "soc",
+    "factor": 0.1
+  },
+  {
+    "id": "B5_pesos_0142",
+    "group": "B5_pesos",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "w_mpc_soc": 12000,
+      "information_policy": "persistence"
+    },
+    "weight": "soc",
+    "factor": 10
+  },
+  {
+    "id": "B5_pesos_0143",
+    "group": "B5_pesos",
+    "scenario": "carga_faixas",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "w_mpc_soc": 12000,
+      "information_policy": "persistence"
+    },
+    "weight": "soc",
+    "factor": 10
+  },
+  {
+    "id": "B5_pesos_0144",
+    "group": "B5_pesos",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "w_mpc_soc_terminal": 1200.0,
+      "information_policy": "persistence"
+    },
+    "weight": "soc_terminal",
+    "factor": 0.1
+  },
+  {
+    "id": "B5_pesos_0145",
+    "group": "B5_pesos",
+    "scenario": "carga_faixas",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "w_mpc_soc_terminal": 1200.0,
+      "information_policy": "persistence"
+    },
+    "weight": "soc_terminal",
+    "factor": 0.1
+  },
+  {
+    "id": "B5_pesos_0146",
+    "group": "B5_pesos",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "w_mpc_soc_terminal": 120000,
+      "information_policy": "persistence"
+    },
+    "weight": "soc_terminal",
+    "factor": 10
+  },
+  {
+    "id": "B5_pesos_0147",
+    "group": "B5_pesos",
+    "scenario": "carga_faixas",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "w_mpc_soc_terminal": 120000,
+      "information_policy": "persistence"
+    },
+    "weight": "soc_terminal",
+    "factor": 10
+  },
+  {
+    "id": "B5_pesos_0148",
+    "group": "B5_pesos",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "w_mpc_uso_bess": 2.0,
+      "information_policy": "persistence"
+    },
+    "weight": "uso_bess",
+    "factor": 0.1
+  },
+  {
+    "id": "B5_pesos_0149",
+    "group": "B5_pesos",
+    "scenario": "carga_faixas",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "w_mpc_uso_bess": 2.0,
+      "information_policy": "persistence"
+    },
+    "weight": "uso_bess",
+    "factor": 0.1
+  },
+  {
+    "id": "B5_pesos_0150",
+    "group": "B5_pesos",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "w_mpc_uso_bess": 200,
+      "information_policy": "persistence"
+    },
+    "weight": "uso_bess",
+    "factor": 10
+  },
+  {
+    "id": "B5_pesos_0151",
+    "group": "B5_pesos",
+    "scenario": "carga_faixas",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "w_mpc_uso_bess": 200,
+      "information_policy": "persistence"
+    },
+    "weight": "uso_bess",
+    "factor": 10
+  },
+  {
+    "id": "B5_horizonte_0152",
+    "group": "B5_horizonte",
+    "scenario": "carga_faixas",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "Np_mpc": 12,
+      "Nc_mpc": 4,
+      "information_policy": "persistence"
+    },
+    "Np": 12,
+    "Nc": 4
+  },
+  {
+    "id": "B5_horizonte_0153",
+    "group": "B5_horizonte",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "Np_mpc": 12,
+      "Nc_mpc": 4,
+      "information_policy": "persistence"
+    },
+    "Np": 12,
+    "Nc": 4
+  },
+  {
+    "id": "B5_horizonte_0154",
+    "group": "B5_horizonte",
+    "scenario": "carga_faixas",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "Np_mpc": 30,
+      "Nc_mpc": 8,
+      "information_policy": "persistence"
+    },
+    "Np": 30,
+    "Nc": 8
+  },
+  {
+    "id": "B5_horizonte_0155",
+    "group": "B5_horizonte",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "Np_mpc": 30,
+      "Nc_mpc": 8,
+      "information_policy": "persistence"
+    },
+    "Np": 30,
+    "Nc": 8
+  },
+  {
+    "id": "B5_horizonte_0156",
+    "group": "B5_horizonte",
+    "scenario": "carga_faixas",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "Np_mpc": 60,
+      "Nc_mpc": 15,
+      "information_policy": "persistence"
+    },
+    "Np": 60,
+    "Nc": 15
+  },
+  {
+    "id": "B5_horizonte_0157",
+    "group": "B5_horizonte",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "Np_mpc": 60,
+      "Nc_mpc": 15,
+      "information_policy": "persistence"
+    },
+    "Np": 60,
+    "Nc": 15
+  },
+  {
+    "id": "B6_gerador_0158",
+    "group": "B6_gerador",
+    "scenario": "perda_fonte",
+    "ctrl": "heuristico",
+    "params": {
+      "Pgen_kW": 400,
+      "Pgen_delay_s": 10,
+      "information_policy": "persistence"
+    },
+    "delay": 10
+  },
+  {
+    "id": "B6_gerador_0159",
+    "group": "B6_gerador",
+    "scenario": "perda_fonte",
+    "ctrl": "heuristico_foresight",
+    "params": {
+      "Pgen_kW": 400,
+      "Pgen_delay_s": 10,
+      "information_policy": "persistence"
+    },
+    "delay": 10
+  },
+  {
+    "id": "B6_gerador_0160",
+    "group": "B6_gerador",
+    "scenario": "perda_fonte",
+    "ctrl": "miope_qp",
+    "params": {
+      "Pgen_kW": 400,
+      "Pgen_delay_s": 10,
+      "information_policy": "persistence"
+    },
+    "delay": 10
+  },
+  {
+    "id": "B6_gerador_0161",
+    "group": "B6_gerador",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "Pgen_kW": 400,
+      "Pgen_delay_s": 10,
+      "information_policy": "persistence"
+    },
+    "delay": 10
+  },
+  {
+    "id": "B6_gerador_0162",
+    "group": "B6_gerador",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "params": {
+      "Pgen_kW": 400,
+      "Pgen_delay_s": 10,
+      "information_policy": "persistence"
+    },
+    "delay": 10
+  },
+  {
+    "id": "B6_gerador_0163",
+    "group": "B6_gerador",
+    "scenario": "perda_fonte",
+    "ctrl": "heuristico",
+    "params": {
+      "Pgen_kW": 400,
+      "Pgen_delay_s": 30,
+      "information_policy": "persistence"
+    },
+    "delay": 30
+  },
+  {
+    "id": "B6_gerador_0164",
+    "group": "B6_gerador",
+    "scenario": "perda_fonte",
+    "ctrl": "heuristico_foresight",
+    "params": {
+      "Pgen_kW": 400,
+      "Pgen_delay_s": 30,
+      "information_policy": "persistence"
+    },
+    "delay": 30
+  },
+  {
+    "id": "B6_gerador_0165",
+    "group": "B6_gerador",
+    "scenario": "perda_fonte",
+    "ctrl": "miope_qp",
+    "params": {
+      "Pgen_kW": 400,
+      "Pgen_delay_s": 30,
+      "information_policy": "persistence"
+    },
+    "delay": 30
+  },
+  {
+    "id": "B6_gerador_0166",
+    "group": "B6_gerador",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "Pgen_kW": 400,
+      "Pgen_delay_s": 30,
+      "information_policy": "persistence"
+    },
+    "delay": 30
+  },
+  {
+    "id": "B6_gerador_0167",
+    "group": "B6_gerador",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "params": {
+      "Pgen_kW": 400,
+      "Pgen_delay_s": 30,
+      "information_policy": "persistence"
+    },
+    "delay": 30
+  },
+  {
+    "id": "B6_gerador_0168",
+    "group": "B6_gerador",
+    "scenario": "perda_fonte",
+    "ctrl": "heuristico",
+    "params": {
+      "Pgen_kW": 400,
+      "Pgen_delay_s": 60,
+      "information_policy": "persistence"
+    },
+    "delay": 60
+  },
+  {
+    "id": "B6_gerador_0169",
+    "group": "B6_gerador",
+    "scenario": "perda_fonte",
+    "ctrl": "heuristico_foresight",
+    "params": {
+      "Pgen_kW": 400,
+      "Pgen_delay_s": 60,
+      "information_policy": "persistence"
+    },
+    "delay": 60
+  },
+  {
+    "id": "B6_gerador_0170",
+    "group": "B6_gerador",
+    "scenario": "perda_fonte",
+    "ctrl": "miope_qp",
+    "params": {
+      "Pgen_kW": 400,
+      "Pgen_delay_s": 60,
+      "information_policy": "persistence"
+    },
+    "delay": 60
+  },
+  {
+    "id": "B6_gerador_0171",
+    "group": "B6_gerador",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "Pgen_kW": 400,
+      "Pgen_delay_s": 60,
+      "information_policy": "persistence"
+    },
+    "delay": 60
+  },
+  {
+    "id": "B6_gerador_0172",
+    "group": "B6_gerador",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "params": {
+      "Pgen_kW": 400,
+      "Pgen_delay_s": 60,
+      "information_policy": "persistence"
+    },
+    "delay": 60
+  },
+  {
+    "id": "B6_gerador_longo_0173",
+    "group": "B6_gerador_longo",
+    "scenario": "falha_critica",
+    "ctrl": "heuristico",
+    "params": {
+      "Tf": 9600,
+      "Pgen_kW": 400,
+      "Pgen_delay_s": 30,
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "B6_gerador_longo_0174",
+    "group": "B6_gerador_longo",
+    "scenario": "falha_critica",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "Tf": 9600,
+      "Pgen_kW": 400,
+      "Pgen_delay_s": 30,
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "B6_aging_qp_0175",
+    "group": "B6_aging_qp",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "w_mpc_uso_bess": 200,
+      "information_policy": "persistence"
+    },
+    "variant": "uso_bess_x10"
+  },
+  {
+    "id": "B6_dinamica_0176",
+    "group": "B6_dinamica",
+    "scenario": "carga_faixas",
+    "ctrl": "heuristico",
+    "params": {
+      "converter_dP_max": 80,
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "B6_dinamica_0177",
+    "group": "B6_dinamica",
+    "scenario": "carga_faixas",
+    "ctrl": "heuristico_foresight",
+    "params": {
+      "converter_dP_max": 80,
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "B6_dinamica_0178",
+    "group": "B6_dinamica",
+    "scenario": "carga_faixas",
+    "ctrl": "miope_qp",
+    "params": {
+      "converter_dP_max": 80,
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "B6_dinamica_0179",
+    "group": "B6_dinamica",
+    "scenario": "carga_faixas",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "converter_dP_max": 80,
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "B6_dinamica_0180",
+    "group": "B6_dinamica",
+    "scenario": "carga_faixas",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "params": {
+      "converter_dP_max": 80,
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "B6_dinamica_0181",
+    "group": "B6_dinamica",
+    "scenario": "carga_faixas",
+    "ctrl": "ff_feedback",
+    "params": {
+      "converter_dP_max": 80,
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "B6_dinamica_0182",
+    "group": "B6_dinamica",
+    "scenario": "perda_fonte",
+    "ctrl": "heuristico",
+    "params": {
+      "converter_dP_max": 80,
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "B6_dinamica_0183",
+    "group": "B6_dinamica",
+    "scenario": "perda_fonte",
+    "ctrl": "heuristico_foresight",
+    "params": {
+      "converter_dP_max": 80,
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "B6_dinamica_0184",
+    "group": "B6_dinamica",
+    "scenario": "perda_fonte",
+    "ctrl": "miope_qp",
+    "params": {
+      "converter_dP_max": 80,
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "B6_dinamica_0185",
+    "group": "B6_dinamica",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "converter_dP_max": 80,
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "B6_dinamica_0186",
+    "group": "B6_dinamica",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "params": {
+      "converter_dP_max": 80,
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "B6_dinamica_0187",
+    "group": "B6_dinamica",
+    "scenario": "perda_fonte",
+    "ctrl": "ff_feedback",
+    "params": {
+      "converter_dP_max": 80,
+      "information_policy": "persistence"
+    }
+  },
+  {
+    "id": "B6_ruido_0188",
+    "group": "B6_ruido",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260915,
+      "information_policy": "persistence"
+    },
+    "trial": 1
+  },
+  {
+    "id": "B6_ruido_0189",
+    "group": "B6_ruido",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260915,
+      "information_policy": "persistence"
+    },
+    "trial": 1
+  },
+  {
+    "id": "B6_ruido_0190",
+    "group": "B6_ruido",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260916,
+      "information_policy": "persistence"
+    },
+    "trial": 2
+  },
+  {
+    "id": "B6_ruido_0191",
+    "group": "B6_ruido",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260916,
+      "information_policy": "persistence"
+    },
+    "trial": 2
+  },
+  {
+    "id": "B6_ruido_0192",
+    "group": "B6_ruido",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260917,
+      "information_policy": "persistence"
+    },
+    "trial": 3
+  },
+  {
+    "id": "B6_ruido_0193",
+    "group": "B6_ruido",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260917,
+      "information_policy": "persistence"
+    },
+    "trial": 3
+  },
+  {
+    "id": "B6_ruido_0194",
+    "group": "B6_ruido",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260918,
+      "information_policy": "persistence"
+    },
+    "trial": 4
+  },
+  {
+    "id": "B6_ruido_0195",
+    "group": "B6_ruido",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260918,
+      "information_policy": "persistence"
+    },
+    "trial": 4
+  },
+  {
+    "id": "B6_ruido_0196",
+    "group": "B6_ruido",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260919,
+      "information_policy": "persistence"
+    },
+    "trial": 5
+  },
+  {
+    "id": "B6_ruido_0197",
+    "group": "B6_ruido",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260919,
+      "information_policy": "persistence"
+    },
+    "trial": 5
+  },
+  {
+    "id": "B6_ruido_0198",
+    "group": "B6_ruido",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260920,
+      "information_policy": "persistence"
+    },
+    "trial": 6
+  },
+  {
+    "id": "B6_ruido_0199",
+    "group": "B6_ruido",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260920,
+      "information_policy": "persistence"
+    },
+    "trial": 6
+  },
+  {
+    "id": "B6_ruido_0200",
+    "group": "B6_ruido",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260921,
+      "information_policy": "persistence"
+    },
+    "trial": 7
+  },
+  {
+    "id": "B6_ruido_0201",
+    "group": "B6_ruido",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260921,
+      "information_policy": "persistence"
+    },
+    "trial": 7
+  },
+  {
+    "id": "B6_ruido_0202",
+    "group": "B6_ruido",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260922,
+      "information_policy": "persistence"
+    },
+    "trial": 8
+  },
+  {
+    "id": "B6_ruido_0203",
+    "group": "B6_ruido",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260922,
+      "information_policy": "persistence"
+    },
+    "trial": 8
+  },
+  {
+    "id": "B6_ruido_0204",
+    "group": "B6_ruido",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260923,
+      "information_policy": "persistence"
+    },
+    "trial": 9
+  },
+  {
+    "id": "B6_ruido_0205",
+    "group": "B6_ruido",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260923,
+      "information_policy": "persistence"
+    },
+    "trial": 9
+  },
+  {
+    "id": "B6_ruido_0206",
+    "group": "B6_ruido",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260924,
+      "information_policy": "persistence"
+    },
+    "trial": 10
+  },
+  {
+    "id": "B6_ruido_0207",
+    "group": "B6_ruido",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260924,
+      "information_policy": "persistence"
+    },
+    "trial": 10
+  },
+  {
+    "id": "B6_ruido_0208",
+    "group": "B6_ruido",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260925,
+      "information_policy": "persistence"
+    },
+    "trial": 11
+  },
+  {
+    "id": "B6_ruido_0209",
+    "group": "B6_ruido",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260925,
+      "information_policy": "persistence"
+    },
+    "trial": 11
+  },
+  {
+    "id": "B6_ruido_0210",
+    "group": "B6_ruido",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260926,
+      "information_policy": "persistence"
+    },
+    "trial": 12
+  },
+  {
+    "id": "B6_ruido_0211",
+    "group": "B6_ruido",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260926,
+      "information_policy": "persistence"
+    },
+    "trial": 12
+  },
+  {
+    "id": "B6_ruido_0212",
+    "group": "B6_ruido",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260927,
+      "information_policy": "persistence"
+    },
+    "trial": 13
+  },
+  {
+    "id": "B6_ruido_0213",
+    "group": "B6_ruido",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260927,
+      "information_policy": "persistence"
+    },
+    "trial": 13
+  },
+  {
+    "id": "B6_ruido_0214",
+    "group": "B6_ruido",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260928,
+      "information_policy": "persistence"
+    },
+    "trial": 14
+  },
+  {
+    "id": "B6_ruido_0215",
+    "group": "B6_ruido",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260928,
+      "information_policy": "persistence"
+    },
+    "trial": 14
+  },
+  {
+    "id": "B6_ruido_0216",
+    "group": "B6_ruido",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260929,
+      "information_policy": "persistence"
+    },
+    "trial": 15
+  },
+  {
+    "id": "B6_ruido_0217",
+    "group": "B6_ruido",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260929,
+      "information_policy": "persistence"
+    },
+    "trial": 15
+  },
+  {
+    "id": "B6_ruido_0218",
+    "group": "B6_ruido",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260930,
+      "information_policy": "persistence"
+    },
+    "trial": 16
+  },
+  {
+    "id": "B6_ruido_0219",
+    "group": "B6_ruido",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260930,
+      "information_policy": "persistence"
+    },
+    "trial": 16
+  },
+  {
+    "id": "B6_ruido_0220",
+    "group": "B6_ruido",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260931,
+      "information_policy": "persistence"
+    },
+    "trial": 17
+  },
+  {
+    "id": "B6_ruido_0221",
+    "group": "B6_ruido",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260931,
+      "information_policy": "persistence"
+    },
+    "trial": 17
+  },
+  {
+    "id": "B6_ruido_0222",
+    "group": "B6_ruido",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260932,
+      "information_policy": "persistence"
+    },
+    "trial": 18
+  },
+  {
+    "id": "B6_ruido_0223",
+    "group": "B6_ruido",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260932,
+      "information_policy": "persistence"
+    },
+    "trial": 18
+  },
+  {
+    "id": "B6_ruido_0224",
+    "group": "B6_ruido",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260933,
+      "information_policy": "persistence"
+    },
+    "trial": 19
+  },
+  {
+    "id": "B6_ruido_0225",
+    "group": "B6_ruido",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260933,
+      "information_policy": "persistence"
+    },
+    "trial": 19
+  },
+  {
+    "id": "B6_ruido_0226",
+    "group": "B6_ruido",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260934,
+      "information_policy": "persistence"
+    },
+    "trial": 20
+  },
+  {
+    "id": "B6_ruido_0227",
+    "group": "B6_ruido",
+    "scenario": "nvml_llama2_stress",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "sigma_L": 5.0,
+      "sigma_SOC": 0.2,
+      "noise_seed": 20260934,
+      "information_policy": "persistence"
+    },
+    "trial": 20
+  },
+  {
+    "id": "B6_segundo_evento_0228",
+    "group": "B6_segundo_evento",
+    "scenario": "perda_fonte",
+    "ctrl": "heuristico",
+    "params": {
+      "SOC_initial": 30,
+      "information_policy": "persistence"
+    },
+    "extra_outage": [
+      900,
+      1050
+    ]
+  },
+  {
+    "id": "B6_segundo_evento_0229",
+    "group": "B6_segundo_evento",
+    "scenario": "perda_fonte",
+    "ctrl": "heuristico_foresight",
+    "params": {
+      "SOC_initial": 30,
+      "information_policy": "persistence"
+    },
+    "extra_outage": [
+      900,
+      1050
+    ]
+  },
+  {
+    "id": "B6_segundo_evento_0230",
+    "group": "B6_segundo_evento",
+    "scenario": "perda_fonte",
+    "ctrl": "miope_qp",
+    "params": {
+      "SOC_initial": 30,
+      "information_policy": "persistence"
+    },
+    "extra_outage": [
+      900,
+      1050
+    ]
+  },
+  {
+    "id": "B6_segundo_evento_0231",
+    "group": "B6_segundo_evento",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_v5",
+    "params": {
+      "SOC_initial": 30,
+      "information_policy": "persistence"
+    },
+    "extra_outage": [
+      900,
+      1050
+    ]
+  },
+  {
+    "id": "B6_segundo_evento_0232",
+    "group": "B6_segundo_evento",
+    "scenario": "perda_fonte",
+    "ctrl": "mpc_qp_estocastico_3cen",
+    "params": {
+      "SOC_initial": 30,
+      "information_policy": "persistence"
+    },
+    "extra_outage": [
+      900,
+      1050
+    ]
+  },
+  {
+    "id": "B6_segundo_evento_0233",
+    "group": "B6_segundo_evento",
+    "scenario": "perda_fonte",
+    "ctrl": "ff_feedback",
+    "params": {
+      "SOC_initial": 30,
+      "information_policy": "persistence"
+    },
+    "extra_outage": [
+      900,
+      1050
+    ]
+  }
+]

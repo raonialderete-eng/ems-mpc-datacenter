@@ -1,0 +1,8 @@
+# Fragmento para o Makefile gerado pelo Nios EDS (lab).
+# APP_CFLAGS += -I../../c_golden
+# C_SRCS += ../../c_golden/ems_param.c ../../c_golden/planta_bess.c \
+#   ../../c_golden/controle_heuristico.c ../../c_golden/gera_cenario.c \
+#   ../../c_golden/qp_admm.c ../../c_golden/controle_mpc_fpga.c \
+#   ../../c_golden/ems_protocol.c ems_main.c
+
+APP_CFLAGS += -I../../c_golden -D__NIOS2__
