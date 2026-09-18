@@ -2,8 +2,8 @@
 
 Reproduction package for the IEEE Access manuscript on predictive energy management of an aggregated critical load with battery energy storage.
 
-- **Code:** https://github.com/raonialderete-eng/ems-mpc-datacenter
-- **Archive (DOI):** https://doi.org/10.5281/zenodo.22835283
+- **Code:** https://github.com/raonialderete-eng/ems-mpc-datacenter — private until acceptance; tag `v1.0.3-ieee-access-rev`.
+- **Archive (version DOI):** https://doi.org/10.5281/zenodo.22837544 — cite this version, not the earlier test deposit. That zip was minted from `v1.0.2-ieee-access-rev`. It does **not** include the input MATs required by `caso_auditado.m` nor A1/B2–B6 sources/results; those remain in the local working tree pending a matching deposit. A discarded MATLAB row labelled `serial/mpc` (90.98 kW / 57 s wall; switch-capture error) is not in the working-tree HIL CSV.
 
 Please cite the published article (title and DOI as printed) together with the Zenodo record.
 
@@ -12,7 +12,7 @@ Please cite the published article (title and DOI as printed) together with the Z
 | Item | In this repository |
 |---|---|
 | Desktop campaign (MATLAB R2025b, Optimization Toolbox) | Yes — consolidation of 11 Sep 2026 |
-| FPGA-ready C, ADMM, UART protocol | Yes — `07_fpga/` |
+| Nios C/ADMM, UART protocol | Yes — `07_fpga/` (demonstration, not a 1200-step KPI table) |
 | SIL (`backend=matlab_fpga`, \(N_p=12\), \(N_c=4\)) | Yes — `05_resultados/hil_de2115/` |
 | UART HIL of the **heuristic** (four short scenarios) | Yes — matches SIL |
 | UART HIL of ADMM / 1200-step serial MPC | No (OpenCore Plus ~1 h; QP ≫ \(T_s\) on Nios) |
@@ -22,7 +22,7 @@ Please cite the published article (title and DOI as printed) together with the Z
 | Stochastic three-scenario MPC on FPGA | Desktop only |
 | Warm-start | Not used |
 
-SIL is not a facility test. UART HIL validates the embedded controller on the same aggregated model used in simulation.
+SIL (`matlab_fpga`) is in-process MATLAB/`quadprog`; it does not exercise UART. UART HIL closed the heuristic on four short scenarios without a recorded timeout; firmware `t_us=0`, so cycle WCET is not measured.
 
 ## Layout
 

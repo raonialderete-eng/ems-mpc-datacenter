@@ -45,7 +45,7 @@
 \history{Date of publication xxxx 00, 0000, date of current version xxxx 00, 0000.}
 \doi{10.1109/ACCESS.2026.DOI}
 
-\title{Predictive Energy Management of an Aggregated AI/HPC Data-Center Load with BESS: Comparative Evaluation under Detectable Events, and Embedded Controller Validation}
+\title{Predictive Energy Management of an Aggregated AI/HPC Data-Center Load with BESS: Heuristic, Myopic QP, and MPC under Detectable Events}
 
 \author{\uppercase{Raoni Alderete}\authorrefmark{1}}
 \address[1]{Graduate Program in Electrical Engineering, Universidade Federal de Mato Grosso do Sul (UFMS), Campo Grande, MS 79070-900, Brazil (e-mail: raoni.alderete@ufms.br)}
@@ -57,11 +57,11 @@
 \corresp{Corresponding author: Raoni Alderete (e-mail: raoni.alderete@ufms.br).}
 
 \begin{abstract}
-This paper presents an applied, comparative energy management system (EMS) for an artificial intelligence / high-performance computing (AI/HPC) data center in which a battery energy storage system (BESS) provides uninterruptible support to an aggregated critical load. The contribution is not a new MPC theory: it is a reproducible protocol that separates forecast information from optimizer structure and evaluates five policies on one first-order plant---a reactive heuristic, a foresight-enabled heuristic (Heur+FS), a one-step myopic QP, a deterministic event-anticipating MPC-QP (golden V5, $N_p{=}60$, $N_c{=}15$), and a three-scenario stochastic MPC with a shared first action. Under nominal load steps, filtered unserved-power peaks of the deterministic MPC fall below \SI{1}{\kilo\watt} (raw $\approx\SI{0.018}{\kilo\watt}$), versus \SI{90.98}{\kilo\watt} (heuristic) and \SI{102.78}{\kilo\watt} (myopic). Under source loss at \SI{750}{\kilo\watt}, the same MPC reaches the case-study power floor $750{-}400=\SI{350}{\kilo\watt}$ ($\approx\SI{40.9}{\percent}$ peak cut, $\approx\SI{1.16}{\percent}$ energy cut); the floor is physics, not a solver failure. Timing error is more harmful than magnitude error. In the \emph{audited} protocol, a \SI{10}{\second} early forecast still sits on the case-study bound ($\approx\SI{350}{\kilo\watt}$); a \SI{20}{\second} late forecast raises the peak to $\approx\SI{512}{\kilo\watt}$ while remaining below the reactive $\approx\SI{593}{\kilo\watt}$. A historical $\approx\SI{699}{\kilo\watt}$ at $-10$\,s belongs to a previous campaign/protocol and is not reproduced here. A 200-pair Monte Carlo on the same physical trajectory shows that the stochastic competitor reduces the peak in 188/200 pairs and never worsens it beyond \SI{0.001}{\kilo\watt}, at a systematic SOC/throughput cost. An FPGA-ready SIL copy ($N_p{=}12$, $N_c{=}4$, ADMM, same UART protocol) reproduces the V5 floor to $\approx\SI{1}{\kilo\watt}$. UART hardware-in-the-loop on a Terasic DE2-115 closed the heuristic on four scenarios ($P_{\mathrm{un}}^{\max}$ identical to SIL). The on-chip ADMM runs, but Quartus Lite OpenCore Plus ($\approx\SI{1}{\hour}$) and soft-float QP time preclude a full 1200-step MPC serial campaign at $T_s=\SI{1}{\second}$. The plant remains aggregated: the board validates the embedded controller, not a MW facility and not UPS inner loops. Language throughout is load-continuity on this model, not a claim of UPS topology fidelity.
+This paper presents an applied, comparative energy management system (EMS) for an artificial intelligence / high-performance computing (AI/HPC) data center in which a battery energy storage system (BESS) provides uninterruptible support to an aggregated critical load. The contribution is not a new MPC theory: it is a reproducible protocol that separates forecast information from optimizer structure on one first-order plant. The 11~September campaign compares a reactive heuristic, a foresight-enabled heuristic (Heur+FS), a one-step myopic QP, a deterministic event-anticipating MPC-QP (golden V5, $N_p{=}60$, $N_c{=}15$), and a three-scenario stochastic MPC that shares the entire receding-horizon command $\Delta U$ (only the first increment is applied). A later feedforward-plus-feedback (FF+FB) package is reported separately and is not part of that consolidation. Under nominal load steps, filtered unserved-power peaks of V5 fall below \SI{1}{\kilo\watt} (raw $\approx\SI{0.018}{\kilo\watt}$), versus \SI{90.98}{\kilo\watt} (heuristic) and \SI{102.78}{\kilo\watt} (myopic); FF+FB already reaches a filtered zero on the same load-band case. Under source loss at \SI{750}{\kilo\watt}, V5 reaches the case-study bound $750{-}400=\SI{350}{\kilo\watt}$ ($\approx\SI{40.9}{\percent}$ peak cut, $\approx\SI{1.16}{\percent}$ energy cut); that bound is physics, not a solver failure. Timing error is more harmful than magnitude error. In the \emph{audited} protocol, a \SI{10}{\second} early forecast still sits on the bound ($\approx\SI{350}{\kilo\watt}$); a \SI{20}{\second} late forecast raises the peak to $\approx\SI{512}{\kilo\watt}$ while remaining below the reactive $\approx\SI{593}{\kilo\watt}$. A historical $\approx\SI{699}{\kilo\watt}$ at $-10$\,s belongs to a previous campaign/protocol and is not reproduced here. A 200-pair Monte Carlo on the same physical trajectory shows that the stochastic competitor reduces the peak in 188/200 pairs and never worsens it beyond \SI{0.001}{\kilo\watt}, at a systematic SOC/throughput cost. Software-in-the-loop (SIL) using the MATLAB FPGA backend is a reduced-horizon MATLAB/\texttt{quadprog} copy ($N_p{=}12$, $N_c{=}4$), not ADMM~C: it matches V5 on Group~A and sits $\approx\SI{1}{\kilo\watt}$ above the source-loss bound. UART hardware-in-the-loop on a Terasic DE2-115 closed the heuristic on four scenarios. On-chip ADMM UART executed until OpenCore Plus expired; Quartus Lite ($\approx\SI{1}{\hour}$) and soft-float QP time preclude a full 1200-step MPC serial campaign at $T_s=\SI{1}{\second}$. The plant remains aggregated: the board validates the embedded controller, not a MW facility and not UPS inner loops.
 \end{abstract}
 
 \begin{keywords}
-Energy management system, model predictive control, BESS, data center, quadratic programming, hardware-in-the-loop, FPGA, comparative evaluation.
+Energy management system, model predictive control, BESS, data center, quadratic programming, software-in-the-loop, UART HIL, comparative evaluation.
 \end{keywords}
 
 \titlepgskip=-15pt
@@ -72,26 +72,26 @@ Energy management system, model predictive control, BESS, data center, quadratic
 
 Rule-based (heuristic) controllers remain common for supervisory simplicity and interpretability~\cite{passino1998fuzzy,astrom1997computer}. Their reactive nature, however, limits performance under converter dynamics when demand steps are foreseeable in the operating horizon. One-step (myopic QP) optimization improves local consistency with costs and constraints, but still ignores future demand trajectories. Model predictive control via quadratic programming (MPC-QP) combines a dynamic model, an explicit prediction horizon and constraint handling, and is a natural candidate for storage-centric EMS design under variable load~\cite{camacho2007mpc,rossiter2003mpc,wang2009mpc,parisio2014mpc,wang2023hierarchical,nair2020mpc,sepehrzad2023mpc}. The MATLAB-oriented practical frameworks of Rossiter~\cite{rossiter2003mpc} and Wang~\cite{wang2009mpc} underpin the modeling, QP formulation and numerical validation workflow used here.
 
-This work formulates a deterministic EMS-MPC via QP for an aggregated data-center load supplied by a main source and a BESS/UPS. Positioning is applied and comparative: the contribution is \emph{not} a new MPC theory result, but (i)~an operational EMS design for critical-load supply and BESS/UPS coordination on a first-order aggregated plant, (ii)~a reproducible simulation framework with fixed plant, parameters, metrics and information policy, and (iii)~a protocol that separates forecast information from optimization structure. The operational objective is to manage BESS power while prioritizing critical-load supply under demand variation and source-limit saturation, with anticipation of detectable or schedulable events in the horizon (protection alarm, switching signal, HPC job schedule, planned load step)---not completely random outages. Grid contingencies are analyzed as a complementary study, to delimit honestly what storage can and cannot deliver. A three-scenario stochastic MPC (shared first command) is included as a fifth competitor, not as a claim of multi-stage recourse theory.
+This work formulates a deterministic EMS-MPC via QP for an aggregated data-center load supplied by a main source and a BESS/UPS. Positioning is applied and comparative: the contribution is \emph{not} a new MPC theory result, but (i)~an operational EMS design for critical-load supply and BESS/UPS coordination on a first-order aggregated plant, (ii)~a reproducible simulation framework with fixed plant, parameters, metrics and information policy, and (iii)~a protocol that separates forecast information from optimization structure. The operational objective is to manage BESS power while prioritizing critical-load supply under demand variation and source-limit saturation, with anticipation of detectable or schedulable events in the horizon (protection alarm, switching signal, HPC job schedule, planned load step)---not completely random outages. Grid contingencies are analyzed as a complementary study, to delimit honestly what storage can and cannot deliver. A three-scenario stochastic MPC (shared $\Delta U$ sequence) is included as a fifth competitor, not as a claim of multi-stage recourse theory.
 
 Specific contributions are:
 \begin{enumerate}
 \item an aggregated plant model and a reproducible QP EMS-MPC formulation (decision vector, hard/soft constraints, weights, SOC predictor with $K_{\mathrm{d}}/K_{\mathrm{c}}$, and explicit current-versus-forecast information);
-\item a five-controller protocol---heuristic, Heur+FS, myopic QP, deterministic MPC-QP (V5), stochastic three-scenario MPC---that isolates forecast versus multi-step optimization under identical plant dynamics;
-\item evidence that, under nominal load-variation cases, deterministic MPC-QP drives filtered $P_{\mathrm{unserved}}$ below the reporting threshold, whereas heuristic and myopic QP remain limited by converter dynamics and rate limits;
-\item forecast-error, multi-burst, public GPU/facility traces (NVML and DIPLOEE-derived), Monte Carlo, fairness/ablation and computational analyses, with a case-study power floor $P_{\mathrm{load}}-P_{\mathrm{BESS}}^{\max}$ stated as physics;
-\item embedded validation of the FPGA-ready copy: SIL ($N_p{=}12$, $N_c{=}4$, ADMM) and UART HIL of the heuristic on a Terasic DE2-115, without claiming FIL, a completed MPC serial campaign, or $T_s=\SI{1}{\second}$ real-time ADMM on Cyclone~IV Lite.
+\item a five-controller protocol on the 11~September campaign---heuristic, Heur+FS, myopic QP, deterministic MPC-QP (V5), stochastic three-scenario MPC---that isolates forecast versus multi-step optimization under identical plant dynamics, plus a later FF+FB competitor (package B2) that uses the same forecasts;
+\item evidence that, under nominal load-variation cases, both V5 and FF+FB drive filtered $P_{\mathrm{unserved}}$ below the reporting threshold, whereas heuristic and myopic QP remain limited by converter dynamics and rate limits---so multi-step QP is sufficient but not uniquely necessary for those zeros on this plant;
+\item forecast-error, multi-burst, public GPU/facility traces (NVML and DIPLOEE-derived), Monte Carlo, fairness/ablation and computational analyses, with a case-study power bound $P_{\mathrm{load}}-P_{\mathrm{BESS}}^{\max}$ stated as physics, and a second-event limit test (package B6) in which the stochastic policy hits $750$\,kW;
+\item embedded validation that distinguishes SIL MATLAB/\texttt{quadprog} ($N_p{=}12$, $N_c{=}4$) from Nios ADMM~C, plus UART HIL of the heuristic on a Terasic DE2-115, without claiming FIL, a completed MPC serial campaign, or $T_s=\SI{1}{\second}$ real-time ADMM on Cyclone~IV Lite.
 \end{enumerate}
 
-The central research question is whether the improvement comes merely from advance event information or from the combination of foresight with multi-step constrained optimization.
-To answer this, the protocol compares a reactive heuristic, a foresight-enabled heuristic, a one-step myopic QP, and the event-anticipating MPC-QP under identical plant dynamics and constraints---so that each baseline isolates one factor (Table~\ref{tab:baseline_role}). The stochastic competitor additionally asks whether a cheap scenario fan-out reduces tail peaks at an SOC cost.
+The central research question is whether the improvement comes merely from advance event information or from the combination of foresight with multi-step constrained optimization, and whether a simpler FF+FB law with the same forecasts already obtains the Group~A zeros.
+To answer this, the 11~September protocol compares a reactive heuristic, a foresight-enabled heuristic, a one-step myopic QP, and the event-anticipating MPC-QP under identical plant dynamics (Table~\ref{tab:baseline_role}). The comparison is structured, not a claim that each baseline isolates a single causal factor: costs, $\Delta u$ coefficients and supervisory maps still differ. The stochastic competitor additionally asks whether a cheap scenario fan-out reduces tail peaks at an SOC cost. FF+FB is a later package, labelled as such.
 
 The remainder of the paper is organized as follows. Section~\ref{sec:related} positions the work against prior EMS-MPC studies. Section~\ref{sec:model} presents the system model. Section~\ref{sec:control} describes the controllers. Section~\ref{sec:scenarios} defines scenarios, information policy and metrics. Section~\ref{sec:results} discusses desktop campaigns. Section~\ref{sec:embedded} reports SIL and UART HIL. Section~\ref{sec:data} states data availability. Section~\ref{sec:conclusion} concludes. Appendix~\ref{sec:appqp} writes the audited QP maps.
 
 \section{Related Work and Scope}
 \label{sec:related}
 
-Table~\ref{tab:lit} compares representative storage-centric MPC EMS papers already cited herein. The delta of this study is not a new theory of MPC: it is a \emph{controlled comparison protocol} (forecast versus multi-step QP versus one-step QP versus rules) on an aggregated critical-load plant, with an explicit scenario-specific power bound, paired forecast-error statistics, and an FPGA-ready C copy. It is not a microgrid economic dispatch, not a detailed UPS/EMT study, and not a MW facility test.
+Table~\ref{tab:lit} compares representative storage-centric MPC EMS papers already cited herein. The delta of this study is not a new theory of MPC: it is a \emph{controlled comparison protocol} (forecast versus multi-step QP versus one-step QP versus rules) on an aggregated critical-load plant, with an explicit scenario-specific power bound, paired forecast-error statistics, and a Nios C/ADMM demonstration of a reduced-horizon solver (not FIL and not a 1200-step KPI table). It is not a microgrid economic dispatch, not a detailed UPS/EMT study, and not a MW facility test.
 
 \begin{table*}[!t]
 \centering
@@ -102,12 +102,12 @@ Table~\ref{tab:lit} compares representative storage-centric MPC EMS papers alrea
 \toprule
 Work & Plant / objective & Information & Baselines & Hardware & Errors / limits \\
 \midrule
-Parisio \emph{et al.}~\cite{parisio2014mpc} & Microgrid operation & Mixed forecasts & Optimization-centric & Simulation & Economic dispatch, not AI steps \\
+Parisio \emph{et al.}~\cite{parisio2014mpc} & Microgrid operation (Athens experimental MG) & Mixed forecasts & Optimization-centric & Experimental microgrid & Economic dispatch, not AI steps \\
 Wang \emph{et al.}~\cite{wang2023hierarchical} & Data-center HESS dispatch & Hierarchical set-points & Hierarchical MPC & Simulation & Not critical-load $P_{\mathrm{un}}$ protocol \\
 Nair and Costa-Castell{\'o}~\cite{nair2020mpc} & Islanded hybrid storage & MPC scheme & Storage EMS & Simulation & Islanded MG, not feeder+BESS UPS support \\
 Sepehrzad \emph{et al.}~\cite{sepehrzad2023mpc} & DC microgrid + BESS & DMPC & Experimental DC MG & Lab DC MG & Different plant/time scale \\
 Iqbal and Sarwat~\cite{iqbal2026reliability} & Behind-the-meter BESS, data center & Stochastic outages & Co-optimization & Simulation & Reliability/cost; not this QP/HIL stack \\
-This paper & Aggregated source--load--BESS, $T_s=\SI{1}{\second}$ & Current measured; future forecast; unannounced $g$ hidden & Heur., Heur+FS, myopic, V5, 3-sc.\ stoch. & SIL + UART HIL (heuristic); ADMM on Nios shown & Timing/MC; case-study bound $750{-}400$ \\
+This paper & Aggregated source--load--BESS, $T_s=\SI{1}{\second}$ & Current measured; future forecast; unannounced $g$ hidden & Heur., Heur+FS, myopic, V5, 3-sc.\ stoch.; later FF+FB & MATLAB SIL $N_p{=}12$ (\texttt{quadprog}); UART HIL heuristic; ADMM Nios demo & Timing/MC; bound $750{-}400$; 2nd-event limit \\
 \bottomrule
 \end{tabular}}
 \end{table*}
@@ -257,7 +257,7 @@ $w_{\Delta u}$ & $\Delta u$ variation & $50$ \\
 \section{Control Strategies}
 \label{sec:control}
 
-Each controller answers a distinct design question (Table~\ref{tab:baseline_role}): the heuristic measures the performance of a simple reactive operating rule; Heur+FS measures how much is gained from future information alone, without multi-step optimization; the myopic QP measures how much is gained from constrained optimization without a future horizon; MPC-QP measures the combined effect of foresight, a dynamic model and multi-step optimization. The comparison is therefore structured: it isolates forecast versus optimization under the same plant.
+Each controller answers a distinct design question (Table~\ref{tab:baseline_role}): the heuristic measures the performance of a simple reactive operating rule; Heur+FS measures how much is gained from future information alone, without multi-step optimization; the myopic QP measures how much is gained from constrained optimization without a future horizon; FF+FB (later package) measures a non-QP law with the same forecasts; MPC-QP measures the combined effect of foresight, a dynamic model and multi-step optimization. The 11~September comparison isolates forecast versus optimization under the same plant; FF+FB is labelled separately.
 
 \begin{table}[!t]
 \centering
@@ -273,6 +273,7 @@ Heur+FS & Yes & No & Partial & forecast effect \\
 Myopic QP & No & Yes & No & local QP \\
 MPC-QP (V5) & Yes & Yes & Yes & proposed deterministic \\
 Stochastic 3-sc. & Yes & Yes & Yes & tail / reserve cost \\
+FF+FB (later) & Yes & No & No & same forecasts, no QP \\
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -300,6 +301,15 @@ One-step BESS power is predicted by~\eqref{eq:dyn} and the balance
 P_{\mathrm{grid}}+P_{\mathrm{BESS}}(k+1)+s_{\mathrm{load}}=P_{\mathrm{load}}(k)
 \end{equation}
 is imposed, together with power/SOC limits (gains $K_{\mathrm{d}}/K_{\mathrm{c}}$), source tracking, ramps and $u$ rate limits. There is no horizon and no event preparation.
+
+\subsection{Feedforward plus feedback (later package)}
+\label{sec:ff}
+FF+FB is \emph{not} a proportional SOC-error law. It uses the same event/recharge supervisor as the audited assembler (\texttt{referencias\_evento\_v2}) and inverts the first-order converter map on the current sample. With source reference $P_{\mathrm{source},k}^{\mathrm{ref}}$ from that supervisor,
+\begin{equation}
+r_k=P_{\mathrm{load}}(k)-P_{\mathrm{source},k}^{\mathrm{ref}},\qquad
+u_k^{\star}=(r_k-a_b P_{\mathrm{BESS}}(k))/b_b.
+\end{equation}
+SOC then only \emph{blocks} infeasible signs ($u{=}0$ if $\mathrm{SOC}\le\mathrm{SOC}_{\min}$ and $u^{\star}{>}0$, or $\mathrm{SOC}\ge\mathrm{SOC}_{\max}$ and $u^{\star}{<}0$); recharge enablement is a threshold on SOC versus $\mathrm{SOC}_{\mathrm{ref}}$ minus a deadband, not a $K_p$ term. After $g(k){=}0\Rightarrow u\ge 0$, the command is saturated to $[P_{\mathrm{BESS}}^{\min},P_{\mathrm{BESS}}^{\max}]$ and to $|u-u_{k-1}|\le \Delta u_{\max}$ (event versus normal rate). Package B2 uses persistence fill of future $g$; the 11~September V5 jobs use return-to-normal fill. Table~\ref{tab:ff} reports B2 jobs \texttt{B2\_ff\_0001}/\texttt{B2\_ff\_0003} against 11~September V5 jobs \texttt{j00004}/\texttt{j00014}. It is not a sixth column of Table~\ref{tab:punserved} and is not a validated official campaign (\texttt{ready\_for\_article=false}).
 
 \subsection{Event-anticipating MPC-QP}
 \label{sec:mpc}
@@ -362,9 +372,9 @@ The terminal term is an SOC cost only; it is not a terminal set nor a formal sta
 We use $N_p=60$, $N_c=15$, $N_{\mathrm{prep}}=30$, $T_s=\SI{1}{\second}$ for the golden V5. Audited QPs are normalized with $P_{\mathrm{base}}=\SI{950}{\kilo\watt}$ and $R_{\mathrm{base}}=\SI{100}{\kilo\watt\per\second}$ (the historical V5 builder used a trajectory-dependent base; the myopic used instantaneous bases---the revision campaign freezes the audited pair). The QP is solved with MATLAB \texttt{quadprog} (\texttt{interior-point-convex}) and constraint preallocation. The audited \texttt{quadprog} call passes an empty $X_0$; a dedicated warm-start trial reproduced the same iteration counts and solutions. Warm-start acceleration is therefore \emph{not} used and is not claimed. Solver failures trigger a heuristic fallback classified by \texttt{exitflag}; fallback is part of the closed-loop policy and is reported, not hidden. A candidate Hessian rescaling of the IPM did not pass a pre-registered KKT gate (13/15 cases); official numbers remain the 11~September consolidation.
 
 \subsection{Three-scenario stochastic MPC}
-The fifth competitor is a scenario MPC built in this project: three internal trajectories (nominal forecast, future load ${+}20\%$, interruption announced \SI{10}{\second} early) with equal probabilities, a \emph{shared} command sequence, and scenario-specific predicted states and slacks. Only the first action is applied. Identical scenarios are merged by adding probabilities. This is not a claim of multi-stage recourse or of reproducing a named literature policy. Without an announced event, the early-interruption scenario coincides with the nominal one. Sensitivity with probabilities $0.50/0.25/0.25$ is reported as secondary.
+The fifth competitor is a scenario MPC built in this project: three internal trajectories (nominal forecast, future load ${+}20\%$, interruption announced \SI{10}{\second} early) with equal probabilities, a \emph{shared} command sequence $\Delta U$, and scenario-specific predicted states and slacks. The whole $\Delta U$ is shared across scenarios; only the first increment is applied and the remainder is discarded at the next sample. Identical scenarios are merged by adding probabilities. This is not a claim of multi-stage recourse or of reproducing a named literature policy. Without an announced event, the early-interruption scenario coincides with the nominal one. Sensitivity with probabilities $0.50/0.25/0.25$ is reported as secondary.
 
-The FPGA-ready copy used in Section~\ref{sec:embedded} is a different object: $N_p{=}12$, $N_c{=}4$, ADMM in C, same UART line protocol. It is not the V5 \texttt{quadprog} binary.
+The SIL object in Section~\ref{sec:embedded} is \texttt{backend=matlab\_fpga}: a reduced-horizon MATLAB copy ($N_p{=}12$, $N_c{=}4$) that still calls \texttt{controle\_mpc\_qp\_v5} / \texttt{quadprog} in-process. It is not ADMM~C and does \emph{not} send or parse UART frames. The Nios ADMM firmware is a third object: ASCII UART on the board, different solver, demonstrated until OpenCore Plus expired, not a 1200-step KPI table.
 
 \section{Scenarios, Metrics, and Protocol}
 \label{sec:scenarios}
@@ -382,7 +392,7 @@ Target: eliminate transient $P_{\mathrm{unserved}}$ under demand variation (no g
 \end{enumerate}
 Success criteria (Group~A): filtered $P_{\mathrm{unserved}}^{\max}$ below the reporting threshold, small $E_{\mathrm{unserved}}$, no structural source shortfall beyond what the BESS covers, acceptable SOC.
 
-Public traces complement the synthetic steps; they are \emph{not} feeder measurements of a facility owned by the authors. DIPLOEE-derived profiles are simulated facility power (minute native sampling, resampled). NVML profiles are measured GPU power from 16 nodes, aggregated/interpolated and affinely mapped into the 600--950\,kW band. Unit errata: the preparation script stores NVML extrema in fields named \texttt{raw\_min\_W}/\texttt{raw\_max\_W} \emph{after} converting W$\to$kW, so those metadata labels are wrong; the mapped 600--950\,kW traces used in the campaign are unaffected. Twenty registered windows overlap; they are not 20 independent sites. Stress windows are those with largest amplitude after mapping. GPU utilization is not synchronized to a whole-facility feeder in this study.
+Public traces complement the synthetic steps; they are \emph{not} feeder measurements of a facility owned by the authors. DIPLOEE-derived profiles are simulated facility power (minute native sampling, resampled). NVML profiles are measured GPU power from 16 nodes, aggregated/interpolated and affinely mapped into the 600--950\,kW band. Unit errata: the preparation script stores NVML extrema in fields named \texttt{raw\_min\_W}/\texttt{raw\_max\_W} \emph{after} converting W$\to$kW, so those metadata labels are wrong; the mapped 600--950\,kW traces used in the campaign are unaffected. Twenty registered windows overlap; they are not 20 independent sites. Stress windows were selected for largest amplitude on the \emph{native} traces; each window was then affinely mapped into 600--950\,kW. Amplitude after mapping is therefore not the selection criterion. GPU utilization is not synchronized to a whole-facility feeder in this study.
 
 \begin{table}[!t]
 \centering
@@ -416,9 +426,9 @@ Prolonged critical outage ($\approx\SI{2}{\hour}$): demonstrate that finite ener
 
 \subsection{Information policy}
 \label{sec:infopol}
-Current measurements at $k$ are common to every controller. Future load, source limit and $g$ in the horizon are forecasts. Scheduled load steps, planned interruptions and protection alarms are distinct cues; an unannounced outage hides future $g$ from all five policies. Detection delay is a separate assay and is not a draw from the Monte Carlo delay law.
+Current measurements at $k$ are common to every controller. Future load, source limit and $g$ in the horizon are forecasts. Scheduled load steps, planned interruptions and protection alarms are distinct cues; an unannounced outage hides future $g$ from all compared policies. Detection delay is a separate assay and is not a draw from the Monte Carlo delay law.
 
-When foresight of $g$ is off, the assembler still fills future source-available / nominal limit into the QP: a causal return-to-normal hypothesis, not persistence of the measured outage. That hypothesis is declared, not claimed to be field-identified. A feedforward-plus-feedback competitor that would apply the same forecasts through a separate tracking loop was not added; the protocol already isolates forecast (Heur+FS), local QP (myopic) and multi-step QP (V5 and $N_c=N_p=1$). Repeating the same forecasts in a fourth structure would not resolve the unequal $\Delta u$ coefficients.
+When foresight of $g$ is off, the 11~September assembler still fills future source-available / nominal limit into the QP: a causal return-to-normal hypothesis, not persistence of the measured outage. Package B2/B6 used for FF+FB and the second-event test instead fills persistence of the measured outage. Both fills are declared; neither is a field-identified detector. A feedforward-plus-feedback competitor with the same supervisor \emph{was} run as package B2 (Section~\ref{sec:ff}); it is not in Table~\ref{tab:punserved}.
 
 SOC inequality uses the tabulated $\mathrm{SOC}_{\min}$ with zero extra margin in the audited maps. Weights in Table~\ref{tab:weights} were chosen so that load/event slacks dominate after $P_{\mathrm{base}}$ normalization; a univariate $\times 0.5/1/2$ sweep on five V5 weights in two scenarios did not reverse the Group~A ranking, but it does not cover source-tracking, ramp, SOC, terminal and BESS-usage jointly, nor myopic-specific weights. Large slacks are an \emph{approximate} priority, not lexicographic MPC. The reported constraint-gram indicator is $\mathrm{condest}(C^\top C+\varepsilon I)$ at the first step, not the condition of $C$ itself.
 
@@ -430,11 +440,11 @@ The nominal case assumes known horizon profiles (perfect foresight in the baseli
 \item Sensitivity to $N_{\mathrm{prep}}$ and $\tau_b$.
 \item Forecast-error sweeps (magnitude and timing) and a 200-pair Monte Carlo (Normal delays clipped to $\pm\SI{20}{\second}$, $\sigma=\SI{6}{\second}$, load error uniform on $[-20\%,+20\%]$), with the \emph{same} physical outage and different forecast errors---not a population of data centers.
 \item Fairness on the myopic $\Delta u$ limit and isolated ablations (foresight off, unit horizon, event inequality).
-\item FPGA-ready SIL and UART HIL (Section~\ref{sec:embedded}).
+\item MATLAB SIL ($N_p{=}12$, \texttt{quadprog}) and UART HIL of the heuristic (Section~\ref{sec:embedded}).
 \end{itemize}
 
 \subsection{Metrics}
-We report $P_{\mathrm{unserved}}^{\max}$, unserved energy $E_{\mathrm{unserved}}$, duration $T_{\mathrm{unserved}}$, SOC (final/min/at event), throughput and equivalent full cycles $N_{\mathrm{EFC}}$ (a utilization proxy, not a lifetime model), maximum source ramp, fallback percentage and QP timings (mean and max per scenario). For contingencies we also use distance to the scenario-specific bound $P_{\mathrm{unserved}}^{\max}-(P_{\mathrm{load}}-P_{\mathrm{BESS}}^{\max})$. For load variation we report transient reduction relative to the heuristic $(P_{\mathrm{unserved},\mathrm{heur}}^{\max}-P_{\mathrm{unserved}}^{\max})/P_{\mathrm{unserved},\mathrm{heur}}^{\max}$. Under outages, the maximum source ramp includes the exogenous drop induced by $g(k)$ and must not be read as a voluntary EMS operating ramp. Equal heuristic peaks on load-bands and source-limit ($90.979599$\,kW) are not a copy-paste error: both expose a $150$\,kW first-step deficit through $\tau_b=\SI{2}{\second}$, $150\,\mathrm{e}^{-1/2}=90.979599$\,kW, at different event times ($400$\,s vs.\ $200$\,s).
+We report $P_{\mathrm{unserved}}^{\max}$, unserved energy $E_{\mathrm{unserved}}$, duration $T_{\mathrm{unserved}}$, SOC (final/min/at event), throughput and equivalent full cycles $N_{\mathrm{EFC}}$ (a utilization proxy, not a lifetime model), maximum source ramp, fallback percentage and QP timings. Table~\ref{tab:tqp} uses \emph{median} and max $t_{\mathrm{QP}}$ from the 11~September CSV; Table~\ref{tab:nprep} reports historical \emph{mean} $t_{\mathrm{QP}}$ and is labelled as such. Preparation-energy, reversal-count and \texttt{aging\_proxy} fields exist in later packages but are not paper KPIs: \texttt{aging\_proxy} is a multiple of throughput, and the preparation/reversal definitions are not the quantities requested by the reviewers. For contingencies we also use distance to the scenario-specific bound $P_{\mathrm{unserved}}^{\max}-(P_{\mathrm{load}}-P_{\mathrm{BESS}}^{\max})$. For load variation we report transient reduction relative to the heuristic $(P_{\mathrm{unserved},\mathrm{heur}}^{\max}-P_{\mathrm{unserved}}^{\max})/P_{\mathrm{unserved},\mathrm{heur}}^{\max}$. Under outages, the maximum source ramp includes the exogenous drop induced by $g(k)$ and must not be read as a voluntary EMS operating ramp. Equal heuristic peaks on load-bands and source-limit ($90.979599$\,kW) are not a copy-paste error: both expose a $150$\,kW first-step deficit through $\tau_b=\SI{2}{\second}$, $150\,\mathrm{e}^{-1/2}=90.979599$\,kW, at different event times ($400$\,s vs.\ $200$\,s).
 
 \section{Results and Discussion}
 \label{sec:results}
@@ -443,14 +453,17 @@ We report $P_{\mathrm{unserved}}^{\max}$, unserved energy $E_{\mathrm{unserved}}
 The results are interpreted under two different objectives. In load-variation scenarios (Group~A), the target is to eliminate transient unserved power (filtered). In contingency scenarios (Group~B), the target is not zero---infeasible when $P_{\mathrm{load}}>P_{\mathrm{BESS}}^{\max}$---but to approach the scenario-specific bound $P_{\mathrm{load}}-P_{\mathrm{BESS}}^{\max}=\SI{350}{\kilo\watt}$ at \SI{750}{\kilo\watt} load. Desktop numbers below are the 11~September consolidation unless noted.
 
 \subsection{Main comparison}
-Table~\ref{tab:punserved} summarizes $P_{\mathrm{unserved}}^{\max}$ across all short scenarios and shows these two regimes: in load-variation regimes, the performance target is zero unserved power, and MPC-QP reaches it; in source-contingency regimes, the performance target is not zero, but the scenario-specific bound, which MPC-QP reaches when foresight is adequate. In the nominal load-bands and source-limit cases, MPC-QP removes the transient residual ($0$\,kW), whereas heuristic and myopic QP exhibit peaks of about \SIrange{91}{103}{\kilo\watt} linked to~\eqref{eq:dyn}. Relative to the heuristic, transient reduction is $100\,\%$ for MPC-QP and $\approx 94.9\,\%$ for Heur+FS (load bands / source limit). Heur+FS improves the step transient when the demand change is anticipable, but without multi-step optimization it typically does not match MPC-QP. This gain is the most relevant for AI data centers, because demand steps and contractual-limit saturation are recurring---not exceptional---operating events. Table~\ref{tab:metrics} complements with $E_{\mathrm{unserved}}$, final SOC and fallback on the two key scenarios.
+Table~\ref{tab:punserved} summarizes $P_{\mathrm{unserved}}^{\max}$ across all short scenarios and shows these two regimes: in load-variation regimes, the performance target is zero unserved power, and MPC-QP reaches it; in source-contingency regimes, the performance target is not zero, but the scenario-specific bound, which MPC-QP reaches when foresight is adequate. In the nominal load-bands and source-limit cases, MPC-QP removes the \emph{filtered} transient residual ($0$\,kW; raw V5 load-band peak $0.018$\,kW), whereas heuristic and myopic QP exhibit peaks of about \SIrange{91}{103}{\kilo\watt} linked to~\eqref{eq:dyn}. On multi-burst the myopic peak is $108.90$\,kW. Relative to the heuristic, transient reduction is $100\,\%$ for MPC-QP and $\approx 94.9\,\%$ for Heur+FS (load bands / source limit). Heur+FS improves the step transient when the demand change is anticipable, but without multi-step optimization it typically does not match MPC-QP. This gain is the most relevant for AI data centers, because demand steps and contractual-limit saturation are recurring---not exceptional---operating events. Table~\ref{tab:metrics} complements with $E_{\mathrm{unserved}}$, final SOC and fallback on the two key scenarios.
 
 Under contingencies (complementary study), heuristic and myopic QP reach $\approx\SI{593}{\kilo\watt}$, consistent with the first step from $P_{\mathrm{BESS}}\approx 0$ and $u=P_{\mathrm{BESS}}^{\max}$:
-\begin{equation}
-P_{\mathrm{BESS}}^{+}\approx b_b\cdot 400\approx\SI{157}{\kilo\watt}
-\Rightarrow
-P_{\mathrm{unserved}}\approx 750-157=\SI{593}{\kilo\watt}.
-\end{equation}
+\begin{align}
+P_{\mathrm{BESS}}^{+}
+&\approx b_b\cdot 400
+\approx\SI{157}{\kilo\watt},\\
+P_{\mathrm{unserved}}
+&\approx 750-157
+=\SI{593}{\kilo\watt}.
+\end{align}
 With anticipation, MPC-QP arrives at the outage already near \SI{400}{\kilo\watt}, reducing $P_{\mathrm{unserved}}^{\max}$ to the scenario-specific bound
 \begin{equation}
 P_{\mathrm{unserved}}^{\mathrm{floor}}=P_{\mathrm{load}}-P_{\mathrm{BESS}}^{\max}=\SI{350}{\kilo\watt}.
@@ -505,12 +518,30 @@ Table~\ref{tab:metrics} shows that MPC-QP does not win on peak alone: on load ba
 
 Fairness: raising the myopic $\Delta u_{\max}$ from 120 to 200 to $400$\,kW/s on the source-limit case yields $102.78$, $71.31$ and $\approx 0$\,kW. Horizon is therefore not necessary for a near-zero peak in that isolated knob test. The myopic penalty is $w_{\Delta u}(u-u_{\mathrm{prev}})^2/P_{\mathrm{base}}^2$ whereas V5 uses $w_{\Delta u}\|\Delta U\|^2$ \emph{without} that $P_{\mathrm{base}}$ division ($P_{\mathrm{base}}=950$\,kW, $w_{\Delta u}=50$ $\Rightarrow$ coefficient ratio on the order of $9\times 10^{5}$ in normal mode). Equal weight \emph{names} do not equalize costs; the closest horizon ablation is V5 with $N_c=N_p=1$, not the separate myopic controller. With $\Delta u_{\max}=400$\,kW/s, multi-burst and NVML still favor MPC. Isolated removal of the event inequality changes source-loss V5 only from $350.067$ to $350.129$\,kW---keep the constraint, but do not call it the main gain. Without future preview, V5 source-loss returns to $592.56$\,kW. When foresight of $g$ is off, the audited assembler still writes future source-available / nominal limit into the QP (a causal ``return-to-normal'' hypothesis, not persistence of the measured outage).
 
+Table~\ref{tab:ff} shows that FF+FB already drives the load-band filtered peak to zero (throughput $18.71$ vs.\ V5 $19.86$\,kWh; SOC$_f$ $59.11\%$ vs.\ $58.80\%$) and a source-loss peak of $355.95$\,kW versus V5 $350.07$\,kW (energy $14.59$ vs.\ $14.58$\,kWh). On this plant, multi-step QP is therefore \emph{not} uniquely necessary for the Group~A zeros; V5 still sits closer to the $350$\,kW physics bound on source loss.
+
+\begin{table}[!t]
+\centering
+\caption{FF+FB (B2, persistence: \texttt{B2\_ff\_0001}/\texttt{B2\_ff\_0003}) versus V5 (11~Sep: \texttt{j00004}/\texttt{j00014})}
+\label{tab:ff}
+{\footnotesize\setlength{\tabcolsep}{3pt}%
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Scenario & FF $P_{\mathrm{un}}^{\max}$ & V5 $P_{\mathrm{un}}^{\max}$ & FF SOC$_f$ & V5 SOC$_f$ \\
+ & [kW] & [kW] & [\%] & [\%] \\
+\midrule
+Load bands & $\approx 0$ & 0.018 & 59.11 & 58.80 \\
+Source loss & 355.95 & 350.07 & 57.52 & 57.10 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
 Fig.~\ref{fig:load_panels} shows the full comparison for the load-band scenario---the primary evidence of the contribution. MPC-QP anticipates demand steps, reducing $P_{\mathrm{unserved}}$ transients and coordinating $P_{\mathrm{BESS}}$ and SOC more effectively than strategies without a horizon.
 
 \begin{figure*}[!t]
 \centering
 \includegraphics[width=0.85\textwidth]{comp_carga_faixas_paineis.png}
-\caption{Load bands (primary evidence): heuristic, myopic QP and MPC-QP---load, source, BESS, SOC and unserved power.}
+\caption{Load bands, 11~September campaign (jobs \texttt{j00001}/\texttt{j00003}/\texttt{j00004}): heuristic, myopic QP and MPC-QP---load, source, BESS, SOC and unserved power.}
 \label{fig:load_panels}
 \end{figure*}
 
@@ -519,7 +550,7 @@ Fig.~\ref{fig:limit_zoom} reinforces the same point in the source-limit scenario
 \begin{figure*}[!t]
 \centering
 \includegraphics[width=0.85\textwidth]{comp_limite_fonte_zoom_degrau.png}
-\caption{Source limit: zoom on the $750\to 950$\,kW step. MPC-QP removes $P_{\mathrm{unserved}}$; myopic QP (102.78\,kW) exceeds the heuristic peak (90.98\,kW).}
+\caption{Source limit, 11~September campaign: zoom on the $750\to 950$\,kW step. MPC-QP removes $P_{\mathrm{unserved}}$; myopic QP (102.78\,kW) exceeds the heuristic peak (90.98\,kW).}
 \label{fig:limit_zoom}
 \end{figure*}
 
@@ -528,7 +559,7 @@ Fig.~\ref{fig:loss_zoom} illustrates source loss as complementary analysis (full
 \begin{figure*}[!t]
 \centering
 \includegraphics[width=0.85\textwidth]{comp_perda_fonte_zoom_falha.png}
-\caption{Source loss: zoom of $P_{\mathrm{BESS}}$ and unserved power at fault onset; MPC-QP pre-positions to the $\approx 350$\,kW floor.}
+\caption{Source loss, 11~September campaign: zoom of $P_{\mathrm{BESS}}$ and unserved power at fault onset; MPC-QP pre-positions to the $\approx 350$\,kW bound.}
 \label{fig:loss_zoom}
 \end{figure*}
 
@@ -539,12 +570,14 @@ To isolate the value of advance information, the source-loss scenario was repeat
 \centering
 \caption{MPC-QP under source loss: foresight ON vs OFF}
 \label{tab:foresight}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
 \begin{tabular}{@{}lccc@{}}
 \toprule
-Mode & $P_{\mathrm{unserved}}^{\max}$ [kW] & Unserved energy [kWh] & Final SOC [\%] \\
+Mode & $P_{\mathrm{un}}^{\max}$ [kW] & $E_{\mathrm{un}}$ [kWh] & SOC$_f$ [\%] \\
 \midrule
-Foresight ON & 350.08 & 14.58 & 57.31 \\
-Foresight OFF & 592.57 & 14.75 & 57.81 \\
+Foresight ON & 350.07 & 14.58 & 57.10 \\
+Foresight OFF & 592.56 & 14.75 & 57.79 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -554,11 +587,11 @@ Three observations stand out. First, without foresight the peak collapses to the
 In practice, foresight may come from protection alarms, switching signals, HPC/AI load forecasts or operational schedules---that is, detectable or schedulable events. Without such a signal the controller remains valid, yet behaves as a computationally expensive reactive optimizer. The method does not claim universal robustness to completely random outages.
 
 \subsection{Sensitivity}
-Table~\ref{tab:nprep} varies $N_{\mathrm{prep}}\in\{0,10,30,45\}$ with foresight ON. In all cases, $P_{\mathrm{unserved}}^{\max}$ stays near the floor ($\approx\SI{350}{\kilo\watt}$--\SI{350.4}{\kilo\watt}) and unserved energy remains $\approx\SI{14.58}{\kilo\watt\hour}$. In particular, $N_{\mathrm{prep}}=0$ already reaches $\approx\SI{350.27}{\kilo\watt}$: primary foresight comes from the horizon $N_p$ and the future event constraint~\eqref{eq:event}; $N_{\mathrm{prep}}$ only shapes the pre-event ramp/tracking. Once the event enters $N_p$ and the constraint is active at the outage instant, temporal coupling in the dynamic model induces pre-actuation: the optimizer raises $u$ beforehand to respect first-order dynamics. Thus $N_{\mathrm{prep}}$ is not the key foresight mechanism in this case.
+Table~\ref{tab:nprep} varies $N_{\mathrm{prep}}\in\{0,10,30,45\}$ with foresight ON. In all cases, $P_{\mathrm{unserved}}^{\max}$ stays near the bound ($\approx\SI{350}{\kilo\watt}$--\SI{350.4}{\kilo\watt}) and unserved energy remains $\approx\SI{14.58}{\kilo\watt\hour}$. The $N_{\mathrm{prep}}=30$ peak $350.08$\,kW in that historical table is \emph{not} the 11~September V5 KPI ($350.07$\,kW in Table~\ref{tab:punserved}). In particular, $N_{\mathrm{prep}}=0$ already reaches $\approx\SI{350.27}{\kilo\watt}$: primary foresight comes from the horizon $N_p$ and the future event constraint~\eqref{eq:event}; $N_{\mathrm{prep}}$ only shapes the pre-event ramp/tracking. Once the event enters $N_p$ and the constraint is active at the outage instant, temporal coupling in the dynamic model induces pre-actuation: the optimizer raises $u$ beforehand to respect first-order dynamics. Thus $N_{\mathrm{prep}}$ is not the key foresight mechanism in this case.
 
 \begin{table}[!t]
 \centering
-\caption{Sensitivity to $N_{\mathrm{prep}}$ (source loss, foresight ON)}
+\caption{Sensitivity to $N_{\mathrm{prep}}$ (source loss, foresight ON; \emph{historical} campaign, not re-extracted from the 11~September consolidation)}
 \label{tab:nprep}
 \begin{tabular}{@{}rccc@{}}
 \toprule
@@ -572,26 +605,26 @@ $N_{\mathrm{prep}}$ & $P_{\mathrm{unserved}}^{\max}$ [kW] & Unserved energy [kWh
 \end{tabular}
 \end{table}
 
-The converter time constant (Table~\ref{tab:tau}) keeps $P_{\mathrm{unserved}}^{\max}$ at the scenario-specific bound for $\tau_b\in\{1,2,4\}$\,s in this campaign ($350.02$--$350.08$\,kW). Residual fallback remains low (up to $\approx 2.6\,\%$ for $\tau_b=\SI{1}{\second}$ and $\SI{2}{\second}$; $<0.1\,\%$ for $\tau_b=\SI{4}{\second}$). Ranking among the five controllers is preserved under this first-order $\tau_b$ sweep; that does \emph{not} validate LCL/PLL/UPS dynamics.
+The converter time constant (Table~\ref{tab:tau}) keeps $P_{\mathrm{unserved}}^{\max}$ at the scenario-specific bound for $\tau_b\in\{1,2,4\}$\,s in the 11~September jobs ($350.00$--$350.07$\,kW). Residual fallback is $2.00\%$ ($\tau_b=\SI{1}{\second}$), $1.58\%$ ($\tau_b=\SI{2}{\second}$) and $0.08\%$ ($\tau_b=\SI{4}{\second}$). Ranking among the 11~September controllers is preserved under this first-order $\tau_b$ sweep; that does \emph{not} validate LCL/PLL/UPS dynamics.
 
 \begin{table}[!t]
 \centering
-\caption{Sensitivity to $\tau_b$ (source loss, foresight ON)}
+\caption{Sensitivity to $\tau_b$ (source loss, foresight ON; 11~September jobs)}
 \label{tab:tau}
-\begin{tabular}{@{}rcccc@{}}
+\begin{tabular}{@{}rccc@{}}
 \toprule
-$\tau_b$ [s] & $P_{\mathrm{unserved}}^{\max}$ & Energy & FB & Mean $t_{\mathrm{QP}}$ \\
- & [kW] & [kWh] & [\%] & [s] \\
+$\tau_b$ [s] & $P_{\mathrm{unserved}}^{\max}$ & Energy & FB \\
+ & [kW] & [kWh] & [\%] \\
 \midrule
-1 & 350.03 & 14.58 & 2.58 & 0.045 \\
-2 & 350.08 & 14.58 & 2.33 & 0.042 \\
-4 & 350.02 & 14.58 & 0.08 & 0.044 \\
+1 & 350.00 & 14.58 & 2.00 \\
+2 & 350.07 & 14.58 & 1.58 \\
+4 & 350.02 & 14.58 & 0.08 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \subsection{Prolonged critical outage}
-Under an approximately \SI{2}{\hour} outage at constant \SI{750}{\kilo\watt} (outage window $[600,7800)$\,s, $T_f=\SI{9600}{\second}$), heuristic and MPC-QP were compared (Table~\ref{tab:outage}). Both reach $\mathrm{SOC}_{\min}=\SI{20}{\percent}$. After useful BESS depletion, $P_{\mathrm{unserved}}^{\max}=\SI{750}{\kilo\watt}$. Unserved energy is $1309.95$\,kWh (heuristic) vs.\ $1312.33$\,kWh (V5): MPC leaves $\approx 2.38$\,kWh \emph{more} unserved. Time with unmet power equals the $7200$\,s outage because the $400$\,kW rating is below the load. Final SOC $\approx 24.75\%$ / $24.73\%$ is \emph{after} restoration and recharge, not the SOC at $\mathrm{SOC}_{\min}$; pre-event SOC is $60\%$ / $59.50\%$. A $7200$\,s ``recovery'' column is the outage duration until the source returns, not autonomous BESS restoration. Closed-loop generator coordination is not simulated.
+Under an approximately \SI{2}{\hour} outage at constant \SI{750}{\kilo\watt} (outage window $[600,7800)$\,s, $T_f=\SI{9600}{\second}$), heuristic and MPC-QP were compared (Table~\ref{tab:outage}). Both reach $\mathrm{SOC}_{\min}=\SI{20}{\percent}$. After useful BESS depletion, $P_{\mathrm{unserved}}^{\max}=\SI{750}{\kilo\watt}$. Unserved energy is $1309.95$\,kWh (heuristic) vs.\ $1312.33$\,kWh (V5): MPC leaves $\approx 2.38$\,kWh \emph{more} unserved. Time with unmet power equals the $7200$\,s outage because the $400$\,kW rating is below the load. Final SOC $\approx 24.75\%$ / $24.73\%$ is \emph{after} restoration and recharge, not the SOC at $\mathrm{SOC}_{\min}$; pre-event SOC is $60\%$ / $59.50\%$. A $7200$\,s ``recovery'' column is the outage duration until the source returns, not autonomous BESS restoration. Closed-loop generator coordination is not simulated. A later exogenous $400$\,kW injection (package B6; not coordinated dispatch) reduced unserved energy to $513.31$\,kWh (heuristic) versus $538.52$\,kWh (V5): MPC is not automatically better when a genset is an open-loop add-on.
 
 \begin{table}[!t]
 \centering
@@ -616,31 +649,54 @@ E_{\mathrm{useful}}\approx\frac{60-20}{100}\,E_{\mathrm{bat}}\,\eta_{\mathrm{d}}
 \end{equation}
 Even with continuous discharge at \SI{400}{\kilo\watt}, this reserve covers only tens of minutes of partial support; the minimum instantaneous deficit during full BESS support remains \SI{350}{\kilo\watt}. Thus MPC-QP improves the initial contingency transient (when foresight is adequate), but \emph{cannot create missing energy}: the controller does not invent power or energy beyond the installed BESS rating and stored charge~\cite{zhao2023bess,aghmadi2024ess,zhang2024reliability}. In long outages, performance is dominated by nominal BESS power, available energy and backup sizing; resilience then requires a generator, a second feeder, or a larger energy reservoir rather than a more sophisticated EMS alone. The EMS role in this regime is disciplined reserve management down to $\mathrm{SOC}_{\min}$, avoiding premature depletion and respecting power limits---an objective both controllers meet similarly in the prolonged-outage simulation.
 
-\subsection{Computational aspects}
-From the campaign CSV of the main comparison (MATLAB R2025b, Windows PC, Intel Core i7-4510U, \texttt{quadprog}/\texttt{interior-point-convex}), Table~\ref{tab:tqp} summarizes mean/max MPC-QP solve times and fallback by scenario. Wall-clock simulation time is larger because it includes plant updates and logging, not only the QP. The reported solve times therefore \emph{do not} demonstrate strict real-time operation at $T_s=\SI{1}{\second}$ on this conventional PC: occasional solves approach a non-negligible fraction of the sampling period, and deployment must budget computational headroom. Cycle time (assembly$+$QP$+$logging) must be reported separately from $t_{\mathrm{QP}}$. On the main V5 load-band job, cycle p50/p95/max $\approx 0.022/0.031/0.242$\,s with Hessian condition $\approx 3.3\times 10^{5}$. Deterministic V5 recorded no $T_s$ overruns in the principal short cases; the stochastic competitor recorded three first-sample overruns in its campaign and those are not hidden. The DE2-115 timings are in Section~\ref{sec:embedded}; they are not interchangeable with the i7 numbers. Warm-start speed-up is not claimed.
+\subsection{Second-event limit test (later package)}
+\label{sec:second}
+Package B6 (not the 11~September consolidation; $\mathrm{SOC}_0=30\%$, outages $[500,650)$ and $[900,1050)$\,s) is a limit test, not a new official campaign. Table~\ref{tab:second} shows V5 remaining near the $350$\,kW bound ($350.18$\,kW, $4.83\%$ fallback) while the three-scenario competitor hits $750$\,kW, $\mathrm{SOC}_{\min}=20\%$ and $40.01$\,kWh unserved. FF+FB stays at $355.95$\,kW. Sharing $\Delta U$ across scenarios is conservative in Group~A; it is not a guarantee on a depleted second event.
 
 \begin{table}[!t]
 \centering
-\caption{MPC-QP solve times and fallback (main campaign)}
+\caption{Second-event limit test (package B6; $\mathrm{SOC}_0=30\%$, two $150$\,s outages)}
+\label{tab:second}
+{\footnotesize\setlength{\tabcolsep}{2.6pt}%
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Control & $P_{\mathrm{un}}^{\max}$ & $E_{\mathrm{un}}$ & SOC$_f$ & FB \\
+ & [kW] & [kWh] & [\%] & [\%] \\
+\midrule
+Heuristic & 622.94 & 29.55 & 25.36 & 0 \\
+Heur+FS & 362.47 & 29.18 & 24.41 & 0 \\
+MPC-QP V5 & 350.18 & 29.17 & 23.71 & 4.83 \\
+Stoch.\ 3-sc. & 750.00 & 40.01 & 20.00 & 1.33 \\
+FF+FB & 355.95 & 29.18 & 24.20 & 0 \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\subsection{Computational aspects}
+From the 11~September CSV of the main comparison (MATLAB R2025b, Windows PC, Intel Core i7-4510U, \texttt{quadprog}/\texttt{interior-point-convex}), Table~\ref{tab:tqp} reports \emph{median} and \emph{max} $t_{\mathrm{QP}}$ (\texttt{qp\_p50}/\texttt{qp\_max}), not a mixed-campaign mean. Wall-clock simulation time is larger because it includes plant updates and logging, not only the QP. The reported solve times therefore \emph{do not} demonstrate strict real-time operation at $T_s=\SI{1}{\second}$ on this conventional PC: occasional solves approach a non-negligible fraction of the sampling period, and deployment must budget computational headroom. Cycle time (assembly$+$QP$+$logging) must be reported separately from $t_{\mathrm{QP}}$. On the main V5 load-band job, cycle p50/p95/max $\approx 0.022/0.031/0.242$\,s with Hessian condition $\approx 3.3\times 10^{5}$; QP max on that job is $0.089$\,s, not $0.322$\,s. Deterministic V5 recorded no $T_s$ overruns in the principal short cases; the stochastic competitor recorded three first-sample overruns in its campaign and those are not hidden. The DE2-115 timings are in Section~\ref{sec:embedded}; they are not interchangeable with the i7 numbers. Warm-start speed-up is not claimed.
+
+\begin{table}[!t]
+\centering
+\caption{MPC-QP $t_{\mathrm{QP}}$ median/max and fallback (11~September CSV)}
 \label{tab:tqp}
 \begin{tabular}{@{}lccc@{}}
 \toprule
-Scenario & Mean $t_{\mathrm{QP}}$ [s] & Max $t_{\mathrm{QP}}$ [s] & FB [\%] \\
+Scenario & Med.\ $t_{\mathrm{QP}}$ [s] & Max $t_{\mathrm{QP}}$ [s] & FB [\%] \\
 \midrule
-Load bands & 0.037 & 0.322 & 0 \\
-Source limit & 0.046 & 0.131 & 0 \\
-Source loss & 0.044 & 0.192 & 2.33 \\
-Multi-burst & 0.041 & 0.228 & 0 \\
+Load bands & 0.017 & 0.089 & 0 \\
+Source limit & 0.024 & 0.041 & 0 \\
+Source loss & 0.020 & 0.046 & 1.58 \\
+Multi-burst & 0.019 & 0.031 & 0 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \subsection{Forecast error, Monte Carlo, and limitations}
-Under perfect foresight, MPC-QP reaches the case-study bound on source loss ($\approx\SI{350.07}{\kilo\watt}$). Magnitude errors of $\pm 10\%$ and $\pm 20\%$ in the predicted load (Table~\ref{tab:err_mag}) were \emph{tolerable}: the peak remains at that bound ($\approx\SI{350}{\kilo\watt}$). Timing shift of the predicted outage (Table~\ref{tab:err_time}) is the more sensitive axis, but the historical $\approx\SI{699}{\kilo\watt}$ at $-10$\,s is \emph{not} reproduced by the audited protocol. In the 11~September campaign the deterministic V5 peak at $-10$\,s is $350.00$\,kW---the same bound as the unshifted case---because the current sample remains measured while only the future forecast is shifted. None of the 41 grid points on $[-20,+20]$\,s makes V5 worse than the heuristic $592.61$\,kW. A $+10$\,s delay yields $355.57$\,kW; $+20$\,s yields $511.76$\,kW. For the descriptive criterion $P_{\mathrm{unserved}}^{\max}\le 351$\,kW, V5 passes on $[-20,+4]$\,s; that window is not a pre-registered requirement. An $N_{\mathrm{arm}}{=}8$ confirmation gate did \emph{not} improve the ${+}10$\,s Phase-1 re-run ($628$ vs.\ $363$\,kW ungated) and is not presented as a mitigation. The $699$\,kW figure belongs to a previous campaign/protocol; the difference is not attributed to the stochastic competitor, which the deterministic V5 does not use.
+Under perfect foresight, MPC-QP reaches the case-study bound on source loss ($\approx\SI{350.07}{\kilo\watt}$). Magnitude errors of $\pm 10\%$ and $\pm 20\%$ in the predicted load (Table~\ref{tab:err_mag}) were \emph{tolerable}: the peak remains near that bound ($350.03$--$350.63$\,kW). The $+20\%$ case spends more reserve (SOC$_f=49.03\%$ vs.\ $57.10\%$ at zero error). Timing shift of the predicted outage (Table~\ref{tab:err_time}) is the more sensitive axis, but the historical $\approx\SI{699}{\kilo\watt}$ at $-10$\,s is \emph{not} reproduced by the audited protocol. In the 11~September campaign the deterministic V5 peak at $-10$\,s is $350.00$\,kW---the same bound as the unshifted case---because the current sample remains measured while only the future forecast is shifted. None of the 41 grid points on $[-20,+20]$\,s makes V5 worse than the heuristic $592.61$\,kW. A $+10$\,s delay yields $355.57$\,kW; $+20$\,s yields $511.76$\,kW. For the descriptive criterion $P_{\mathrm{unserved}}^{\max}\le 351$\,kW, V5 passes on $[-20,+4]$\,s; that window is not a pre-registered requirement. An $N_{\mathrm{arm}}{=}8$ confirmation gate did \emph{not} improve the ${+}10$\,s Phase-1 re-run ($628$ vs.\ $363$\,kW ungated) and is not presented as a mitigation. That Phase-1 pair is not the 11~September ${+}10$\,s value $355.57$\,kW in Table~\ref{tab:err_time}. The $699$\,kW figure belongs to a previous campaign/protocol; the difference is not attributed to the stochastic competitor, which the deterministic V5 does not use.
 
 Monte Carlo ($n{=}200$ paired forecast errors on one physical loss): V5 mean/p95/max peaks $359.05/384.82/580.32$\,kW; stochastic $350.01/350.03/350.67$\,kW. Stochastic reduces the peak in 188 pairs, ties 12, and never worsens it beyond \SI{0.001}{\kilo\watt}. Mean difference stochastic$-$V5 $= -9.04$\,kW (bootstrap 95\% CI $[-14.02,-4.79]$); median difference only $-0.16$\,kW---the gain sits in the tail. Mean final SOC $55.00\%$ (V5) vs.\ $48.67\%$ (stochastic) in all 200 pairs. Zero peaks worse than the heuristic in 200 draws is not risk zero: the two-sided 95\% binomial upper bound on that rate is $1.83\%$, conditional on the assumed error law. Drawn delays spanned about $-14$ to $+16$\,s, not the full $\pm 20$\,s clip. False alarm (stochastic): SOC $49.42\%$ vs.\ heuristic $60\%$, both without deficit. Unannounced loss: V5 $\approx 592.56$\,kW. Detection delay: V5 $\approx 749.91$\,kW. Do not confuse forecast with detection.
 
-Overall limitations are consolidated as follows. The study uses an aggregated electrical plant without EMT, inner converter loops, DC-link, transfer switch or electrochemical ageing; $\tau_b$ and $\eta$ were not identified on a field battery. Throughput/EFC are utilization proxies, not lifetime. Public traces are mapped into the case-study band; they are not a private feeder campaign. FIL via HDL Verifier was not the implementation path (the DUT is C on Nios, not generated HDL). UART HIL of the heuristic is complete on four scenarios; UART HIL of ADMM was demonstrated in closed loop until the time-limited Nios IP expired and is not a 1200-step KPI table. The stochastic policy is not ported to the FPGA.
+Overall limitations are consolidated as follows. The study uses an aggregated electrical plant without EMT, inner converter loops, DC-link, transfer switch or electrochemical ageing; $\tau_b$ and $\eta$ were not identified on a field battery. Throughput/EFC are utilization proxies, not lifetime. Public traces are mapped into the case-study band; they are not a private feeder campaign. FIL via HDL Verifier was not the implementation path (the DUT is C on Nios, not generated HDL). UART HIL of the heuristic is complete on four scenarios; firmware reports $t_{\mathrm{us}}=0$ for that law, so the overrun column is not a cycle WCET. UART HIL of ADMM was demonstrated in closed loop until the time-limited Nios IP expired and is not a 1200-step KPI table. SIL with \texttt{backend=matlab\_fpga} is MATLAB/\texttt{quadprog} at $N_p{=}12$, not ADMM~C. The stochastic policy is not ported to the FPGA. Prep/reversal/ageing fields in later packages are not used as paper KPIs.
 
 \begin{table}[!t]
 \centering
@@ -650,11 +706,11 @@ Overall limitations are consolidated as follows. The study uses an aggregated el
 \toprule
 Error [\%] & $P_{\mathrm{unserved}}^{\max}$ [kW] & Energy [kWh] & FB [\%] \\
 \midrule
-0 & 350.08 & 14.58 & 2.33 \\
-$-10$ & 350.13 & 14.86 & 2.00 \\
-$+10$ & 350.17 & 14.58 & 2.83 \\
-$-20$ & 350.07 & 15.18 & 1.00 \\
-$+20$ & 350.09 & 14.58 & 2.58 \\
+0 & 350.07 & 14.58 & 1.58 \\
+$-10$ & 350.18 & 14.59 & 1.33 \\
+$+10$ & 350.63 & 14.58 & 2.17 \\
+$-20$ & 350.03 & 14.59 & 0.33 \\
+$+20$ & 350.28 & 14.58 & 2.75 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -668,7 +724,7 @@ $+20$ & 350.09 & 14.58 & 2.58 \\
 Shift [s] & $P_{\mathrm{unserved}}^{\max}$ [kW] & Energy [kWh] & FB [\%] \\
 \midrule
 $-10$ & 350.00 & 14.58 & 1.83 \\
-0 & 350.08 & 14.58 & 2.33 \\
+0 & 350.07 & 14.58 & 1.58 \\
 $+10$ & 355.57 & 14.59 & 1.92 \\
 $+20$ & 511.76 & 14.70 & 1.33 \\
 \bottomrule
@@ -676,50 +732,50 @@ $+20$ & 511.76 & 14.70 & 1.33 \\
 \end{table}
 
 \subsection{Consolidated discussion}
-Taken together, the campaign shows that the MPC-QP gain comes from the \emph{combination} of foresight and multi-step constrained optimization against converter dynamics---not from QP alone and not from foresight alone. The myopic QP does not pre-position the BESS: without a future step in the horizon it remains reactive under $\Delta u$ limits and ramp/SOC penalties, and can therefore perform \emph{worse} than the heuristic on the load step (102.78 vs.\ 90.98\,kW). Heur+FS captures part of the foresight benefit on isolated anticipable events, but does not resolve multi-event trade-offs well (multi-burst peak $60.65$\,kW vs.\ $0$\,kW for MPC-QP). The results support four messages:
+Taken together, the 11~September campaign shows that V5 combines foresight with multi-step constrained optimization against converter dynamics---not QP alone and not Heur+FS alone. The later FF+FB package shows that a non-QP law with the same forecasts already obtains the Group~A zeros, so that combination is sufficient but not uniquely necessary on this plant. The myopic QP does not pre-position the BESS: without a future step in the horizon it remains reactive under $\Delta u$ limits and ramp/SOC penalties, and can therefore perform \emph{worse} than the heuristic on the load step (102.78 vs.\ 90.98\,kW). Heur+FS captures part of the foresight benefit on isolated anticipable events, but does not resolve multi-event trade-offs well (multi-burst peak $60.65$\,kW vs.\ $0$\,kW for MPC-QP). The results support four messages:
 \begin{enumerate}
-\item under demand steps and source-limit saturation, MPC-QP drives filtered $P_{\mathrm{unserved}}$ below the reporting threshold in the nominal cases and outperforms heuristic and myopic QP;
-\item the decisive mechanism is horizon-$N_p$ anticipation with multi-step optimization; Heur+FS is only a partial surrogate, and $N_{\mathrm{prep}}$ mainly shapes preparation;
-\item under grid contingencies, MPC-QP mitigates the peak down to the scenario-specific bound $P_{\mathrm{load}}-P_{\mathrm{BESS}}^{\max}$ when foresight is adequate and well timed, but cannot overcome storage power/energy limits nor random outages without a cue;
+\item under demand steps and source-limit saturation, both V5 and FF+FB drive filtered $P_{\mathrm{unserved}}$ below the reporting threshold; heuristic and myopic QP do not;
+\item horizon-$N_p$ anticipation with multi-step optimization explains V5 versus Heur+FS and versus myopic QP; it does not imply that no simpler forecast-using law can match Group~A zeros;
+\item under grid contingencies, V5 mitigates the peak down to the scenario-specific bound $P_{\mathrm{load}}-P_{\mathrm{BESS}}^{\max}$ when foresight is adequate and well timed, but cannot overcome storage power/energy limits nor random outages without a cue; the stochastic competitor fails a depleted second-event test;
 \item in long outages, autonomy is dominated by energy sizing and backup supply; EMS value concentrates on reserve management and normal variable-load operation.
 \end{enumerate}
 
 \section{Embedded Validation: SIL and UART HIL}
 \label{sec:embedded}
 
-Nomenclature is frozen as follows. \emph{SIL} is the FPGA-ready formulation ($N_p{=}12$, $N_c{=}4$) and the same ASCII UART protocol, with the plant in MATLAB (\texttt{backend=matlab\_fpga}). \emph{UART HIL} is the Nios firmware on a Terasic DE2-115 (Cyclone~IV~E EP4CE115F29C7, Quartus Prime Lite 20.1.1, 50\,MHz, 256\,kB on-chip), plant in MATLAB over RS-232 115200\,8N1. \emph{FIL} would be HDL Verifier over Ethernet; it was not implemented because the controller is C/ADMM on Nios, not an HDL DUT.
+Nomenclature is frozen as follows. \emph{SIL} using the MATLAB FPGA backend (\texttt{matlab\_fpga}) is a reduced-horizon MATLAB copy ($N_p{=}12$, $N_c{=}4$) of the V5 maps, still solved by \texttt{quadprog} on the PC. It shares the HIL \emph{loop} (plant, metrics, ASCII record layout) but calls the controller in-process: it does \emph{not} transmit or parse UART lines and therefore does not validate the serial protocol. It is \emph{not} ADMM~C and is \emph{not} a board execution of the QP. \emph{UART HIL} is the Nios firmware on a Terasic DE2-115 (Cyclone~IV~E, 50\,MHz, 256\,kB on-chip; Quartus Prime Lite 20.1.1). The FPGA device is EP4CE115F29C7. The plant runs in MATLAB over RS-232 115200\,8N1. That serial path is the protocol evidence. \emph{FIL} would be HDL Verifier over Ethernet; it was not implemented because the controller is C/ADMM on Nios, not an HDL DUT.
 
-Table~\ref{tab:sil} compares heuristic and SIL-MPC against golden V5. SIL-MPC matches V5 on Group~A (0 vs.\ 0 filtered) and sits $\approx\SI{1}{\kilo\watt}$ above the 350\,kW floor on source loss ($351.17$ vs.\ $350.08$\,kW). Mean SIL $t_{\mathrm{QP}}$ is $7$--$11$\,ms; the first load-band solve reached $0.517$\,s on the PC (not the FPGA).
+Table~\ref{tab:sil} compares heuristic and SIL-MPC against golden V5. SIL-MPC matches V5 on Group~A (filtered 0 vs.\ 0; raw V5 $0.018$\,kW on load bands, $\approx 0$ on the source-limit case) and sits $\approx\SI{1}{\kilo\watt}$ above the 350\,kW bound on source loss ($351.17$ vs.\ $350.07$\,kW). Mean SIL $t_{\mathrm{QP}}$ of $7$--$11$\,ms is MATLAB/\texttt{quadprog} on the PC, not Nios ADMM; the first load-band solve reached $0.517$\,s on the PC (not the FPGA).
 
 \begin{table}[!t]
 \centering
-\caption{SIL FPGA-ready vs.\ golden V5 ($P_{\mathrm{unserved}}^{\max}$ [kW])}
+\caption{SIL MATLAB/\texttt{quadprog} $N_p{=}12$ vs.\ golden V5 ($P_{\mathrm{unserved}}^{\max}$ [kW]; not ADMM~C; V5 from the 11~September campaign)}
 \label{tab:sil}
 {\footnotesize
 \begin{tabular}{@{}lccc@{}}
 \toprule
 Scenario & Heur. & SIL MPC ($12/4$) & V5 ($60/15$) \\
 \midrule
-Load bands & 90.98 & 0.00 & 0.00 \\
-Source limit & 90.98 & 0.00 & 0.00 \\
-Source loss & 592.61 & 351.17 & 350.08 \\
-Source return & 592.61 & 351.17 & 350.05 \\
+Load bands & 90.98 & 0.00 & 0.018 \\
+Source limit & 90.98 & 0.00 & $\approx 0$ \\
+Source loss & 592.61 & 351.17 & 350.07 \\
+Source return & 592.61 & 351.17 & 350.09 \\
 \bottomrule
 \end{tabular}}
 \end{table}
 
-UART HIL of the \emph{heuristic} on COM4 reproduced SIL to all reported digits on the four short scenarios ($P_{\mathrm{un}}^{\max}=90.98$ or $592.61$\,kW; wall $\approx 57$\,s; 0 fallback). That is closed-loop evidence for the protocol and the reactive law on the board. The ADMM firmware was linked into 256\,kB (228\,kB image, 26\,kB stack) by overlaying $H$/$K$ and dropping \texttt{printf}. Closed-loop ADMM UART executed (tens of \texttt{RSP} frames) until (i)~OpenCore Plus halted the time-limited Nios IP after $\approx\SI{1}{\hour}$, and (ii)~each QP exceeded $T_s$ by a large margin in software double on the Nios. A MATLAB row labelled \texttt{serial/mpc} with $P_{\mathrm{un}}^{\max}=90.98$ and $57$\,s wall was a switch-capture error (heuristic still selected) and is discarded. No FIL result is claimed. Cycle-time percentiles of ADMM \emph{on the FPGA} for 1200 steps are therefore not a paper table; the honest statement is that this Lite platform is adequate for the heuristic at $T_s=\SI{1}{\second}$ and for demonstrating ADMM execution, not for a 1\,s ADMM EMS.
+UART HIL of the \emph{heuristic} on COM4 reproduced SIL to all reported digits on the four short scenarios ($P_{\mathrm{un}}^{\max}=90.98$ or $592.61$\,kW; wall $\approx 57$\,s; 0 fallback). Firmware writes $t_{\mathrm{us}}=0$ for that law, so the overrun column is not a measured cycle WCET. The four runs completed without a recorded protocol timeout; wall $\approx 57$\,s for 1200 steps is \emph{not} a proof that every cycle met $T_s=\SI{1}{\second}$. That is closed-loop evidence for the protocol and the reactive law on the board, not a WCET certificate. The ADMM firmware was linked into 256\,kB (228\,kB image, 26\,kB stack) by overlaying $H$/$K$ and dropping \texttt{printf}. Closed-loop ADMM UART executed (tens of \texttt{RSP} frames) until (i)~OpenCore Plus halted the time-limited Nios IP after $\approx\SI{1}{\hour}$, and (ii)~each QP exceeded $T_s$ by a large margin in software double on the Nios. A MATLAB row labelled \texttt{serial/mpc} with $P_{\mathrm{un}}^{\max}=90.98$ and $57$\,s wall was a switch-capture error (heuristic still selected) and is discarded. No FIL result is claimed. Cycle-time percentiles of ADMM \emph{on the FPGA} for 1200 steps are therefore not a paper table; this Lite platform demonstrated heuristic UART HIL and ADMM execution, not a 1\,s ADMM EMS and not a measured heuristic WCET.
 
 \section{Data Availability}
 \label{sec:data}
 
-Campaign CSVs, job fingerprints, the FPGA-ready C sources, Qsys Tcl, the UART protocol, and the SIL/HIL logs used above are available at \url{https://github.com/raonialderete-eng/ems-mpc-datacenter} and archived at \url{https://doi.org/10.5281/zenodo.22835283}. The $\approx 1$\,GB raw DIPLOEE/NVML drop is not redistributed; the derived 1200\,s traces and \texttt{manifest.json} hashes are. MATLAB R2025b and Optimization Toolbox reproduce the desktop campaign; DE2-115 $+$ Quartus 20.1 are required only for UART HIL. SIL must not be cited as a MW installation test.
+Campaign CSVs, job fingerprints, the Nios C/ADMM sources, Qsys Tcl, the UART protocol, and the SIL/HIL logs of the 11~September campaign are mirrored in the GitHub repository \url{https://github.com/raonialderete-eng/ems-mpc-datacenter} (private until acceptance; tag \texttt{v1.0.3-ieee-access-rev}) and at the version DOI \url{https://doi.org/10.5281/zenodo.22837544} (snapshot minted from \texttt{v1.0.2-ieee-access-rev}; a matching deposit of tag \texttt{v1.0.3} is pending). The presently minted Zenodo zip does \emph{not} contain the input MATs required by \texttt{caso\_auditado.m}, nor the A1/B2--B6 source trees and results cited for FF+FB and the second-event test; those remain local pending a matching deposit. A MATLAB row labelled \texttt{serial/mpc} at $90.98$\,kW / $57$\,s wall was a switch-capture error and is not in the HIL CSV. The $\approx 1$\,GB raw DIPLOEE/NVML drop is not redistributed; reconstruction of mapped windows from that drop is an external dependency. MATLAB R2025b and Optimization Toolbox reproduce the desktop campaign; DE2-115 $+$ Quartus 20.1 are required only for UART HIL. SIL must not be cited as a MW installation test, as FPGA ADMM, or as UART-protocol validation.
 
 \section{Conclusion}
 \label{sec:conclusion}
-This paper presented an applied, comparative MPC-QP EMS for AI/HPC data-center energy management with BESS/UPS, together with a reproducible protocol that isolates forecast versus multi-step optimization and reports a fifth, three-scenario stochastic competitor. In nominal load-variation scenarios, deterministic MPC-QP drives filtered unserved-power peaks below \SI{1}{\kilo\watt}, while heuristic and myopic QP remain in the \SIrange{91}{109}{\kilo\watt} range; Heur+FS is intermediate on isolated steps and weaker on multi-burst. Under contingencies, MPC-QP reduces the initial transient to the case-study bound ($\approx\SI{350}{\kilo\watt}$ at \SI{750}{\kilo\watt} load) when foresight timing is adequate---about $40.9\%$ peak cut and $1.16\%$ energy cut versus the heuristic, not elimination of the outage deficit. Magnitude forecast errors within $\pm 20\%$ preserve that bound. In the audited timing grid a \SI{10}{\second} early shift remains on the bound; a \SI{20}{\second} late shift raises the peak to $\approx\SI{512}{\kilo\watt}$ while still beating the heuristic. Stochastic MPC compresses the Monte Carlo tail at a systematic SOC cost. SIL of the $N_p{=}12$ ADMM copy tracks V5; UART HIL on DE2-115 closes the heuristic. ADMM on Nios is demonstrated, not timed as a 1\,s product on Cyclone~IV Lite. Battery ageing and replacement cost are out of scope: $N_{\mathrm{EFC}}$ is a utilization proxy only.
+This paper presented an applied, comparative EMS for AI/HPC data-center energy management with BESS/UPS, together with a reproducible protocol that isolates forecast versus multi-step optimization. The 11~September campaign reports heuristic, Heur+FS, myopic QP, V5 and a three-scenario stochastic competitor that shares the whole $\Delta U$; a later FF+FB package is labelled separately. In nominal load-variation scenarios, both V5 and FF+FB drive filtered unserved-power peaks below \SI{1}{\kilo\watt}, while heuristic and myopic QP remain in the \SIrange{91}{103}{\kilo\watt} range on load bands and source limit (myopic multi-burst $108.90$\,kW); Heur+FS is intermediate on isolated steps and weaker on multi-burst. Under contingencies, V5 reduces the initial transient to the case-study bound ($\approx\SI{350}{\kilo\watt}$ at \SI{750}{\kilo\watt} load) when foresight timing is adequate---about $40.9\%$ peak cut and $1.16\%$ energy cut versus the heuristic, not elimination of the outage deficit. FF+FB reaches $355.95$\,kW on the same source-loss case. Magnitude forecast errors within $\pm 20\%$ preserve that bound. In the audited timing grid a \SI{10}{\second} early shift remains on the bound; a \SI{20}{\second} late shift raises the peak to $\approx\SI{512}{\kilo\watt}$ while still beating the heuristic. Stochastic MPC compresses the Monte Carlo tail at a systematic SOC cost, and fails a depleted second-event limit test ($750$\,kW). SIL using the MATLAB FPGA backend is MATLAB/\texttt{quadprog} at $N_p{=}12$, not ADMM~C and not UART. UART HIL on DE2-115 closed the heuristic on four short runs without a recorded timeout; firmware $t_{\mathrm{us}}=0$, so cycle WCET is not measured. ADMM on Nios is demonstrated, not timed as a 1\,s product on Cyclone~IV Lite. Battery ageing and replacement cost are out of scope of this load-continuity comparison: $N_{\mathrm{EFC}}$ tracks throughput and is not a lifetime or replacement-cost model; the later \texttt{aging\_proxy} field is a multiple of the same throughput and is not used as a KPI.
 
-The main message is fourfold. First, MPC improves predictive BESS coordination on an aggregated plant under AI-typical steps. Second, under source contingencies the benefit is bounded by installed power/energy and by forecast timing. Third, the method does not replace generators, a second feeder, or larger storage, nor does it validate UPS inner loops. Fourth, embedded evidence supports the controller-on-the-same-model claim, not a facility HIL and not FIL. Converter, SOC and efficiency parameters were not identified on a field battery; measurement noise is not injected. Code and CSVs will be archived as stated in Section~\ref{sec:data}.
+The main message is fourfold. First, predictive BESS coordination on this aggregated plant removes converter-limited Group~A transients; MPC-QP is sufficient for that, and FF+FB shows it is not uniquely necessary. Second, under source contingencies the benefit is bounded by installed power/energy and by forecast timing. Third, the method does not replace generators, a second feeder, or larger storage, nor does it validate UPS inner loops. Fourth, embedded evidence supports the controller-on-the-same-model claim, not a facility HIL, not FIL, not UART-protocol SIL, and not FPGA ADMM SIL. Converter, SOC and efficiency parameters were not identified on a field battery. Measurement noise is not injected in the 11~September tables; forty later V5 noise jobs exist in package B6 and are not treated as a validated campaign. Code and CSVs are archived as stated in Section~\ref{sec:data}.
 
 \appendices
 \section{Audited QP maps}
@@ -728,12 +784,12 @@ The main message is fourfold. First, MPC improves predictive BESS coordination o
 This appendix transcribes the maps executed by the audited assembler (\texttt{montar\_qp\_auditado.m}); it is not a rewrite of \texttt{controle\_mpc\_qp\_v5.m}. Sampling $T_s=\SI{1}{\second}$. Discharge is positive. Measurement at $k$, command $u_k$, BESS power $p_{k+1}$, then interval balance and $\mathrm{SOC}_{k+1}$. Horizons $N_p=60$, $N_c=15$.
 
 \subsection{Condensed prediction}
-$\Delta U=[\Delta u_1,\ldots,\Delta u_{N_c}]^\top$, $U=\mathbf{1}u_{k-1}+T\Delta U$ with $T_{ij}=\mathbb{1}(j\le i)$, and
-\begin{equation}
-P=\Phi p_k+\Gamma U=P^{0}+\Gamma T\Delta U,\quad
-\Phi_i=a^{i},\quad
-\Gamma_{ij}=ba^{i-j}\ \text{for }j\le i.
-\end{equation}
+The stacked command is $\Delta U=[\Delta u_1,\ldots,\Delta u_{N_c}]^\top$ and $U=\mathbf{1}u_{k-1}+T\Delta U$, where $T_{ij}=1$ for $j\le i$ (and $0$ otherwise). Then
+\begin{align}
+P&=\Phi p_k+\Gamma U=P^{0}+\Gamma T\Delta U,\\
+\Phi_i&=a^{i},\qquad
+\Gamma_{ij}=b a^{i-j}\quad (j\le i).
+\end{align}
 Let $C=\mathrm{tril}(\mathbf{1}\mathbf{1}^\top)$. The SOC linearization selects the branch from the free response $P^{0}$ (previous command held):
 \begin{equation}
 K_i=\frac{100T_s}{3600E_b}
@@ -748,18 +804,26 @@ Predicted states are eliminated; they are not extra decision variables. If the s
 
 \subsection{Decision vector and cost}
 \begin{equation}
-z=[\Delta U;\ P_g;\ \xi_L;\ \xi_G;\ \xi_R;\ \xi_E],\qquad n_z=N_c+5N_p=315.
+\begin{aligned}
+z&=[\Delta U;\ P_g;\ \xi_L;\ \xi_G;\ \xi_R;\ \xi_E],\\
+n_z&=N_c+5N_p=315.
+\end{aligned}
 \end{equation}
 Each auxiliary vector has $N_p$ entries and is nonnegative. With $P_b=950$\,kW, $R_b=100$ (kW per sample, i.e.\ kW/s at $T_s=1$\,s), $s^\star=60\%$ and difference operator $D$,
 \begin{equation}
 \begin{aligned}
-J(z)={}&w_g\|(P_g-P_g^\star)/P_b\|_2^2
-+w_L\|\xi_L/P_b\|_2^2+w_G\|\xi_G/P_b\|_2^2\\
-&+w_R\|\xi_R/P_b\|_2^2+w_E\|\xi_E/P_b\|_2^2
-+w_r\|(DP_g-e_1P_{g,k-1})/R_b\|_2^2\\
-&+w_s\|(S-\mathbf{1}s^\star)/100\|_2^2
-+w_T((S_{N_p}-s^\star)/100)^2\\
-&+w_p\|P/P_b\|_2^2+w_u\|\Delta U\|_2^2+\tfrac{\varepsilon}{2}\|z\|_2^2.
+J(z)
+&= w_g\big\|(P_g-P_g^\star)/P_b\big\|_2^2
+ + w_L\big\|\xi_L/P_b\big\|_2^2 \\
+&\quad + w_G\big\|\xi_G/P_b\big\|_2^2
+ + w_R\big\|\xi_R/P_b\big\|_2^2 \\
+&\quad + w_E\big\|\xi_E/P_b\big\|_2^2 \\
+&\quad + w_r\big\|(D P_g-e_1 P_{g,k-1})/R_b\big\|_2^2 \\
+&\quad + w_s\big\|(S-\mathbf{1}s^\star)/100\big\|_2^2 \\
+&\quad + w_T\bigl((S_{N_p}-s^\star)/100\bigr)^2 \\
+&\quad + w_p\big\|P/P_b\big\|_2^2
+ + w_u\|\Delta U\|_2^2
+ + \tfrac{\varepsilon}{2}\|z\|_2^2.
 \end{aligned}
 \end{equation}
 The term $w_u\|\Delta U\|^2$ is \emph{not} divided by $P_b^2$. Regularization $\varepsilon=10^{-6}$ is added to the Hessian. The solver form is $\min_z \tfrac12 z^\top H z+f^\top z$ subject to $Az\le b_A$, $Ez=d$, $\ell\le z\le h$. For each $w\|Fz+c\|^2$ one accumulates $H\leftarrow H+2w F^\top F$ and $f\leftarrow f+2w F^\top c$.
@@ -770,28 +834,42 @@ Normal-mode weights: $w_g=3000$, $w_L=10^9$, $w_G=10^8$, $w_R=10^6$, $w_E=10^9$,
 For each predicted step $i$:
 \begin{align}
 P_{g,i}+P_i+\xi_{L,i}&=\widehat L_i,\\
-p_{\min}\le P_i\le p_{\max},\quad
-s_{\min}\le S_i\le s_{\max},\\
-u_{\min,i}\le U_i\le p_{\max},\quad
-u_{\min,i}&=\begin{cases}0,&\widehat G_i=0,\\p_{\min},&\widehat G_i=1,\end{cases}\\
+p_{\min}&\le P_i\le p_{\max},\\
+s_{\min}&\le S_i\le s_{\max},\\
+u_{\min,i}&\le U_i\le p_{\max},\\
 -dU_{\max}&\le\Delta U\le dU_{\max},\\
-P_{g,i}-\xi_{G,i}&\le\widehat M_i,\quad P_{g,i}\ge 0,
+P_{g,i}-\xi_{G,i}&\le\widehat M_i,\qquad P_{g,i}\ge 0,
 \end{align}
-and $P_{g,i}=0$ if $\widehat G_i=0$. Recharge, when requested: $P_{g,i}+\xi_{R,i}\ge P_{g,i}^{\min,R}$. Event support, when positive: $P_i+\xi_{E,i}\ge q_i$. Otherwise the corresponding slacks are fixed at zero. There is no hard source-ramp inequality; ramp enters only the cost. Command rate is not the physical ramp of $p_k$. SOC inequalities use the tabulated bounds with zero extra margin.
+with
+\begin{equation}
+u_{\min,i}
+=\begin{cases}
+0, & \widehat{G}_i=0,\\
+p_{\min}, & \widehat{G}_i=1.
+\end{cases}
+\end{equation}
+and $P_{g,i}=0$ if $\widehat{G}_i=0$. Recharge is requested only when the source is up, no armed event occupies the horizon, source headroom exists, and $\mathrm{SOC}<\mathrm{SOC}_{\mathrm{ref}}-\Delta_{\mathrm{SOC}}$ with $\Delta_{\mathrm{SOC}}=0.3$ (percentage points) and $P_{\mathrm{rech}}^{\max}=50$\,kW:
+\begin{equation}
+P_{\mathrm{rech},i}
+=\min\!\big(\widehat M_i-\widehat L_i,\ P_{\mathrm{rech}}^{\max},\ |p_{\min}|\big).
+\end{equation}
+Then $P_{g,i}^{\min,R}=\widehat L_i+P_{\mathrm{rech},i}$ and $P_{g,i}+\xi_{R,i}\ge P_{g,i}^{\min,R}$; the source reference on that branch is also $\widehat L_i+P_{\mathrm{rech},i}$. If recharge is not requested, $\xi_{R,i}$ is fixed at zero. Event support, when positive: $P_i+\xi_{E,i}\ge q_i$. Otherwise the corresponding slacks are fixed at zero. There is no hard source-ramp inequality; ramp enters only the cost. Command rate is not the physical ramp of $p_k$. SOC inequalities use the tabulated bounds with zero extra margin.
 
 \subsection{Event target and no-preview fill}
-The raw target is $v_i=\min(\widehat L_i,400)$ during an outage and $v_i=\min(\max(\widehat L_i-\widehat M_i,0),400)$ with the source up. The first $v_i>0$ is $i_e$. If armed, $q_i=v_i$ for $i\ge i_e$; for $d=i_e-i\le 30$, $q_i=(30-d+1)v_{i_e}/30$; else $q_i=0$. If not armed, $q_i=0$. Source reference is zero on outage; $\max(0,\widehat L_i-q_i)$ when support is active; $\widehat M_i$ if load exceeds the limit without support; $\widehat L_i$ otherwise.
+The raw target is $v_i=\min(\widehat L_i,400)$ during an outage and $v_i=\min(\max(\widehat L_i-\widehat M_i,0),400)$ with the source up. The first $v_i>0$ is $i_e$; $d_{\mathrm{evt}}$ is the run of $v>0$ from $i_e$. Default arming uses $N_{\mathrm{arm}}=\infty$ and $N_{\mathrm{hold}}=1$: if the event has not already started at the current sample, arm only if $i_e\le N_{\mathrm{arm}}$ and $d_{\mathrm{evt}}\ge N_{\mathrm{hold}}$. If already occurring, the constraint stays armed. If armed, $q_i=v_i$ for $i\ge i_e$; for $d=i_e-i\le 30$, $q_i=(30-d+1)v_{i_e}/30$; else $q_i=0$. If not armed, $q_i=0$. Source reference is zero on outage; $\max(0,\widehat L_i-q_i)$ when support is active; $\widehat M_i$ if load exceeds the limit without support; $\widehat L_i$ otherwise, except the recharge branch above.
 
-When foresight of $g$ is off, future $\widehat G$ and $\widehat M$ are filled as source-available / nominal limit (return-to-normal). That is causal and is not persistence of a measured outage.
+When foresight of $g$ is off in the 11~September assembler, future $\widehat G$ and $\widehat M$ are filled as source-available / nominal limit (return-to-normal). Package B2/B6 uses persistence of the measured outage. Both are causal hypotheses, not a field detector.
 
 If $\mathrm{exitflag}\le 0$ or the solution is empty, fallback applies: maximum admissible support on outage, or the heuristic with the limiter. Fallback is part of the closed-loop policy.
 
 \subsection{Three-scenario competitor}
 For $s\in\{\mathrm{nominal},\ \mathrm{high\ load},\ \mathrm{early\ event}\}$,
 \begin{equation}
-\min_{\Delta U,y_1,y_2,y_3}\sum_s \pi_s J_s(\Delta U,y_s),\qquad \pi_s=1/3,
+\min_{\Delta U,\{y_s\}}
+\sum_{s}\pi_s J_s(\Delta U,y_s),
+\qquad \pi_s=1/3,
 \end{equation}
-with a \emph{shared} $\Delta U$ and scenario-specific auxiliaries. There is no future branching. Dimension is $N_c+5N_p n_{\mathrm{unique}}\in\{315,615,915\}$. Only $u_k=u_{k-1}+\Delta u_1$ is applied.
+with a \emph{shared} $\Delta U$ and scenario-specific auxiliaries. There is no future branching. Dimension is $N_c+5N_p n_{\mathrm{unique}}\in\{315,615,915\}$. The entire command sequence is common across scenarios; only $u_k=u_{k-1}+\Delta u_1$ is applied and the unused tail is discarded.
 
 \begin{thebibliography}{00}
 
@@ -829,7 +907,7 @@ J.~K. N{\o}land, M.~Hjelmeland, and M.~Korp{\aa}s, ``Will energy-hungry AI creat
 International Energy Agency, \emph{Electricity 2025: Analysis and Forecast to 2027}. Paris, France: IEA, 2025. [Online]. Available: https://www.iea.org/reports/electricity-2025
 
 \bibitem{ieee2025gridready}
-IEEE Standards Association, ``Review of industry efforts and standards of grid readiness for data center deployment,'' IEEE SA Industry Connections, Piscataway, NJ, USA, 2025.
+IEEE Standards Association, ``Review of industry efforts and standards of grid readiness for data center deployment,'' IEEE SA Industry Connections, Piscataway, NJ, USA, 29~Jan.~2026.
 
 \bibitem{li2025aiload}
 Y.~Li and Y.~R. Li, ``AI load dynamics---A power electronics perspective,'' 2025, arXiv:2502.01647.
@@ -859,7 +937,7 @@ D.~Al~Kez, A.~M. Foley, F.~Ahmed, M.~O'Malley, and S.~M. Muyeen, ``Potential of 
 T.~Teague, S.~S. Refaat, M.~Farrag, and A.~Karaki, ``A comparative study of UPS batteries for data center applications,'' in \emph{Proc. IEEE 19th Int. Conf. Compat., Power Electron. Power Eng. (CPE-POWERENG)}, 2025, pp.~1--6, doi: 10.1109/CPE-POWERENG63314.2025.11027304.
 
 \bibitem{azizi2026gf}
-A.~Azizi \emph{et al.}, ``Strengthening data center operations using grid-forming battery energy storage as a line-interactive uninterruptible power supply,'' \emph{Int. J. Electr. Power Energy Syst.}, vol.~170, Art.~no.~111638, 2026, doi: 10.1016/j.ijepes.2026.111638.
+A.~Azizi \emph{et al.}, ``Strengthening data center operations using grid-forming battery energy storage as a line-interactive uninterruptible power supply,'' \emph{Int. J. Electr. Power Energy Syst.}, vol.~175, Art.~no.~111638, 2026, doi: 10.1016/j.ijepes.2026.111638.
 
 \bibitem{zhang2024reliability}
 S.~Zhang, C.~Xu, J.~Jiang, and J.~Guo, ``Reliability and economic evaluation of energy storage as backup and load regulation power supply in data centers,'' \emph{Energy Sci. Eng.}, vol.~12, no.~10, pp.~4101--4115, Oct.~2024, doi: 10.1002/ese3.1865.

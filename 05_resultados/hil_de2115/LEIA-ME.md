@@ -6,7 +6,7 @@ Gerados neste PC (MATLAB SIL). Bitstream e UART da placa so no laboratorio.
 |---------|----------|
 | `00_plataforma.txt` | apos `main_validar_mpc_fpga` |
 | `01_matlab_v5_vs_fpga.csv` | V5 vs horizonte 12/4 vs varredura |
-| `02_hil_resultados.csv` | SIL (`matlab_fpga`); no lab acresce `serial` |
+| `02_hil_resultados.csv` | SIL (`matlab_fpga`) + UART HIL `serial/heur` (4 cenários). Uma linha `serial/mpc` (90.98 kW / 57 s) foi captura de SW[2] e foi apagada. |
 | `03_matlab_heuristico_*.csv` | referencia bit-a-bit do C golden |
 | `03_python_heuristico_kpi.csv` | conferiu Pnao do heuristico = campanha do artigo |
 | `04_tabela_ieee_fpga.md` | rascunho da tabela do paper |
