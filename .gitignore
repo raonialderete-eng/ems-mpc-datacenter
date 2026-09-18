@@ -57,8 +57,12 @@ Thumbs.db
 Desktop.ini
 .DS_Store
 
-# Unrelated local material — never publish
-catarina_alfabetizacao/
+# Internal drafting notes (local only)
+04_artigo/revisao_operacional/HANDOFF_ARTIGO.md
+04_artigo/revisao_operacional/ZENODO_DOI_PASSO.md
+04_artigo/revisao_operacional/CHECKLIST_COMENTARIO_SECAO.md
+04_artigo/revisao_operacional/R2.17_PACOTE.md
+
 
 # Raw ~GB traces (derived copies live in dataset_v1)
 dataset/
