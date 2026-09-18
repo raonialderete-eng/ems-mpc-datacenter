@@ -116,8 +116,8 @@ Não marcar Monte Carlo, sweep ou fairness como concluídos com base neste docum
 
 - Examinar resultados finais e atualizar a interpretação de cada comentário.
 - Compilar C/ADMM com compilador disponível e executar testes de integração.
-- Validar fisicamente na DE2-115 em outra conversa.
-- Redigir artigo e carta em outra conversa, usando os handoffs.
+- Validar fisicamente na DE2-115.
+- Redigir artigo e carta com os resultados consolidados.
 
 ## Correções futuras já sustentadas
 
