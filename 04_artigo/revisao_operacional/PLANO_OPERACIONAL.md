@@ -30,4 +30,4 @@
 
 `jobs.json` contém 1.755 jobs pré-registrados. Para cada execução, `fingerprint.txt` identifica a configuração e `jNNNNN.mat` comprova conclusão de um job. O log informa START/DONE, pico bruto/filtrado, energia, fallback e duração. As análises versionadas produzem `status.json` e tabelas.
 
-Os estados da matriz devem ser interpretados junto do status efetivo: implementado, executado, validado e pronto para incorporação são etapas distintas. Comentários textuais permanecem pendentes até a conversa de redação; hardware permanece pendente até a bancada.
+Os estados da matriz devem ser interpretados junto do status efetivo: implementado, executado, validado e pronto para incorporação são etapas distintas. Comentários textuais permanecem pendentes até a redação do manuscrito; hardware permanece pendente até a bancada.
