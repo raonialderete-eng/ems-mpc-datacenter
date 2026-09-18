@@ -12,9 +12,8 @@ If a `.sof` is present locally when hashing, record:
 sha256sum path/to/ems.sof
 ```
 
-Populate the table below before the public Zenodo snapshot if a `.sof` exists
-on disk. An empty digest means the hash was not captured in this session
-(no `.sof` under `07_fpga/` at pack time).
+If a `.sof` is present locally, record its SHA-256 below. An empty digest means
+no `.sof` was stored under `07_fpga/` when this file was written.
 
 | File | SHA-256 | Notes |
 |---|---|---|
