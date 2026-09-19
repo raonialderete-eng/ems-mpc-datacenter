@@ -3,8 +3,9 @@
 Reproduction package for the IEEE Access manuscript on predictive energy management of an aggregated critical load with battery energy storage.
 
 - **Code:** https://github.com/raonialderete-eng/ems-mpc-datacenter — tag `v1.0.4-ieee-access-rev`.
-- **Reviewer pack:** `04_artigo/resubmissao_20260918/pacote_experimental_revisores/` (job MATs, `dataset_v1`, B2–B6 CSVs, audited MATLAB). This is the reproduction source of the present revision.
-- **Do not use** https://doi.org/10.5281/zenodo.22837544 (tag `v1.0.2`) to reproduce this manuscript. The reviewer-facing archive is the confidential experimental pack together with GitHub tag `v1.0.4-ieee-access-rev`.
+- **Pack:** `07_Experimental_Pack.zip` on that GitHub release (job MATs, `dataset_v1`, B2–B6 including `B2_ff_0005`, audited MATLAB).
+- **Zenodo (this tag):** https://doi.org/10.5281/zenodo.22846250
+- **Do not use** https://doi.org/10.5281/zenodo.22837544 (tag `v1.0.2`).
 
 Please cite the published article (title and DOI as printed) together with the Zenodo record.
 
