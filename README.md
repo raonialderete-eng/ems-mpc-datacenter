@@ -2,8 +2,9 @@
 
 Reproduction package for the IEEE Access manuscript on predictive energy management of an aggregated critical load with battery energy storage.
 
-- **Code:** https://github.com/raonialderete-eng/ems-mpc-datacenter — private until acceptance; tag `v1.0.3-ieee-access-rev`.
-- **Archive (version DOI):** https://doi.org/10.5281/zenodo.22837544 — cite this version, not the earlier test deposit. That zip was minted from `v1.0.2-ieee-access-rev`. It does **not** include the input MATs required by `caso_auditado.m` nor A1/B2–B6 sources/results; those remain in the local working tree pending a matching deposit. A discarded MATLAB row labelled `serial/mpc` (90.98 kW / 57 s wall; switch-capture error) is not in the working-tree HIL CSV.
+- **Code:** https://github.com/raonialderete-eng/ems-mpc-datacenter — tag `v1.0.4-ieee-access-rev`.
+- **Reviewer pack:** `04_artigo/resubmissao_20260918/pacote_experimental_revisores/` (job MATs, `dataset_v1`, B2–B6 CSVs, audited MATLAB). This is the reproduction source of the present revision.
+- **Do not use** https://doi.org/10.5281/zenodo.22837544 (tag `v1.0.2`) to reproduce this manuscript. The reviewer-facing archive is the confidential experimental pack together with GitHub tag `v1.0.4-ieee-access-rev`.
 
 Please cite the published article (title and DOI as printed) together with the Zenodo record.
 

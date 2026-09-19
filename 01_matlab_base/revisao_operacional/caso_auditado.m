@@ -7,6 +7,9 @@ p.ab=exp(-p.Ts/p.tau_b); p.bb=1-p.ab;
 t=0:p.Ts:p.Tf;
 if startsWith(job.scenario,'diploee_') || startsWith(job.scenario,'nvml_')
     fn=fullfile(root,'05_resultados','revisao_operacional','dataset_v1',[job.scenario '.mat']);
+    if ~isfile(fn)
+        fn=fullfile(root,'dataset_v1',[job.scenario '.mat']);
+    end
     assert(isfile(fn),'Official profile missing: %s',fn); c=load(fn,'L','M','G');
 else
     [c.L,c.M,c.G]=gera_cenario(t,job.scenario,p);
