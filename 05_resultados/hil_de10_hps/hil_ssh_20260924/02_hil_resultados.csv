@@ -1,0 +1,5 @@
+backend,controle,cenario,Pnao_max,E_nao_kWh,SOC_final,n_fallback,pct_fallback,n_overrun,t_us_med,t_us_max,t_us_p99,wall_s
+c_exe,mpc,carga_faixas,0.000000,0.000000,59.074570,0,0.0000,0,4060.116,211681.000,27061.500,13.479
+c_exe,mpc,limite_fonte,0.000000,0.000000,51.103009,0,0.0000,0,2973.133,30967.000,8096.000,11.933
+c_exe,mpc,perda_fonte,351.169467,14.584159,57.572890,139,11.5833,0,3275.281,89007.000,34849.500,12.244
+c_exe,mpc,retorno_fonte,351.169484,24.306381,55.233876,239,19.9167,0,3193.496,83120.000,34053.000,12.048

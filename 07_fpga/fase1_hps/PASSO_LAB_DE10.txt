@@ -1,0 +1,39 @@
+Fase 1 HPS — OSQP em casa (DE10-Standard) e depois a mesma pasta na faculdade
+=============================================================================
+Nao e FIL. Nao grave o .sof Nios da DE2-115. Quartus 20.1 NAO entra neste ensaio.
+
+0. Kit = DE10-Standard (HPS ARM + UART-USB). Se for Lite, pare.
+   Copiar 07_fpga/fase1_hps (fontes atuais com OSQP). NAO copiar ems_hps.exe.
+   NAO usar o ZIP fase1_hps-P1-20260919-r2 como binario — aquele e ADMM.
+
+1. Ligar a placa. SD Linux Terasic. UART-USB = COMx no Device Manager (nao Blaster).
+   Ethernet opcional (SSH). Anotar gcc -v no HPS em ENSAIO_DE10.md.
+
+2. No Linux do HPS:
+
+     cd fase1_hps
+     make                 # default = OSQP
+     ./ems_hps --ctrl heur --cenario carga_faixas
+     # espera Pnao_max ~ 90.98
+
+     ./ems_hps --ctrl mpc --qp-solver osqp --cenario carga_faixas
+     # alvo casa PC: ~0.006 kW, fallback 0, SOC ~59.06
+     # se der ~11.67, compilou o ADMM antigo — refaca o make com estas fontes
+
+3. Portao PC-ARM (pendrive com dumps congelados):
+     00_freeze/qp_fixtures_perda80/qp_k0000_exit1.txt
+     00_freeze/qp_fixtures_perda80/qp_k0500_exit0.txt
+     00_freeze/qp_fixtures_perda80/qp_k0650_exit1.txt
+
+     ./qp_campaign --set DIR --solver osqp --init cold --csv arm_osqp.csv
+   Comparar x[0], pass_app, native com 08_fecho/04_cold/treino_all.csv do PC.
+
+4. HIL se o passo 2/3 bater. UART (MATLAB serial) ou SSH stdin — ver README.
+   Quatro cenarios. RSP: t_us != 0. Preencher ENSAIO_DE10.md.
+   Levar os CSV para a faculdade no mesmo pendrive.
+
+5. Se make falhar (gcc velho / sem C99): no PC/WSL
+     make arm
+   e copiar so o ELF ems_hps_arm.
+
+6. Opcional outro dia: FIL Magri. Nao mistura com este binario.

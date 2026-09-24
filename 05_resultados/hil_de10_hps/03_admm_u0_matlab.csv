@@ -1,0 +1,5 @@
+cenario,u0_quadprog,exitflag,usou_fallback
+carga_faixas,0.00006246,1,0
+limite_fonte,0.00007805,1,0
+perda_fonte,0.00007792,1,0
+retorno_fonte,0.00007792,1,0

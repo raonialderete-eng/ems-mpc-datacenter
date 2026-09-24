@@ -1,0 +1,32 @@
+{
+  "label": "physical_operational_sensitivity",
+  "not": "monte_carlo",
+  "n": 32,
+  "n_perda": 16,
+  "n_limite": 16,
+  "seed": 20260919,
+  "controllers": ["mpc_qp_v5", "miope_qp", "ff_feedback"],
+  "forecast": "aligned_to_plant",
+  "factors": {
+    "L_base_kW": [550, 700],
+    "dL_kW": [80, 300],
+    "SOC0_pct": [40, 60],
+    "M_kW": [600, 850],
+    "t0_s": [350, 700],
+    "dur_s": [80, 200],
+    "tau_b_s": [1, 4]
+  },
+  "constraints": {
+    "L_evento_cap_kW": 950,
+    "t0_plus_dur_lt_s": 1150,
+    "limite_requires_L_gt_M": true,
+    "PBESS_max_kW": 400,
+    "dUmax_kW": 120,
+    "dUmax_evento_kW": 400
+  },
+  "bound": {
+    "perda": "max(L_evento - 400, 0)",
+    "limite": "max(L_evento - M - 400, 0)"
+  },
+  "kpis": ["P_raw_kW", "P_filtered_kW", "E_raw_kWh", "SOC_pre_event", "SOC_final", "T_gt1_s", "source_violation_kW", "soc_min_violation", "fallback_pct", "throughput_kWh", "P_minus_bound"]
+}

@@ -1,0 +1,13 @@
+# Fixtures QP — perda_fonte 80 iter (congelados)
+
+Dumps byte-a-byte iguais aos auditados em
+`04_artigo/revisao_supervisor_20260918/validacao_admm_1825/`.
+
+Uso: testes de factibilidade e de ADMM **sem** repetir a malha.
+Não são a V5. Não entram no Access.
+
+- `qp_k*.txt` — P,q,A,l,u e x do ADMM
+- `k500_testemunha_factivel.csv` — vetor factível (HiGHS), violação max 5,68e-14
+- `feasibility.json` — auditoria 18:25 (λ_min ~ 0,01; todos LP factíveis)
+
+MATLAB: `diag_qp_feas` (linprog, objetivo 0) e `diag_qp_audit` (quadprog).

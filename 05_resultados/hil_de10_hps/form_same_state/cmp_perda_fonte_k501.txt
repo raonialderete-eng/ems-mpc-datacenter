@@ -1,0 +1,11 @@
+n_C=64 n_M=64
+||H_M-P_C||_F=2.23649e-12  ||f-q||=0
+J_ones MATLAB=44830.1553150579 C=44830.1553150579 dJ=0
+spy_lb=1 spy_ub=1
+m_C=172 m_M_converted=172 (Aeq/Aineq + bounds finitos)
+viol_ones MATLAB=747.607 C=747.607
+row_match=172 miss_MATLAB=0 miss_C=0
+membership n=200 agree=200 MATLAB_only=0 C_only=0 max_|vM-vC|=0
+witness_Pgrid_2e6 viol_M=2e+06 viol_C=2e+06
+Notas: C usa ±1e9/1e6 no lugar de inf; MATLAB Pgrid ub=inf com rede.
+Equivalencia de conjuntos no envelope operacional se membership concordar.

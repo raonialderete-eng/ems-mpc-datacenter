@@ -1,0 +1,2 @@
+u0=0.00006263 pri=2.27374e-13 iter=93 fb=0 exit=1
+ctrl=mpc cenario=carga_faixas Pnao_max=0.006312 SOC_final=59.060244 fallback=0 evento=261 tqp_med=0.000776 tqp_max=0.035599 pri_med=5.597e-13 pri_max=1.251e-12 iter_med=2.7 n_lim=0 n_inv=0 eval_app=1200 eval_kkt=1200 du0_same_max=0 shadow_ok=0

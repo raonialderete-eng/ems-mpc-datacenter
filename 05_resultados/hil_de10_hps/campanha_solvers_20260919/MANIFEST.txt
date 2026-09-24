@@ -1,0 +1,10 @@
+﻿date: 2026-09-19
+gcc: 16.1.0 WinLibs
+osqp: v1.0.0 tag zip + qdldl v0.1.8
+qpoases: releases/3.2.1 zip
+flags: -O2 no fast-math
+command: 07_fpga/fase1_hps/build_campaign.ps1
+          qp_campaign.exe --contracts --solver all
+          qp_campaign.exe --solver all --init cold --set ... --ref-dir 08_fecho/ref
+          ems_hps.exe --ctrl mpc --qp-solver osqp --shadow-solver qpoases --cenario ...
+fecho: 08_fecho/ (xref, dumps reavaliados, timing note=pass_app, malha eval independente)

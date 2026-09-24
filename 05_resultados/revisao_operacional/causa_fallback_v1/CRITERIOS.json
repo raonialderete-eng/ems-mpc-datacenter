@@ -1,0 +1,32 @@
+{
+  "official_consolidation": "05_resultados/revisao_operacional/consolidacao_corrigida_20260911_v1",
+  "do_not_replace_official_kpis": true,
+  "principal_jobs": ["j00014", "j00019"],
+  "letter_j00014_times_s": [462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 475, 476, 477, 478, 481, 482, 483],
+  "letter_j00019_count": 28,
+  "ipm": {
+    "Algorithm": "interior-point-convex",
+    "MaxIterations": 150,
+    "ConstraintTolerance": 1e-5,
+    "OptimalityTolerance": 1e-5,
+    "StepTolerance": 1e-8
+  },
+  "scale_alpha": 0.001,
+  "active_set": {
+    "Algorithm": "active-set",
+    "MaxIterations": 1000,
+    "OptimalityTolerance": 1e-8,
+    "ConstraintTolerance": 1e-7,
+    "StepTolerance": 1e-12
+  },
+  "lambda_min_indefinite": -1e-8,
+  "labels": [
+    "ipm_falso_nao_convexo",
+    "hessiana_indefinida",
+    "inviavel",
+    "iteracoes",
+    "ok",
+    "inconclusivo"
+  ],
+  "notes": "nao_convexo records MATLAB exitflag -6 only. SPD Hessian plus accepted scaled/active-set solve => ipm_falso_nao_convexo."
+}

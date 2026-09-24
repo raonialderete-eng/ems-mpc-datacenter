@@ -1,0 +1,2 @@
+u0=0.00007823 pri=2.27374e-13 iter=93 fb=0 exit=1
+ctrl=mpc cenario=perda_fonte Pnao_max=351.169467 SOC_final=57.572890 fallback=0 evento=161 tqp_med=0.000721 tqp_max=0.037372 pri_med=3.034e-12 pri_max=1.461e-10 iter_med=2.5 n_lim=0 n_inv=0 eval_app=1200 eval_kkt=1200 du0_same_max=0 shadow_ok=0

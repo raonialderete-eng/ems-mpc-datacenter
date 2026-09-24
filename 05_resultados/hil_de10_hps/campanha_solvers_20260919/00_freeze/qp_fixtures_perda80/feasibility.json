@@ -1,0 +1,101 @@
+[
+  {
+    "file": "qp_k0000_exit1.txt",
+    "lp_status": 0,
+    "lp_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "admm_violation_max": 0.5882392648593395,
+    "admm_cost": -48512.21082883354,
+    "lambda_min": 0.010322235842262663,
+    "feasible_violation_max": 0.0
+  },
+  {
+    "file": "qp_k0488_exit1.txt",
+    "lp_status": 0,
+    "lp_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "admm_violation_max": 0.7968785704505308,
+    "admm_cost": -48430.86613596481,
+    "lambda_min": 0.010322235842262663,
+    "feasible_violation_max": 1.1368683772161603e-13
+  },
+  {
+    "file": "qp_k0489_exit0.txt",
+    "lp_status": 0,
+    "lp_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "admm_violation_max": 182.90872289326148,
+    "admm_cost": 2458212.972652376,
+    "lambda_min": 0.009612558960565669,
+    "feasible_violation_max": 1.1368683772161603e-13
+  },
+  {
+    "file": "qp_k0490_exit0.txt",
+    "lp_status": 0,
+    "lp_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "admm_violation_max": 170.737582442516,
+    "admm_cost": 6706606.831003998,
+    "lambda_min": 0.009612558960565669,
+    "feasible_violation_max": 2.2737367544323206e-13
+  },
+  {
+    "file": "qp_k0491_exit0.txt",
+    "lp_status": 0,
+    "lp_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "admm_violation_max": 162.65922811649546,
+    "admm_cost": 12100588.065252626,
+    "lambda_min": 0.009612558960565669,
+    "feasible_violation_max": 0.0
+  },
+  {
+    "file": "qp_k0492_exit0.txt",
+    "lp_status": 0,
+    "lp_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "admm_violation_max": 155.9749124609205,
+    "admm_cost": 19114864.878270596,
+    "lambda_min": 0.009612558960565669,
+    "feasible_violation_max": 1.1368683772161603e-13
+  },
+  {
+    "file": "qp_k0493_exit0.txt",
+    "lp_status": 0,
+    "lp_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "admm_violation_max": 153.93097254551793,
+    "admm_cost": 22772578.03589793,
+    "lambda_min": 0.009612558960565669,
+    "feasible_violation_max": 1.1368683772161603e-13
+  },
+  {
+    "file": "qp_k0494_exit0.txt",
+    "lp_status": 0,
+    "lp_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "admm_violation_max": 148.28530096365262,
+    "admm_cost": 35386856.67434826,
+    "lambda_min": 0.009612558960565669,
+    "feasible_violation_max": 1.1368683772161603e-13
+  },
+  {
+    "file": "qp_k0500_exit0.txt",
+    "lp_status": 0,
+    "lp_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "admm_violation_max": 151.55604966235035,
+    "admm_cost": 107568383.44647148,
+    "lambda_min": 0.009612558960565669,
+    "feasible_violation_max": 5.684341886080802e-14
+  },
+  {
+    "file": "qp_k0649_exit0.txt",
+    "lp_status": 0,
+    "lp_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "admm_violation_max": 174.89136301488352,
+    "admm_cost": 2530313.9566792096,
+    "lambda_min": 0.009612558960565669,
+    "feasible_violation_max": 5.684341886080802e-14
+  },
+  {
+    "file": "qp_k0650_exit1.txt",
+    "lp_status": 0,
+    "lp_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "admm_violation_max": 0.408112062502357,
+    "admm_cost": 2129733.8176354747,
+    "lambda_min": 0.010322235842262663,
+    "feasible_violation_max": 1.1368683772161603e-13
+  }
+]

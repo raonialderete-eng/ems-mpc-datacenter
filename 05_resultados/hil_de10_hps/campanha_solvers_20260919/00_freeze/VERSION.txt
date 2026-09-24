@@ -1,0 +1,30 @@
+id: fase1_hps-P1-20260919-r2
+date: 2026-09-19
+replaces: EMS_FASE1_DE10_FACULDADE.zip 2026-09-19 17:42:51 (H/K aliased)
+desc: Hessiana H e KKT/Cholesky K em buffers distintos; pri_tol=1.0; admm_max_iter=80; admm_rho=1.0; k=500 factivel (LP)
+nao_incluir: ems_hps.exe (Windows). Compilar make no Linux da DE10-Standard.
+golden_c_exe_mpc_carga_faixas: Pnao=11.679759 fallback=12 t_us_p50=1349 t_us_max=3996
+heur_carga_faixas: Pnao=90.979599
+sha256:
+  9764817946811f276b91e09c534aa7dff8655606ce2fe7b2a2c2f8530f8a433b  controle_heuristico.c
+  c1bf155f45e364e8474d79664ab9f8b112da2aedd9c56d93d9a98dc4b8d59850  controle_heuristico.h
+  2c426f5eaf432d8656bb4d76f43a2b3111f43810a104b50c99b92974340a5064  controle_mpc_fpga.c
+  4918220c63e6d757b85904c3f070370d144335a247418a562cbe755fb9895531  controle_mpc_fpga.h
+  131f627bc738c847a60559295587dfb95bbfb624e4fdbe1c182c949fdf1367f6  ems_clock.c
+  538b9852243d4404a5912f2aaaed51a0c15b4b3def13cd7d29acb571027392ec  ems_clock.h
+  24db41e432bfa4b5d1ec4458b44bd27dfeede08e570b660cb0d0240cfb45a818  ems_hps_main.c
+  3b5e408fd820474665965a9d3d895a38f8c6e53a0fc26c80c014152b332013b6  ems_param.c
+  dc86212b79ad423e3ebb2e87e3dddeefb19c05f9950e8416be4e6137dc482b37  ems_param.h
+  5ba894f21db9cf6e8ec8df4f478c55de8fbd25cb0ea9272812cd1aca2d26524a  ems_protocol.c
+  c20eb3eb89a83f894246cb4068dfff38e9b41cb8944480303dbbf7fb5ef147fb  ems_protocol.h
+  eafee0b0abb9d186c630df74b36c3e4253fbe61f691eadb523c1e1721920c6cc  ems_types.h
+  aa877c22f146c27d766cf69a8753c9ca73563e81cf6495257cd30ce645d1a0d3  ems_work.c
+  b54b24f8756b18b5a2339451b9fbefbfacce7af9cb42acd4c82119300a7de013  ems_work.h
+  1a2c78392514351711678d924e7c8050a27b673861a00ea3158f5322841fbebf  gera_cenario.c
+  c4af00c512786e43d12576dfa5016c4eab2b6384defcb37bb578f7f2a17b6054  gera_cenario.h
+  23613c9dff333adcaac701235ca825db7719fea0badf233ba1f607a15c77b4ec  Makefile
+  76d2b39bc0ce2ed212ddae6feab5f03c23e7d4e4e9bb29cb9ceab54be2b51ff7  planta_bess.c
+  51ba4cbfaa930395601be0dd9de1649d6658d63cb29eb7209dfc01aa1bca245c  planta_bess.h
+  bdc6eceea3ab24b5c0dda78155d411080e998320891cffcba25d2e27515b18ee  qp_admm.c
+  baf09b72dffb6ffb7e138b1ff85eeb2cd6e1d1c7a07112231eef2a5e89752a00  qp_admm.h
+
