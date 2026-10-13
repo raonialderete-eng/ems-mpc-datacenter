@@ -1,0 +1,445 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs,hyperref,enumitem,xcolor}
+\usepackage{amsmath,siunitx}
+
+\newcommand{\repgithub}{https://github.com/raonialderete-eng/ems-mpc-datacenter}
+
+\title{Response to Reviewers\\[0.4em]
+\large Predictive Energy Management of an Aggregated AI/HPC Data-Center Load with BESS:\\[0.2em]
+\normalsize When Forecast-Aware Control Suffices and When MPC Adds Value}
+\author{Raoni Alderete and Edson Antonio Batista\\UFMS --- PPEE / FAENG -- LABSEM\\Corresponding author: raoni.alderete@ufms.br}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\noindent\textit{Manuscript:} IEEE Access (decision: reject in present form with encouragement to resubmit).\\
+\textit{Code:} \url{\repgithub} (tag \texttt{v1.0.5-ieee-access-rev}). Job MATs and mapped traces: \texttt{07\_Experimental\_Pack.zip} on the \texttt{v1.0.4} GitHub release. OSQP/HIL CSVs: \texttt{08\_Experimental\_Addendum.zip} on \texttt{v1.0.5}. Zenodo \texttt{10.5281/zenodo.22943792} (concept \texttt{10.5281/zenodo.22846250}).\\
+\textit{Letter numbering} follows the decision PDF (R1: 14 items; R2: 17; R3; R4.C1--C12; R5).
+
+\paragraph{How this letter maps onto the manuscript.}
+The paper now asks when forecast-aware simple control already removes converter-limited transients, and when multi-step QP still adds value. Manuscript Table~7 is a \emph{six-controller} comparison on the same plant and named cases: heuristic, Heur+FS, myopic QP, FF+FB, V5, and three-scenario MPC. FF+FB is a main baseline (Section~IV-D), not a later package. The sixth policy is named three-scenario MPC, not stochastic MPC with recourse. Results are grouped as RQ1--RQ4 (Section~VI--VII). No new experiment was added for this narrative revision. A frozen $N_p=N_c=1$ V5 KPI is not claimed (Table~10 reports the horizon pairs that exist: $(12,4)$ and $(30,8)$). FF+FB uses persistence fill of future $g$; V5 and three-scenario MPC use return-to-normal fill---that difference is stated in the Table~7 caption.
+
+\paragraph{How to read this letter.}
+Each item is (a)~concern, (b)~response with evidence, (c)~action in the manuscript. Out-of-scope requests are delimitations, not ``Done''. Diagnostic jobs (false alarms, myopic-weight cross, noise, detection delay) remain in the archive and in this letter; they are not extra columns of Table~7 because they answer a different question.
+
+\paragraph{Figures 2--4.}
+Load bands, source-limit step and source-loss onset were regenerated from \texttt{j00001}/\texttt{j00003}/\texttt{j00004}, \texttt{j00006}/\texttt{j00008}/\texttt{j00009} and \texttt{j00011}/\texttt{j00013}/\texttt{j00014}. Source-loss V5 is $350.07$\,kW, SOC$_f=57.10\%$, matching Table~8.
+
+\section*{Associate Editor / process}
+
+We thank the editor and the five reviewers. The package contains this letter, a clean PDF+TeX, and the public archive above. A reduced-horizon copy of the same MPC ($N_p=12$), solved with OSQP on a Cortex-A9, closed the loop on the aggregated plant (Table~21): Group~A peaks $0$\,kW, source loss $351.169$\,kW, ARM $t_{\mathrm{us}}$ p50 $\approx 2.4$\,ms, 0 overruns versus $T_s=1$\,s. UART HIL on a DE2-115 closed the heuristic on four short cases. That is controller-on-the-same-plant evidence, not a MW facility test and not UPS inner-loop validation.
+
+%% =================================================================
+\section*{Reviewer 1}
+
+\subsection*{R1.1 Experimental / HIL validation}
+\textbf{(a) Concern.} Lack of experimental or HIL evidence, especially for alleged zero unserved-power transients.
+
+\textbf{(b) Response.} Desktop filtered zero remains a simulation KPI on the aggregated plant. Section~VII reports a reduced-horizon copy ($N_p=12$) solved with OSQP on a Cortex-A9 over SSH (not UART), closing the loop with the MATLAB plant (Tables~20--21). Recorded peaks match SIL; those KPIs are MPC+fallback. On source loss, fallback is $139/1200=11.58\%$ over the campaign and $139/150=92.67\%$ in the outage window ($500$--$649$\,s); on return, $239/1200=19.92\%$ and $239/250=95.60\%$ in $400$--$649$\,s. Equal peaks do not prove that the QP was accepted for most of the island. ARM batch fallback is 0 on the same maps; the per-step cause of that gap is not isolated. UART HIL on a DE2-115 closed the heuristic only. That is not a MW facility test. No measured solver execution exceeded the \SI{1}{\second} sampling interval. End-to-end real-time deadline compliance was not assessed (wall $\approx 12$--$13$\,s / 1200 steps).
+
+\textbf{(c) Action.} Section~VII and Tables~20--21 (campaign / window fallback; solver time vs.\ 1\,Hz).
+
+\subsection*{R1.2 Measured AI/HPC traces}
+\textbf{(a) Concern.} Use measured GPU/facility traces, not only synthetic steps.
+
+\textbf{(b) Response.} Derived NVML (measured GPU power, 16 nodes, mapped to 600--950\,kW) and DIPLOEE-derived (simulated facility, resampled) windows are in \texttt{dataset\_v1/} with \texttt{manifest.json} hashes. They are not a feeder campaign owned by the authors, not synchronized GPU-utilization vs whole-facility power, and not 20 independent sites (windows overlap). Unit errata: metadata fields \texttt{raw\_min\_W}/\texttt{raw\_max\_W} for NVML are mislabelled after W$\to$kW; mapped traces used in tables are unaffected.
+
+\textbf{(c) Action.} Trace paragraph in Section~V; NVML/DIPLOEE rows in Table~7 (now including FF+FB).
+
+\subsection*{R1.3 Timing sensitivity}
+\textbf{(a) Concern.} Investigate timing errors; early alarms may beat the heuristic the wrong way.
+
+\textbf{(b) Response.} Audited V5 at $-10$\,s is $350.00$\,kW (current sample remains measured; only the forecast shifts). None of 41 points on $[-20,+20]$\,s makes V5 worse than the heuristic $592.61$\,kW. $+10$\,s $\to 355.57$\,kW; $+20$\,s $\to 511.76$\,kW. A previous-protocol $\approx 699$\,kW figure is not a result of this grid.
+
+\textbf{(c) Action.} Table~19 and RQ3 (forecast error).
+
+\subsection*{R1.4 Probabilistic timing / detection delay}
+\textbf{(a) Concern.} Timing should be treated probabilistically, including realistic detection delays.
+
+\textbf{(b) Response.} A 200-pair Monte Carlo draws forecast timing/magnitude errors on \emph{one} physical outage. That law is not a detection-delay distribution. Detection delay remains a distinct group (V5 $\approx 749.91$\,kW when delayed; $592.56$\,kW at delay 0, the same first-step peak as an unannounced loss). Measurement noise is a third group. The three groups are not mixed into Table~7.
+
+\textbf{(c) Action.} RQ3 keeps forecast error, detection delay and sensor noise separate.
+
+\subsection*{R1.5 Comparable tuning / heuristic variants}
+\textbf{(a) Concern.} Comparable tuning methodology and alternative heuristic parametrizations.
+
+\textbf{(b) Response.} Raising myopic $\Delta u_{\max}$ from 120 to 400\,kW/s on the source-limit case yields $102.78$, $71.31$ and $\approx 0$\,kW, so horizon is not necessary for that isolated near-zero. After aligning the normal-mode $\Delta u$ coefficient, fill and slew, the myopic load-band peak is $114.30$\,kW while V5 and FF+FB remain at filtered zero; source loss remains $592.61$ vs.\ $350.07$ / $355.95$\,kW. Alternative heuristic charge-caps were not exhaustively re-optimized. Architectures still differ in horizon, terminal and slack terms.
+
+\textbf{(c) Action.} RQ2 and Table~10 (within-V5 ablations). A frozen $N_p=N_c=1$ V5 table is not claimed; the separate myopic QP is not that ablation.
+
+\subsection*{R1.6 Weight sensitivity}
+\textbf{(a) Concern.} Sensitivity of main weights and stability of conclusions.
+
+\textbf{(b) Response.} Univariate $\times 0.5/1/2$ on five V5 weights, two scenarios, did not reverse Group~A ranking. It does not cover source-tracking, ramp, SOC, terminal and BESS-usage jointly. Large slacks are approximate priority, not lexicographic MPC.
+
+\textbf{(c) Action.} Manuscript Table~4 plus the univariate caveat in the information-policy subsection.
+
+\subsection*{R1.7 Converter/battery parameters vs hardware}
+\textbf{(a) Concern.} Relate $\tau_b$ and efficiencies to hardware; discuss temperature, ageing, nonlinearities.
+
+\textbf{(b) Response.} Sweep $\tau_b\in\{1,2,4\}$\,s keeps \emph{V5} on the bound (manuscript Table~12 is V5-only). The six-controller ranking was not re-run across $\tau_b$. Varying $\tau_b$ does \emph{not} identify a cell or a UPS. Ageing/temperature are out of scope; $N_{\mathrm{EFC}}$ is a utilization proxy.
+
+\textbf{(c) Action.} Table~12 caption and RQ3 sentence qualify V5-only.
+
+\subsection*{R1.8 Multi-UPS / multi-bus / generators}
+\textbf{(a) Concern.} Extension to multiple UPS units, converters, buses and generator coordination.
+
+\textbf{(b) Response.} Not implemented as coordinated dispatch. Qualitatively: per-unit bounds replace $750-400=350$\,kW; SOC sharing is absent from the first-order BESS map; a genset could erase the $14.5833$\,kWh energy floor on a 150\,s outage. A later exogenous $400$\,kW injection (package B6) gave unserved energy $513.31$\,kWh (heuristic) vs $538.52$\,kWh (V5) and is not EMS--genset co-optimization.
+
+\textbf{(c) Action.} Discussion-only paragraph in Related Work. No new architecture jobs.
+
+\subsection*{R1.9 Partial criticality / shedding}
+\textbf{(a) Concern.} Partial criticality, shedding priorities, redundancy.
+
+\textbf{(b) Response.} The load is modelled as 100\% critical; there are no shedding classes. A class-split QP is not assembled.
+
+\textbf{(c) Action.} Explicit hypothesis in model and related-work text; Appendix~A for $z$ (dimension 315).
+
+\subsection*{R1.10 Computational headroom / real time}
+\textbf{(a) Concern.} Do not claim real time from solver time alone; report cycle headroom.
+
+\textbf{(b) Response.} On the i7 host, V5 load-band cycle p50/max $\approx 0.022/0.242$\,s (Table~16). On the DE10 HPS, OSQP-MPC ($N_p=12$) records ARM $t_{\mathrm{us}}$ p50 $\approx 2.4$\,ms and $\max=0.212$\,s, with 0 solver overruns versus $T_s=1$\,s (Table~21). That is solve time on the RSP, not a WCET certificate and not end-to-end 1\,Hz deadline compliance. The SSH host loop of 1200 steps finished in $\approx 12$--$13$\,s (accelerated).
+
+\textbf{(c) Action.} Computational subsection and Section~VII.
+
+\subsection*{R1.11 Prolonged outage}
+\textbf{(a) Concern.} Interpret long outages with autonomy, redundancy and generators.
+
+\textbf{(b) Response.} Outage window $[600,7800)$\,s, $T_f=9600$\,s. Both controllers hit $\mathrm{SOC}_{\min}=20\%$. Unserved energy $1309.95$\,kWh (heuristic) vs $1312.33$\,kWh (V5): MPC leaves $\approx 2.38$\,kWh more unserved. Final SOC $\approx 24.75\%/24.73\%$ is after restoration/recharge, not the old $\approx 37\%$. Generator coordination is not simulated.
+
+\textbf{(c) Action.} Manuscript Table~13 and prolonged-outage subsection.
+
+\subsection*{R1.12 Positioning vs prior MPC/BESS}
+\textbf{(a) Concern.} Differentiate the contribution from prior EMS-MPC studies.
+
+\textbf{(b) Response.} Differentiation (Table~1) is the question answered, not a new theorem: on this plant, which uses of forecast and optimization change $P_{\mathrm{un}}$, and at what SOC cost? The six-controller protocol (Table~7) plus the bound $P_{\mathrm{load}}-P_{\mathrm{BESS}}^{\max}$, the 200-pair forecast-error law, the 32-draw physical sensitivity and the second-event test (Table~14) are the increment. What is learned: FF+FB matches V5 on \emph{nominal} Group~A zeros; three-scenario tail cut spends reserve; that tail policy can fail a depleted second outage.
+
+\textbf{(c) Action.} Table~1, introduction, and the discussion in Section~VI.
+
+\subsection*{R1.13 Reproducibility}
+\textbf{(a) Concern.} Enough detail to reproduce loads, events and parameters.
+
+\textbf{(b) Response.} Public distribution of this revision is split on purpose. \emph{Code} of tag \texttt{v1.0.5-ieee-access-rev} is on GitHub and at Zenodo \texttt{10.5281/zenodo.22943792}. That DOI is a snapshot of the tagged tree; it does \emph{not} contain campaign job MATs. The concept record \texttt{10.5281/zenodo.22846250} always resolves to the latest version. \emph{Experimental pack} \texttt{07\_Experimental\_Pack.zip} (11~September MATs, \texttt{dataset\_v1}, B2--B6) remains on the GitHub release of \texttt{v1.0.4}. \emph{Addendum} \texttt{08\_Experimental\_Addendum.zip} (OSQP/DE10 HIL CSVs, diagnostic CSVs) is on the \texttt{v1.0.5} release. Synthetic Group~A/B cases are generated by \texttt{gera\_cenario}; NVML/DIPLOEE cases load \texttt{dataset\_v1}. Do not use \texttt{10.5281/zenodo.22837544} (v1.0.2). A discarded \texttt{serial/mpc} HIL row is not in the working-tree CSV. Raw $\approx 1$\,GB traces are not redistributed; \texttt{manifest.json} hashes are.
+
+\textbf{(c) Action.} Section~VIII states this split; the pack is not called confidential.
+
+\subsection*{R1.14 Limit conclusions}
+\textbf{(a) Concern.} Restrict claims to the model and to detectable/schedulable events.
+
+\textbf{(b) Response.} Agreed.
+
+\textbf{(c) Action.} Title, abstract and conclusions rewritten around an aggregated plant and detectable events.
+
+%% =================================================================
+\section*{Reviewer 2}
+
+\subsection*{R2.1 Complete QP}
+\textbf{(a) Concern.} Predictors, limits, slacks, recharge/event maps, normalizations.
+
+\textbf{(b) Response.} Appendix~A transcribes the audited assembler: $z$ of dimension $315$, $P_{\mathrm{base}}=950$\,kW, $R_{\mathrm{base}}=100$, $w_u\|\Delta U\|^2$ \emph{not} divided by $P_b^2$, SOC linearization from the free response, zero extra SOC margin. Recharge $P_g^{\min,R}$ is now written: SOC below $\mathrm{SOC}_{\mathrm{ref}}-0.3$\,pp, source headroom, no armed event, cap $50$\,kW. Arming uses default $N_{\mathrm{arm}}=\infty$, $N_{\mathrm{hold}}=1$. 11~September no-preview fill is return-to-normal; B2/B6 use persistence. \texttt{controle\_mpc\_qp\_v5.m} was not rewritten.
+
+\textbf{(c) Action.} Appendix~A recharge and arming paragraphs.
+
+\subsection*{R2.2 Justify steps / restrict scope}
+\textbf{(a) Concern.} Support synthetic steps with data or restrict title/scope.
+
+\textbf{(b) Response.} Synthetic steps remain controlled isolators of $\tau_b$. Public traces complement them after affine mapping; they do not retro-calibrate the historical synthetics. Scope is restricted in the title.
+
+\textbf{(c) Action.} Title + trace paragraph.
+
+\subsection*{R2.3 Causal information classes}
+\textbf{(a) Concern.} Separate scheduled load, planned interruption, alarm, and unannounced loss.
+
+\textbf{(b) Response.} Current sample is measured; future $g$ of an unannounced outage is hidden. Detection delay is a separate assay. 11~September no-preview fills future source-available / nominal limit (return-to-normal). Package B2/B6 uses persistence of the measured outage. Stochastic early-event scenario without an announcement coincides with nominal.
+
+\textbf{(c) Action.} Information-policy subsection names both fills.
+
+\subsection*{R2.4 Four ablations / feedforward+feedback}
+\textbf{(a) Concern.} Ablations and a feedforward+feedback competitor with the same forecasts.
+
+\textbf{(b) Response.} Foresight OFF, event-inequality off and horizon pairs are in Table~10. FF+FB is a main baseline in Table~7 (same named cases; persistence fill). The law inverts $u^\star=(r-a_b P_{\mathrm{BESS}})/b_b$ with SOC blocks and rate limits. Load-band/limit/multi-burst filtered peaks $\approx 0$\,kW, matching V5; source-loss $355.95$ vs V5 $350.07$\,kW. Heur+FS at $60.65$\,kW on multi-burst therefore does not prove that multi-step QP is necessary. A frozen $N_p=N_c=1$ V5 KPI is not in Table~10.
+
+\textbf{(c) Action.} Section~IV-D; Table~7 column FF+FB; Table~10.
+
+\subsection*{R2.5 Broad timing, missed events, repeated false alarms, gate}
+\textbf{(a) Concern.} Wide timing, missed events, repeated false positives, combined errors, confirmation.
+
+\textbf{(b) Response.} The 11~September protocol already contains a 41-point timing grid, one false-alarm case, missed-event/unannounced loss, and a 200-pair MC. Package \texttt{B4\_alarmes} adds 24 jobs: four forecast-pulse patterns (\texttt{three\_short}, \texttt{two\_medium}, \texttt{dense\_prep}, \texttt{late\_burst}) $\times$ six controllers, with \texttt{event\_mode=false\_alarm\_repeated} (physical $g{=}1$; only the forecast $g$ is pulsed). CSV check: every controller has $P_{\mathrm{un}}^{\max}\approx 0$\,kW---there is no physical outage to miss. The cost is reserve. Heuristic: SOC$_f=60\%$, throughput $0$ (it does not react to a false forecast). V5: SOC$_f$ $57.99$ / $59.00$ / $58.41$ / $58.49\%$ across the four patterns, throughput $16.85$--$24.80$\,kWh, fallback $1.50$--$4.42\%$. Stochastic: SOC$_f$ $49.35$--$50.33\%$. FF+FB: SOC$_f$ $58.85$--$59.65\%$. Repeated false alarms therefore spend SOC/throughput and can trigger V5 fallback; they do not create unserved power on this plant. The $N_{\mathrm{arm}}{=}8$ gate already failed a Phase-1 re-run ($628$ vs.\ $363$\,kW ungated) and is not a mitigation. These 24 jobs stay off manuscript Table~7 because the plant has no outage: mixing a reserve-cost test into the continuity ranking would change the question.
+
+\textbf{(c) Action.} Additional-studies list plus the forecast-error subsection: three sentences on B4; CSV remains GitHub.
+
+\subsection*{R2.6 Fallback / exitflags}
+\textbf{(a) Concern.} Causes, instants, exitflags, fallback influence.
+
+\textbf{(b) Response.} Fallback is part of the closed-loop policy. Reported KPIs are therefore MPC+fallback, not QP-only. Principal V5 jobs ($7\times 1200=8400$ steps; $8353$ accepted QP solutions):
+
+\begin{center}
+{\footnotesize
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+V5 case & Occ.\ /\ steps & FB\% & Recorded instants [s] & Code \\
+\midrule
+Source loss \texttt{j00014} & $19/1200$ & $1.5833$ & $462$--$473$; $475$--$478$; $481$--$483$ & \texttt{exitflag}$=-6$ all \\
+Source return \texttt{j00019} & $28/1200$ & $2.3333$ & $352$; $355$; $357$--$378$; $380$--$381$; $383$--$384$ & \texttt{exitflag}$=-6$ all \\
+Other five principal cases & $0/6000$ & $0$ & none & --- \\
+\bottomrule
+\end{tabular}}
+\end{center}
+
+On source loss those 19 steps all precede the outage at $500$\,s, so a global FB\% does not replace the concentration in preparation. Desktop V5 fallback (scale / \texttt{exitflag}$=-6$) is not the same gate as ARM--SSH firmware fallback (\texttt{qp\_engine\_accepted}~$\wedge$~\texttt{pass\_app}). HIL SSH islanding used fallback on $92.67\%$ / $95.60\%$ of the event windows (R1.1). The local label \texttt{nao\_convexo} records \texttt{exitflag}$=-6$; it does \emph{not} prove that the formulated QP is nonconvex. Package \texttt{causa\_fallback\_v1} reconstructs the 47 QPs at the stored MAT state: $\mathrm{chol}(H)$ succeeds, $\lambda_{\min}\approx +0.00666$ (SPD). IPM with objective scale $\alpha=0.001$ returns \texttt{exitflag}$=1$ on $47/47$. The active-set check uses the \emph{same} scaled pair $(\alpha H,\alpha f)$, warm-started from the scaled IPM $z$ when available---it is \emph{not} an independent confirmation at the official scale. The tag is therefore \texttt{ipm\_falso\_nao\_convexo}: a numerical scale sensitivity of the official IPM on these 47 Hessians, not a claim of an exact internal solver mechanism for the whole campaign, and not a certificate of every mathematical optimum. Closed-loop replay: official trajectory identical to the MAT; with scale or QP recovery, fallback goes $19\to 0$ (\texttt{j00014}) and $28\to 0$ (\texttt{j00019}) while the unserved-power peak stays on the $\approx 350$\,kW floor. The heuristic delayed preparation discharge ($\Delta E_{\mathrm{prep}}\approx 1.8$ and $2.5$\,kWh; $\Delta\mathrm{SOC}$ at the event $\approx -0.37$ and $-0.53$\,pp). That $E_{\mathrm{prep}}$ is the change in $\int \max(u,0)\,dt$ over the $N_{\mathrm{prep}}=30$\,s window before event onset between official MPC+fallback and diagnostic QP-accepted loops; it is not the unused campaign \texttt{aging\_proxy} field. CSVs: \texttt{05\_resultados/revisao\_operacional/causa\_fallback\_v1/}. This diagnosis is for these 47 principal steps; it is not a claim that all $6254$ consolidation \texttt{exitflag}$=-6$ events are false refusals, and $\alpha=0.001$ is not promoted (KKT gate 13/15).
+
+\textbf{(c) Action.} Implementation paragraph + this table; FB columns of the paper tables unchanged.
+
+\subsection*{R2.7 SOC predictor inconsistency}
+\textbf{(a) Concern.} Sign inconsistency frequency and SOC error vs piecewise model.
+
+\textbf{(b) Response.} Accepted V5 solutions of seven principal scenarios: $100/8353$ steps ($1.20\%$) with a sign mismatch; worst error $0.044$\,pp; no bound violation of the piecewise reference.
+
+\textbf{(c) Action.} Implementation subsection (sign-mismatch $100/8353$ and $0.044$\,pp).
+
+\subsection*{R2.8 Myopic weights / active constraints}
+\textbf{(a) Concern.} Myopic weight sensitivity, active constraints, command near steps.
+
+\textbf{(b) Response.} The 11~September fairness sweep already shows that raising myopic $\Delta u_{\max}$ from 120 to 200 to $400$\,kW/s on source-limit yields $102.78$, $71.31$ and $\approx 0$\,kW. Package \texttt{B3\_miope} (36 jobs) crosses $w_{\Delta u}\in\{5,50,200,500\}$ with the same three $\Delta u_{\max}$ values on load bands, NVML and source loss (persistence, \texttt{common\_slew}). CSV check: on load bands the peak is set by $\Delta u_{\max}$, not by $w_{\Delta u}$ ($102.78$ / $71.31$ / $\approx 0$\,kW at every weight). On source loss the myopic peak remains $702.78$ / $671.31$ / $592.61$\,kW by $\Delta u_{\max}$ and never reaches the $350$\,kW bound---so the myopic vs.\ V5 ranking on that contingency is not an artefact of these weights. On NVML both knobs move the peak (from $28.3$\,kW at $w_{\Delta u}{=}5$, $\Delta u_{\max}{=}120$ down to $2.89$\,kW at $w_{\Delta u}{=}500$, $\Delta u_{\max}{=}400$). Coefficient mismatch ($P_{\mathrm{base}}$ division on the myopic $\Delta u$ term only) remains disclosed: the myopic Hessian uses $w_{\Delta u}/P_{\mathrm{base}}^2$ whereas V5 uses $w_{\Delta u}\|\Delta U\|^2$ without that division. That sweep reports \emph{peak} versus $\Delta u_{\max}$ and $w_{\Delta u}$; it does \emph{not} report the command trajectory $u(t)$ nor the active-set identity. Those quantities are reconstructed post-hoc from the stored MATs in package \texttt{fairness\_sintese\_v1} (windows $\pm 20$\,s about load steps and the first $G{:}1\to 0$; separate myopic and V5 QP builders). A short follow-up package (\texttt{fairness\_harm\_v1}) then equalizes the directly comparable knobs---persistence fill, $\Delta u_{\max}=\Delta u_{\max}^{\mathrm{event}}=400$\,kW/s, \texttt{common\_slew}, $P_{\mathrm{base}}=950$, $R_{\mathrm{base}}=100$, and the effective myopic $\Delta u$ coefficient $w_{\Delta u}^{\mathrm{eff}}=w_{\Delta u}^{\mathrm{V5}}=50$ obtained by compensating the $P_{\mathrm{base}}^2$ division---and repeats FF+FB on that same slew/fill. Jobs \texttt{H01}--\texttt{H08}: on load bands the aligned myopic peak is $114.30$\,kW (V5 filtered $0$; FF+FB $0$); the unaligned $400$\,kW/s fairness sweep had reached $\approx 0$ only with the weaker $w_{\Delta u}/P_{\mathrm{base}}^2$ coefficient. On source loss the aligned myopic remains $592.61$\,kW versus V5 $350.07$\,kW and FF+FB $355.95$\,kW. Alignment is of the \emph{normal-mode} $\Delta u$ coefficient ($w_{\mathrm{eff}}=50$); in event mode V5 still uses $0.1\,w_{\Delta u}$. We harmonized the directly comparable parameters and verified that the main difference persists; the architectures, however, retain structural differences in their objectives, including horizon, terminal, slack and recharge terms. Equalizing one coefficient does not equalize relative priorities. Post-hoc command reconstruction (\texttt{fairness\_sintese\_v1}) matches stored $u$ to $0.012$\,kW; solver options differ from the official call ($200$ iterations / $10^{-6}$ vs.\ $150$ / $10^{-5}$), so it is not bit-exact. Active-set \emph{labels} flag myopic one-step constraints versus \emph{any} V5 horizon step, and mix binding inequalities with positive slacks---they are not an exact active-set identity. Those packages stay off manuscript Table~7: they are not a re-tune of V5, not a claim of identical objectives, and not a full factorial of all myopic costs.
+
+\textbf{(c) Action.} RQ2 fairness paragraph: 36-job CSV, aligned knobs, and the locked conclusion. Command/active-set synthesis stays on GitHub, not a full in-body reconstruction.
+
+\subsection*{R2.9 Normalization / Hessian / hierarchical priority}
+\textbf{(a) Concern.} Normalization, conditioning, hierarchical priority.
+
+\textbf{(b) Response.} Reported gram indicator is $\mathrm{condest}(C^\top C+\varepsilon I)$ at the first step, not $\mathrm{cond}(C)$. Hessian $\approx 3.3\times 10^{5}$ on the main V5 load-band job. Lexicographic MPC is not implemented.
+
+\textbf{(c) Action.} Information-policy and computational subsections.
+
+\subsection*{R2.10 350 kW is case-specific}
+\textbf{(a) Concern.} $750-400=350$\,kW is not a universal physical floor.
+
+\textbf{(b) Response.} Agreed. It is a scenario-specific power bound. Over $150$\,s the persistent energy floor is $14.5833$\,kWh.
+
+\textbf{(c) Action.} Terminology replaced throughout; ``physical floor'' removed from the TeX.
+
+\subsection*{R2.11 UPS dynamics}
+\textbf{(a) Concern.} Include UPS dynamics or restrict language to load continuity via BESS.
+
+\textbf{(b) Response.} Language is restricted to load continuity on the aggregated model. DE2-115 with the same plant does not add electrical UPS fidelity.
+
+\textbf{(c) Action.} Model, keywords, abstract, related work.
+
+\subsection*{R2.12 Repeated/randomized evaluation}
+\textbf{(a) Concern.} Randomize loads, SOC, converter, events, source limits and errors, with CI/quantiles.
+
+\textbf{(b) Response.} The 200-pair Monte Carlo evaluates \emph{forecast} uncertainty under a \emph{common} physical trajectory; it is not a joint randomization of the plant. Package \texttt{randomizacao\_fisica\_v1} is a separate physical/operational randomization \emph{sensitivity} (not an informal extension of those 200 pairs; not the \texttt{fairness\_harm\_v1} protocol, which uses $\Delta u_{\max}=400$ and \texttt{common\_slew}). Construction: 32 Latin-rank draws, seed $20260919$, forecast aligned to the plant (perfect foresight of that draw, not combined forecast error). Ranges: $L_{\mathrm{base}}\in[550,700]$\,kW, step $[80,300]$\,kW, $\mathrm{SOC}_0\in[40,60]\%$, source limit $[600,850]$\,kW, event time $[350,700]$\,s, duration $[80,200]$\,s, $\tau_b\in[1,4]$\,s; 16 outages / 16 saturations. Post-processing caps load at $950$\,kW and adjusts $M$/$L$ so saturations keep $L>M$; $\tau_b$ is known to both plant and controller (not an identification mismatch). Duration sets the $G{=}0$ window on outages; on saturations the raised load persists to the end. Controllers: V5, myopic QP, FF+FB. Default ramp remains $120/400$\,kW/s without \texttt{common\_slew}. Fraction within $1$\,kW of the case-specific bound: V5 $31/32$ (outages $16/16$, saturations $15/16$); myopic $0/32$; FF+FB $15/32$ (saturations $15/16$, outages $0/16$, median outage gap $11.9$\,kW). Exceptions discussed: saturation \texttt{D20} (V5 $1.51$\,kW for $1$\,s; FF+FB $171.6$\,kW); outage \texttt{D16} (FF+FB $303$\,kW above the bound). Not a data-center population; not mixed into Table~7. Overlapping NVML windows remain disclosed.
+
+\textbf{(c) Action.} MC paragraph and the compact diagnostic-package table in the manuscript; Table~7 unchanged.
+
+\subsection*{R2.13 Cycle percentiles / warm-start / horizon scale}
+\textbf{(a) Concern.} p50/p95/p99/max of cycle, assembly, iterations, scale with $N_p/N_c$, warm-start.
+
+\textbf{(b) Response.} Manuscript Table~16 is median/max \emph{QP solve} time $t_{\mathrm{QP}}$ for the 11~September V5 jobs, not the full cycle. The measured cycle time of each sample is the closed-loop step: forecast/horizon preparation, controller, diagnostics, plant update and storage of the step record. It is \emph{not} assembly$+$QP only. On the main V5 load-band job \texttt{j00004} the 11~September CSV gives cycle p50/p95/p99/max $0.0216$ / $0.0309$ / $0.0366$ / $0.242$\,s; QP $0.0174$ / $0.0255$ / $0.0305$ / $0.0887$\,s; assembly $0.0040$ / $0.0053$ / $0.0074$ / $0.0893$\,s. Iteration counts were not exported to that CSV; they are in \texttt{out.diagnostics.iterations} of the saved MAT. For all 1200 steps of \texttt{j00004} the percentiles are p50/p95/p99/max $= 10/12/14/15$. A warm-start trial matched iteration counts, so acceleration is not claimed. Audited \texttt{quadprog} passes empty $X_0$. Package \texttt{B5\_horizonte} is six V5 jobs, $(N_p,N_c)\in\{(12,4),(30,8),(60,15)\}$ on load bands and source loss (persistence). CSV check, load bands: cycle p50 $0.00357$ / $0.00826$ / $0.02397$\,s and wall $4.39$ / $10.47$ / $29.67$\,s; filtered peak remains 0. Source loss: cycle p50 $0.00349$ / $0.00899$ / $0.02701$\,s, peaks $350.99$ / $350.01$ / $350.07$\,kW. The $(60,15)$ pair matches the 11~September V5 KPIs (SOC$_f$ $58.80\%$ / $57.10\%$). Short horizon does not reverse Group~A; cycle time grows with horizon on this PC. These six jobs are not mixed with DE2-115 ADMM timings as an FPGA scaling law, and they are not a sixth column of manuscript Table~7 because three pairs on one host are not a complexity model.
+
+\textbf{(c) Action.} Computational subsection: iteration percentiles $10/12/14/15$ on \texttt{j00004}; no warm-start claim.
+
+\subsection*{R2.14 Long-outage final SOC}
+\textbf{(a) Concern.} Explain final SOC above minimum after a long outage; give intervals.
+
+\textbf{(b) Response.} Intervals $[600,7800)$\,s outage, $T_f=9600$\,s. SOC$_f$ $24.75\%/24.73\%$ after source return and recharge. Pre-event SOC $60\%/59.50\%$. A $7200$\,s ``recovery'' column is outage duration, not autonomous BESS restoration.
+
+\textbf{(c) Action.} Manuscript Table~13.
+
+\subsection*{R2.15 Extra metrics}
+\textbf{(a) Concern.} Times above thresholds, pre-event SOC, preparation energy, violations, recovery, throughput/EFC, reversals.
+
+\textbf{(b) Response.} Basic metrics are in the 11~September CSVs ($T_{\mathrm{gt1}}$, $T_{\mathrm{gt50}}$, $T_{\mathrm{gt100}}$, $T_{\mathrm{gt350}}$, pre-event SOC where logged, throughput, EFC). $T_{\mathrm{gt1}}$ uses $\ge 1$; other thresholds use $>$. EFC is utilization, not lifetime. Campaign fields named preparation-energy, reversal-count and \texttt{aging\_proxy} were \emph{not} recalculated as paper KPIs: those legacy definitions are not the reviewer quantities (\texttt{aging\_proxy} is a multiple of throughput). Distinct from that, package \texttt{causa\_fallback\_v1} reports a \emph{diagnostic} $\Delta E_{\mathrm{prep}}$: the change in $\int\max(u,0)\,dt$ over the $N_{\mathrm{prep}}=30$\,s window before event onset between the official MPC+fallback loop and a QP-accepted diagnostic loop. Reversal counts remain unrecalculated.
+
+\textbf{(c) Action.} Metrics subsection; diagnostic $E_{\mathrm{prep}}$ only in the fallback discussion. Campaign reversal counts remain unrecalculated.
+
+\subsection*{R2.16 Retracted / recent references}
+\textbf{(a) Concern.} Replace retracted reference; check recent metadata.
+
+\textbf{(b) Response.} The canonical TeX has no \texttt{sheng2026power} entry. Remaining bibliography uses the already-verified keys. A Crossref lookup of 18 extracted DOIs returned 16 records (two HTTP 429). No update-relation was seen in those 16 responses; that check does \emph{not} certify the absence of retraction for the whole bibliography.
+
+\textbf{(c) Action.} Bibliography retained without the retracted key; no pending pre-upload audit is announced.
+
+\subsection*{R2.17 Permanent repository}
+\textbf{(a) Concern.} Code, parameters, data, forecasts, seeds and results in a permanent archive.
+
+\textbf{(b) Response.} Deliberate \emph{partial} archive, not a claim of integral deposit of every artefact in one DOI. Code of this revision is GitHub tag \texttt{v1.0.5-ieee-access-rev}, archived at Zenodo \texttt{10.5281/zenodo.22943792} (concept \texttt{10.5281/zenodo.22846250}). Campaign MATs, \texttt{dataset\_v1} and B-group CSVs remain public as \texttt{07\_Experimental\_Pack.zip} on the GitHub release of \texttt{v1.0.4}. OSQP/DE10 HIL tables and diagnostic CSVs are \texttt{08\_Experimental\_Addendum.zip} on \texttt{v1.0.5}. They are \emph{not} inside the Zenodo code zip. Raw $\approx 1$\,GB DIPLOEE/NVML traces are not uploaded (hashes in \texttt{manifest.json}). The discarded \texttt{serial/mpc} HIL row is not in the CSV. Do not use \texttt{10.5281/zenodo.22837544} (v1.0.2). Whether this split satisfies a permanent-archive request is for the editor and reviewers.
+
+\textbf{(c) Action.} Section~VIII states the split; no assertion that the DOI holds all job MATs.
+
+%% =================================================================
+\section*{Reviewer 3}
+
+\subsection*{R3.1 Comparative table vs cited MPC works}
+\textbf{(a) Concern.} Table versus prior works (information, plant, baselines, HIL/SIL, errors).
+
+\textbf{(b) Response.} Qualitative positioning only; not a meta-analysis. Manuscript Table~1 (Section~II) maps the cited EMS-MPC works as follows: Parisio \emph{et al.} (2014; manuscript [4], Athens experimental microgrid, economic dispatch); Wang \emph{et al.} (2023; [5], data-center HESS, hierarchical MPC); Nair and Costa-Castell{\'o} (2020; [6], islanded hybrid storage); Sepehrzad \emph{et al.} (2023; [7], DC microgrid DMPC); Iqbal and Sarwat (2026; [24], behind-the-meter BESS, reliability/cost); this paper (aggregated source--load--BESS, $T_s=1$\,s, Heur/Heur+FS/myopic/FF+FB/V5/three-scenario MPC). Method textbooks already cited---Rossiter (2003; [1]), Wang (2009; [2]), Camacho and Bordons (2007; [3])---are not extra rows.
+
+\textbf{(c) Action.} Manuscript Table~1 (Parisio [4], Wang 2023 [5], Nair [6], Sepehrzad [7], Iqbal [24], this paper).
+
+\subsection*{R3.2 Statistical support / CI}
+\textbf{(a) Concern.} Confidence intervals on forecast tests.
+
+\textbf{(b) Response.} 200 pairs on one physical loss. V5 \emph{mean}/median/p95/max peaks $359.05$ / $350.16$ / $384.82$ / $580.32$\,kW; three-scenario $350.01$ / $350.00$ / $350.03$ / $350.67$\,kW. Mean difference (three-scenario$-$V5) $-9.043$\,kW, bootstrap $95\%$ CI $[-14.017,-4.791]$\,kW; median difference $-0.157$\,kW; $188$ lower / $12$ ties. The typical gain is small; the effect is in the tail (Fig.~ECDF in the manuscript). Mean SOC $55.00\%$ vs $48.67\%$. The 32-draw physical/operational sensitivity is a separate study (Table~17).
+
+\textbf{(c) Action.} RQ3 reports mean, median, p95, max and the bootstrap CI; ECDF figure.
+
+\subsection*{R3.3 Justify weights}
+\textbf{(a) Concern.} Justify weights and show sensitivity.
+
+\textbf{(b) Response.} Load/event slacks dominate after $P_{\mathrm{base}}$ normalization (manuscript Table~4). Univariate sweep only; no universal stability claim.
+
+\textbf{(c) Action.} Weights table + infopol caveat.
+
+\subsection*{R3.4 First-order simplification vs ranking}
+\textbf{(a) Concern.} Does the first-order converter change controller ranking?
+
+\textbf{(b) Response.} Table~12 is V5-only: $\tau_b=1/2/4$\,s keeps V5 on the bound. That is not a six-controller ranking in $\tau$ and does not validate a richer converter/UPS model.
+
+\textbf{(c) Action.} Table~12 caption; RQ3 qualifies the sweep.
+
+\subsection*{R3.5 Identical 90.98 kW peaks}
+\textbf{(a) Concern.} Equal heuristic peaks on load-bands and source-limit look like a copy-paste error.
+
+\textbf{(b) Response.} Both expose a $150$\,kW first-step deficit through $\tau_b=2$\,s: $150\,e^{-1/2}=90.979599$\,kW, at $400$\,s vs $200$\,s. Scenarios are otherwise different.
+
+\textbf{(c) Action.} Sentence in the metrics subsection.
+
+%% =================================================================
+\section*{Reviewer 4}
+
+\subsection*{R4.C1 Scientific novelty}
+\textbf{(a) Concern.} Novelty beyond implementing existing methods.
+
+\textbf{(b) Response.} The scientific increment is \emph{not} a new MPC theorem and is \emph{not} the historical $-10$\,s / $699$\,kW figure (that peak is not a result of the 11~September protocol: audited V5 at $-10$\,s is $350.00$\,kW). What the reader obtains, on one first-order aggregated plant with a stated case-study bound $P_{\mathrm{load}}-P_{\mathrm{BESS}}^{\max}$, is three operational facts that a paper which only implements ``an MPC'' would not have measured:
+
+\begin{enumerate}
+\item \emph{With the same forecasts, FF+FB also eliminates the filtered transient in the \emph{nominal} Group~A cases; multi-step QP is therefore not uniquely necessary for those results.} Table~7: filtered $P_{\mathrm{un}}^{\max}=0$ on load bands, source limit and multi-burst, matching V5. Heuristic and myopic QP remain in the $91$--$109$\,kW range. Equivalence is \emph{nominal}: it does not hold on every physical draw (e.g.\ \texttt{D20}: V5 $1.51$\,kW vs.\ FF+FB $171.6$\,kW).
+\item \emph{Extra peak cut on a single contingency is not free reserve.} The three-scenario competitor compresses the 200-pair forecast-error tail ($188$ better / $12$ ties; median difference $-0.16$\,kW; mean SOC $55.00\%$ vs.\ $48.67\%$). That is a design trade-off, not a dominance result.
+\item \emph{Improving the tail of one announced outage can fail the next.} On the depleted second-event test (Table~14; $\mathrm{SOC}_0=30\%$, two outages), the three-scenario policy hits $750$\,kW and $\mathrm{SOC}_{\min}=20\%$, whereas V5 stays near $350$\,kW and FF+FB at $355.95$\,kW.
+\end{enumerate}
+
+Fairness and physical/operational sensitivity packages further bound the claim: a common ramp does not equalize architectures; after aligning \emph{normal-mode} $\Delta u$ coefficients the source-loss myopic peak remains $\approx 593$\,kW versus V5 $\approx 350$\,kW (V5 still uses $0.1\,w_{\Delta u}$ in event mode---not an integral match during the contingency); across 32 plant/operating draws V5 stays within $1$\,kW of the case-specific bound in $31/32$ and the myopic QP in $0/32$, while FF+FB does so in $15/32$ (all but one source-limit draw; $0/16$ outages within $1$\,kW, median gap $11.9$\,kW). Those packages stay off Table~7 (they qualify it; Table~17). The contribution is a measured region of benefit and its costs---not a new optimizer and not a claim of general MPC superiority.
+
+\textbf{(c) Action.} Introduction, Table~7, RQ1--RQ3, conclusions.
+
+\subsection*{R4.C2 Validation beyond simulation}
+\textbf{(a) Concern.} HIL or operational measurements.
+
+\textbf{(b) Response.} Same as R1.1 (Section~VII, Tables~20--21), including concentrated SSH fallback and the solver-time vs.\ 1\,Hz sentence. Measured NVML is an input profile, not electrical validation of the plant.
+
+\textbf{(c) Action.} Section~VII.
+
+\subsection*{R4.C3 Public GPU/HPC dataset}
+\textbf{(a) Concern.} Use GPU/HPC measurements or an established public dataset.
+
+\textbf{(b) Response.} Same as R1.2. Mapped 600--950\,kW is not a measured 600--950\,kW feeder.
+
+\textbf{(c) Action.} Trace paragraph.
+
+\subsection*{R4.C4 Probabilistic forecast/timing}
+\textbf{(a) Concern.} Treat prediction/timing probabilistically.
+
+\textbf{(b) Response.} Sweep + MC + three-scenario competitor. Assumed error law disclosed; $-10$\,s $\neq 699$\,kW in the audited grid.
+
+\textbf{(c) Action.} Forecast-error subsection.
+
+\subsection*{R4.C5 Established predictive EMS (e.g.\ stochastic MPC)}
+\textbf{(a) Concern.} Add an established predictive EMS, e.g.\ stochastic MPC.
+
+\textbf{(b) Response.} Sixth competitor: three scenarios, $\pi=1/3$, shared entire $\Delta U$. It is scenario-based MPC, not multi-stage stochastic MPC with recourse. Table~14: the three-scenario policy hits $750$\,kW while V5 remains $350.18$\,kW.
+
+\textbf{(c) Action.} Section~IV (three-scenario MPC) and Table~14.
+
+\subsection*{R4.C6 Weights of several orders}
+\textbf{(a) Concern.} Justify widely different weights and robustness to tuning.
+
+\textbf{(b) Response.} Approximate hierarchy via normalized slacks. Large weights are not strict priority. Univariate sweep only.
+
+\textbf{(c) Action.} Manuscript Table~4, infopol.
+
+\subsection*{R4.C7 Real-time on representative hardware}
+\textbf{(a) Concern.} Real-time execution evidence on representative hardware.
+
+\textbf{(b) Response.} Same as R1.1: OSQP on the Cortex-A9 closed 1200 steps at $N_p=12$ with 0 solver overruns versus $T_s=1$\,s on the RSP (Table~21). That is not a WCET of golden V5 ($N_p=60$) and not end-to-end real-time deadline compliance. Desktop V5 fallback is not the ARM--SSH firmware gate.
+
+\textbf{(c) Action.} Section~VII.
+
+\subsection*{R4.C8 Battery degradation / replacement cost}
+\textbf{(a) Concern.} Incorporate degradation and replacement cost.
+
+\textbf{(b) Response.} This paper is a load-continuity EMS comparison, not a battery lifetime or replacement-cost study. Throughput/$N_{\mathrm{EFC}}$ are utilization proxies. The later \texttt{aging\_proxy} field is a multiple of throughput and adds no independent ageing information, so it is not used as a KPI. Peak/energy conclusions on this plant do not require a rainflow or cost model; they also do not substitute for one.
+
+\textbf{(c) Action.} Metrics and conclusion state the scientific cut, not only ``out of the operational plan''.
+
+\subsection*{R4.C9 Richer converter/UPS/DC-bus dynamics}
+\textbf{(a) Concern.} Verify conclusions with more realistic dynamics.
+
+\textbf{(b) Response.} The 11~September campaign varies only $\tau_b$/SOC on the aggregated plant. Package \texttt{B6\_dinamica} contains 12 jobs with a physical-dynamics limiter on that same first-order map. They are not EMT, PLL, LCL or UPS inner loops, so they cannot close this request; they are not mixed into the paper tables for that reason.
+
+\textbf{(c) Action.} Model limitations retained; limiter jobs excluded as not UPS/EMT fidelity.
+
+\subsection*{R4.C10 Statistical robustness}
+\textbf{(a) Concern.} More than isolated deterministic scenarios.
+
+\textbf{(b) Response.} The 200 pairs evaluate forecast uncertainty on one physical loss. Package \texttt{randomizacao\_fisica\_v1} (32 operational/plant draws) is a separate sensitivity, not an informal extension of that Monte Carlo. Overlapping NVML windows remain disclosed.
+
+\textbf{(c) Action.} MC caveats plus physical/operational sensitivity package.
+
+\subsection*{R4.C11 Data-center specificity}
+\textbf{(a) Concern.} Show a data-center contribution, not a generic microgrid.
+
+\textbf{(b) Response.} Motivation, mapped AI traces, and 100\%-critical IT load are data-center oriented. The electrical plant remains a generic aggregated source--load--BESS model; multi-UPS and job-class shedding are not modelled.
+
+\textbf{(c) Action.} Related work + critical-load hypothesis.
+
+\subsection*{R4.C12 Qualified conclusions}
+\textbf{(a) Concern.} No general superiority or universal zero.
+
+\textbf{(b) Response.} Filtered zero is Group~A; Group~B bound is 350\,kW; long outage: MPC slightly worse on energy; myopic can beat heuristic only after $\Delta u$ retuning.
+
+\textbf{(c) Action.} Conclusion rewrite.
+
+%% =================================================================
+\section*{Reviewer 5}
+
+\subsection*{R5.1 Timing precision needed}
+\textbf{(a) Concern.} Expand timing analysis and state the accuracy required.
+
+\textbf{(b) Response.} For beating the heuristic peak, both V5 and the three-scenario policy pass all 41 points. For the descriptive criterion $P_{\mathrm{un}}^{\max}\le 351$\,kW, V5 passes on $[-20,+4]$\,s. That window is not a pre-registered requirement and is not a universal accuracy spec.
+
+\textbf{(c) Action.} Table~19 plus the $[-20,+4]$\,s sentence in the forecast-error subsection.
+
+\subsection*{R5.2 Why the myopic loses}
+\textbf{(a) Concern.} Explain the myopic being worse; retune.
+
+\textbf{(b) Response.} On load bands, myopic $102.78$ vs heuristic $90.98$\,kW at $\Delta u_{\max}=120$. Raising $\Delta u_{\max}$ to 400\,kW/s drives that isolated peak to $\approx 0$. Horizon is therefore not the only cause; $\Delta u$ coefficients also differ.
+
+\textbf{(c) Action.} RQ2.
+
+\subsection*{R5.3 Align title and all sections with limited scope}
+\textbf{(a) Concern.} Title and every section must match the limited event/model scope.
+
+\textbf{(b) Response.} Title now states when forecast-aware control suffices and when MPC adds value, on an aggregated load. Hardware is not in the title; it is Section~VII.
+
+\textbf{(c) Action.} Title, abstract, keywords, conclusion.
+
+\subsection*{R5.4 Quantify SOC, recovery, peak cut, generator coordination}
+\textbf{(a) Concern.} Quantify SOC, recovery, peak reduction, backup-generator coordination and nominal benefit.
+
+\textbf{(b) Response.} Peak/SOC/energy numbers are in the tables. Closed-loop generator coordination is \emph{not} simulated; discussion only (R1.8/R1.11).
+
+\textbf{(c) Action.} Tables + discussion-only generator sentence.
+
+\subsection*{R5.5 Unidentified parameters, noise, nonlinearities, run-to-run variability}
+\textbf{(a) Concern.} Limits from unidentified parameters, measurement noise, nonlinearities and execution variability.
+
+\textbf{(b) Response.} $\tau_b$ and $\eta$ were not identified on a field battery (manuscript Table~12 only sweeps the first-order $\tau_b$). Package \texttt{B6\_ruido} is 40 V5 jobs, $\sigma_L{=}5$\,kW and $\sigma_{\mathrm{SOC}}{=}0.2$\,pp, twenty seeds $\times$ \{source loss, NVML\}. CSV check: source-loss peaks stay in $350.05$--$350.24$\,kW (noiseless V5 $350.07$\,kW); NVML filtered peaks remain 0. Additive measurement noise at this amplitude does not reverse the bound or the NVML zeros. The jobs stay off manuscript Table~7 because they are V5-only, one $(\sigma_L,\sigma_{\mathrm{SOC}})$ pair, persistence fill, and not a converter/sensor identification. Nonlinear UPS dynamics remain out of scope (R4.C9). Solver variability on the i7 is $t_{\mathrm{QP}}$ in manuscript Table~16; cycle percentiles are in the computational paragraph and manuscript Table~15. FPGA ADMM timing for 1200 steps is not a paper table.
+
+\textbf{(c) Action.} Section~V-F (scope); Table~12; noise check stays off Table~7.
+
+\end{document}
