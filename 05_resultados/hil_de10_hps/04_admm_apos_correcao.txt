@@ -1,0 +1,40 @@
+﻿=== carga_faixas ===
+ems_hps.exe : u0=54.90437089 pri=0.236 iter=15 fb=0 exit=1
+No C:\Users\Rauni\AppData\Local\Temp\ps-script-02acf02f-8546-4e88-a948-f9adbfddf303.ps1:112 caractere:110
++ ... c ==="; $out += (& .\ems_hps.exe --ctrl mpc --cenario $c 2>&1 | Out-S ...
++                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (u0=54.90437089 ...=15 fb=0 exit=1:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ctrl=mpc cenario=carga_faixas Pnao_max=3.028416 SOC_final=55.230919 fallback=0 evento=261 tqp_med=0.001078 tqp_max=0.003988 pri_med=0.3983 pri_max=0.9938 iter_med=18.9 n_lim=0 n_inv=0
+
+=== limite_fonte ===
+ems_hps.exe : u0=57.75201760 pri=0.30777 iter=15 fb=0 exit=1
+No C:\Users\Rauni\AppData\Local\Temp\ps-script-02acf02f-8546-4e88-a948-f9adbfddf303.ps1:112 caractere:110
++ ... c ==="; $out += (& .\ems_hps.exe --ctrl mpc --cenario $c 2>&1 | Out-S ...
++                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (u0=57.75201760 ...=15 fb=0 exit=1:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ctrl=mpc cenario=limite_fonte Pnao_max=2.938075 SOC_final=38.512218 fallback=0 evento=1011 tqp_med=0.000863 tqp_max=0.002118 pri_med=0.406 pri_max=0.9868 iter_med=13.4 n_lim=0 n_inv=0
+
+=== perda_fonte ===
+ems_hps.exe : u0=55.51844859 pri=0.306447 iter=15 fb=0 exit=1
+No C:\Users\Rauni\AppData\Local\Temp\ps-script-02acf02f-8546-4e88-a948-f9adbfddf303.ps1:112 caractere:110
++ ... c ==="; $out += (& .\ems_hps.exe --ctrl mpc --cenario $c 2>&1 | Out-S ...
++                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (u0=55.51844859 ...=15 fb=0 exit=1:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ctrl=mpc cenario=perda_fonte Pnao_max=397.772059 SOC_final=57.160308 fallback=0 evento=161 tqp_med=0.001074 tqp_max=0.002837 pri_med=0.4323 pri_max=0.9947 iter_med=18.9 n_lim=0 n_inv=0
+
+=== retorno_fonte ===
+ems_hps.exe : u0=55.51844859 pri=0.306447 iter=15 fb=0 exit=1
+No C:\Users\Rauni\AppData\Local\Temp\ps-script-02acf02f-8546-4e88-a948-f9adbfddf303.ps1:112 caractere:110
++ ... c ==="; $out += (& .\ems_hps.exe --ctrl mpc --cenario $c 2>&1 | Out-S ...
++                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (u0=55.51844859 ...=15 fb=0 exit=1:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ctrl=mpc cenario=retorno_fonte Pnao_max=397.773967 SOC_final=55.090239 fallback=0 evento=261 tqp_med=0.001066 tqp_max=0.002808 pri_med=0.4539 pri_max=0.9947 iter_med=19.0 n_lim=0 n_inv=0
+

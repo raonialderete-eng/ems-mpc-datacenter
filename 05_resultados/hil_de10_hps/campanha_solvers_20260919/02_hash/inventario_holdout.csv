@@ -1,0 +1,9 @@
+file,k,n,m,qp_id,dup_of
+C:\Users\Rauni\Documents\MPC_DATACENTER\05_resultados\hil_de10_hps\holdout_dumps\inicio_ilha_prescrito\qp_k0500_exit0.txt,500,64,172,88994aff4c40b6476bc5ba8f54b8d1f64be5fb37d2ac976be59b402cdebd6445,
+C:\Users\Rauni\Documents\MPC_DATACENTER\05_resultados\hil_de10_hps\holdout_dumps\k0_aceito_faixas\qp_k0000_exit1.txt,0,64,160,cb46881f264987e4e90d2484b035325df6322b5be702a576f021c6387fa82443,
+C:\Users\Rauni\Documents\MPC_DATACENTER\05_resultados\hil_de10_hps\holdout_dumps\retorno_k0\qp_k0000_exit1.txt,0,64,160,de50193c7db29b9d71be6e106bc99f679c9e6f6bd7e744b2e2524e3b36d06597,
+C:\Users\Rauni\Documents\MPC_DATACENTER\05_resultados\hil_de10_hps\holdout_dumps\soc_perto_max\qp_k0000_exit1.txt,0,64,160,813cd292601a518052945970197d2cc0c6b445bcdae5bda914256a163462ac24,
+C:\Users\Rauni\Documents\MPC_DATACENTER\05_resultados\hil_de10_hps\holdout_dumps\soc_perto_min\qp_k0000_exit1.txt,0,64,172,6a725307cefeaff539c16e2aa3584d774ffde643297025b9a996e47bdf01ddb3,
+C:\Users\Rauni\Documents\MPC_DATACENTER\05_resultados\hil_de10_hps\holdout_dumps\transicao_carga\qp_k0120_exit1.txt,120,64,160,cb46881f264987e4e90d2484b035325df6322b5be702a576f021c6387fa82443,
+C:\Users\Rauni\Documents\MPC_DATACENTER\05_resultados\hil_de10_hps\holdout_dumps\transicao_limite\qp_k0120_exit1.txt,120,64,160,de50193c7db29b9d71be6e106bc99f679c9e6f6bd7e744b2e2524e3b36d06597,
+C:\Users\Rauni\Documents\MPC_DATACENTER\05_resultados\hil_de10_hps\first_div\dump\qp_k0389_exit0.txt,389,64,172,dff97a2e5b1b11e3aa666110e7369e640ed4fcc1613063c49a4956d427d5d56e,

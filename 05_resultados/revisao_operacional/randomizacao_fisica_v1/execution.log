@@ -1,0 +1,193 @@
+MATLAB 25.2.0.2998904 (R2025b) | physical_operational_sensitivity n=32 method=latin_ranks_fallback
+START D01_mpc_qp_v5 tipo=perda t0=607.0
+DONE D01_mpc_qp_v5 P=482.050 bound=482.031 wall=31.6
+START D01_miope_qp tipo=perda t0=607.0
+DONE D01_miope_qp P=838.741 bound=482.031 wall=0.9
+START D01_ff_feedback tipo=perda t0=607.0
+DONE D01_ff_feedback P=496.168 bound=482.031 wall=0.1
+START D02_mpc_qp_v5 tipo=perda t0=388.3
+DONE D02_mpc_qp_v5 P=470.546 bound=470.469 wall=33.3
+START D02_miope_qp tipo=perda t0=388.3
+DONE D02_miope_qp P=659.445 bound=470.469 wall=1.0
+START D02_ff_feedback tipo=perda t0=388.3
+DONE D02_ff_feedback P=659.445 bound=470.469 wall=0.1
+START D03_mpc_qp_v5 tipo=perda t0=432.0
+DONE D03_mpc_qp_v5 P=394.359 bound=394.219 wall=31.8
+START D03_miope_qp tipo=perda t0=432.0
+DONE D03_miope_qp P=731.326 bound=394.219 wall=0.7
+START D03_ff_feedback tipo=perda t0=432.0
+DONE D03_ff_feedback P=404.836 bound=394.219 wall=0.1
+START D04_mpc_qp_v5 tipo=perda t0=694.5
+DONE D04_mpc_qp_v5 P=340.203 bound=340.156 wall=32.0
+START D04_miope_qp tipo=perda t0=694.5
+DONE D04_miope_qp P=541.261 bound=340.156 wall=0.7
+START D04_ff_feedback tipo=perda t0=694.5
+DONE D04_ff_feedback P=343.423 bound=340.156 wall=0.1
+START D05_mpc_qp_v5 tipo=perda t0=355.5
+DONE D05_mpc_qp_v5 P=486.174 bound=486.094 wall=32.6
+START D05_miope_qp tipo=perda t0=355.5
+DONE D05_miope_qp P=828.828 bound=486.094 wall=0.8
+START D05_ff_feedback tipo=perda t0=355.5
+DONE D05_ff_feedback P=497.568 bound=486.094 wall=0.1
+START D06_mpc_qp_v5 tipo=perda t0=574.2
+DONE D06_mpc_qp_v5 P=408.081 bound=407.969 wall=31.6
+START D06_miope_qp tipo=perda t0=574.2
+DONE D06_miope_qp P=612.782 bound=407.969 wall=0.8
+START D06_ff_feedback tipo=perda t0=574.2
+DONE D06_ff_feedback P=612.781 bound=407.969 wall=0.1
+START D07_mpc_qp_v5 tipo=perda t0=453.9
+DONE D07_mpc_qp_v5 P=303.094 bound=302.969 wall=29.3
+START D07_miope_qp tipo=perda t0=453.9
+DONE D07_miope_qp P=653.174 bound=302.969 wall=0.8
+START D07_ff_feedback tipo=perda t0=453.9
+DONE D07_ff_feedback P=315.669 bound=302.969 wall=0.1
+START D08_mpc_qp_v5 tipo=perda t0=585.2
+DONE D08_mpc_qp_v5 P=460.274 bound=460.156 wall=30.3
+START D08_miope_qp tipo=perda t0=585.2
+DONE D08_miope_qp P=707.372 bound=460.156 wall=0.7
+START D08_ff_feedback tipo=perda t0=585.2
+DONE D08_ff_feedback P=466.452 bound=460.156 wall=0.1
+START D09_mpc_qp_v5 tipo=perda t0=475.8
+DONE D09_mpc_qp_v5 P=357.374 bound=357.344 wall=29.3
+START D09_miope_qp tipo=perda t0=475.8
+DONE D09_miope_qp P=573.802 bound=357.344 wall=0.8
+START D09_ff_feedback tipo=perda t0=475.8
+DONE D09_ff_feedback P=359.653 bound=357.344 wall=0.1
+START D10_mpc_qp_v5 tipo=perda t0=596.1
+DONE D10_mpc_qp_v5 P=307.235 bound=307.031 wall=28.5
+START D10_miope_qp tipo=perda t0=596.1
+DONE D10_miope_qp P=618.841 bound=307.031 wall=0.7
+START D10_ff_feedback tipo=perda t0=596.1
+DONE D10_ff_feedback P=314.509 bound=307.031 wall=0.1
+START D11_mpc_qp_v5 tipo=perda t0=464.8
+DONE D11_mpc_qp_v5 P=502.091 bound=501.719 wall=33.5
+START D11_miope_qp tipo=perda t0=464.8
+DONE D11_miope_qp P=732.994 bound=501.719 wall=0.8
+START D11_ff_feedback tipo=perda t0=464.8
+DONE D11_ff_feedback P=732.994 bound=501.719 wall=0.1
+START D12_mpc_qp_v5 tipo=perda t0=377.3
+DONE D12_mpc_qp_v5 P=496.462 bound=496.406 wall=31.7
+START D12_miope_qp tipo=perda t0=377.3
+DONE D12_miope_qp P=848.877 bound=496.406 wall=0.7
+START D12_ff_feedback tipo=perda t0=377.3
+DONE D12_ff_feedback P=509.593 bound=496.406 wall=0.1
+START D13_mpc_qp_v5 tipo=perda t0=508.6
+DONE D13_mpc_qp_v5 P=390.308 bound=390.156 wall=32.0
+START D13_miope_qp tipo=perda t0=508.6
+DONE D13_miope_qp P=691.165 bound=390.156 wall=0.7
+START D13_ff_feedback tipo=perda t0=508.6
+DONE D13_ff_feedback P=397.250 bound=390.156 wall=0.1
+START D14_mpc_qp_v5 tipo=perda t0=530.5
+DONE D14_mpc_qp_v5 P=428.352 bound=428.281 wall=29.5
+START D14_miope_qp tipo=perda t0=530.5
+DONE D14_miope_qp P=776.114 bound=428.281 wall=0.7
+START D14_ff_feedback tipo=perda t0=530.5
+DONE D14_ff_feedback P=440.576 bound=428.281 wall=0.1
+START D15_mpc_qp_v5 tipo=perda t0=366.4
+DONE D15_mpc_qp_v5 P=359.579 bound=359.531 wall=29.5
+START D15_miope_qp tipo=perda t0=366.4
+DONE D15_miope_qp P=631.893 bound=359.531 wall=0.7
+START D15_ff_feedback tipo=perda t0=366.4
+DONE D15_ff_feedback P=364.112 bound=359.531 wall=0.1
+START D16_mpc_qp_v5 tipo=perda t0=672.7
+DONE D16_mpc_qp_v5 P=394.547 bound=394.531 wall=30.5
+START D16_miope_qp tipo=perda t0=672.7
+DONE D16_miope_qp P=697.849 bound=394.531 wall=0.8
+START D16_ff_feedback tipo=perda t0=672.7
+DONE D16_ff_feedback P=697.850 bound=394.531 wall=0.1
+START D17_mpc_qp_v5 tipo=limite t0=519.5
+DONE D17_mpc_qp_v5 P=0.000 bound=0.000 wall=29.5
+START D17_miope_qp tipo=limite t0=519.5
+DONE D17_miope_qp P=91.032 bound=0.000 wall=0.7
+START D17_ff_feedback tipo=limite t0=519.5
+DONE D17_ff_feedback P=0.000 bound=0.000 wall=0.1
+START D18_mpc_qp_v5 tipo=limite t0=497.7
+DONE D18_mpc_qp_v5 P=0.000 bound=0.000 wall=29.7
+START D18_miope_qp tipo=limite t0=497.7
+DONE D18_miope_qp P=189.540 bound=0.000 wall=0.7
+START D18_ff_feedback tipo=limite t0=497.7
+DONE D18_ff_feedback P=0.000 bound=0.000 wall=0.1
+START D19_mpc_qp_v5 tipo=limite t0=410.2
+DONE D19_mpc_qp_v5 P=0.000 bound=0.000 wall=30.6
+START D19_miope_qp tipo=limite t0=410.2
+DONE D19_miope_qp P=86.957 bound=0.000 wall=0.7
+START D19_ff_feedback tipo=limite t0=410.2
+DONE D19_ff_feedback P=0.000 bound=0.000 wall=0.1
+START D20_mpc_qp_v5 tipo=limite t0=443.0
+DONE D20_mpc_qp_v5 P=1.511 bound=0.000 wall=31.6
+START D20_miope_qp tipo=limite t0=443.0
+DONE D20_miope_qp P=233.110 bound=0.000 wall=0.8
+START D20_ff_feedback tipo=limite t0=443.0
+DONE D20_ff_feedback P=171.572 bound=0.000 wall=0.1
+START D21_mpc_qp_v5 tipo=limite t0=661.7
+DONE D21_mpc_qp_v5 P=0.000 bound=0.000 wall=31.0
+START D21_miope_qp tipo=limite t0=661.7
+DONE D21_miope_qp P=148.733 bound=0.000 wall=0.7
+START D21_ff_feedback tipo=limite t0=661.7
+DONE D21_ff_feedback P=0.000 bound=0.000 wall=0.1
+START D22_mpc_qp_v5 tipo=limite t0=399.2
+DONE D22_mpc_qp_v5 P=0.231 bound=0.000 wall=31.2
+START D22_miope_qp tipo=limite t0=399.2
+DONE D22_miope_qp P=58.064 bound=0.000 wall=0.8
+START D22_ff_feedback tipo=limite t0=399.2
+DONE D22_ff_feedback P=0.000 bound=0.000 wall=0.1
+START D23_mpc_qp_v5 tipo=limite t0=618.0
+DONE D23_mpc_qp_v5 P=0.000 bound=0.000 wall=28.5
+START D23_miope_qp tipo=limite t0=618.0
+DONE D23_miope_qp P=93.243 bound=0.000 wall=0.7
+START D23_ff_feedback tipo=limite t0=618.0
+DONE D23_ff_feedback P=0.000 bound=0.000 wall=0.1
+START D24_mpc_qp_v5 tipo=limite t0=421.1
+DONE D24_mpc_qp_v5 P=0.000 bound=0.000 wall=31.0
+START D24_miope_qp tipo=limite t0=421.1
+DONE D24_miope_qp P=46.034 bound=0.000 wall=0.8
+START D24_ff_feedback tipo=limite t0=421.1
+DONE D24_ff_feedback P=0.000 bound=0.000 wall=0.1
+START D25_mpc_qp_v5 tipo=limite t0=628.9
+DONE D25_mpc_qp_v5 P=0.000 bound=0.000 wall=29.5
+START D25_miope_qp tipo=limite t0=628.9
+DONE D25_miope_qp P=43.666 bound=0.000 wall=0.7
+START D25_ff_feedback tipo=limite t0=628.9
+DONE D25_ff_feedback P=0.000 bound=0.000 wall=0.1
+START D26_mpc_qp_v5 tipo=limite t0=486.7
+DONE D26_mpc_qp_v5 P=0.000 bound=0.000 wall=29.4
+START D26_miope_qp tipo=limite t0=486.7
+DONE D26_miope_qp P=17.660 bound=0.000 wall=0.8
+START D26_ff_feedback tipo=limite t0=486.7
+DONE D26_ff_feedback P=0.000 bound=0.000 wall=0.1
+START D27_mpc_qp_v5 tipo=limite t0=683.6
+DONE D27_mpc_qp_v5 P=0.000 bound=0.000 wall=29.7
+START D27_miope_qp tipo=limite t0=683.6
+DONE D27_miope_qp P=37.766 bound=0.000 wall=0.7
+START D27_ff_feedback tipo=limite t0=683.6
+DONE D27_ff_feedback P=0.000 bound=0.000 wall=0.1
+START D28_mpc_qp_v5 tipo=limite t0=639.8
+DONE D28_mpc_qp_v5 P=0.000 bound=0.000 wall=30.3
+START D28_miope_qp tipo=limite t0=639.8
+DONE D28_miope_qp P=175.821 bound=0.000 wall=0.7
+START D28_ff_feedback tipo=limite t0=639.8
+DONE D28_ff_feedback P=0.000 bound=0.000 wall=0.1
+START D29_mpc_qp_v5 tipo=limite t0=650.8
+DONE D29_mpc_qp_v5 P=0.000 bound=0.000 wall=29.3
+START D29_miope_qp tipo=limite t0=650.8
+DONE D29_miope_qp P=153.857 bound=0.000 wall=0.7
+START D29_ff_feedback tipo=limite t0=650.8
+DONE D29_ff_feedback P=0.000 bound=0.000 wall=0.1
+START D30_mpc_qp_v5 tipo=limite t0=563.3
+DONE D30_mpc_qp_v5 P=0.000 bound=0.000 wall=29.7
+START D30_miope_qp tipo=limite t0=563.3
+DONE D30_miope_qp P=96.997 bound=0.000 wall=0.7
+START D30_ff_feedback tipo=limite t0=563.3
+DONE D30_ff_feedback P=0.000 bound=0.000 wall=0.1
+START D31_mpc_qp_v5 tipo=limite t0=552.3
+DONE D31_mpc_qp_v5 P=0.000 bound=0.000 wall=29.5
+START D31_miope_qp tipo=limite t0=552.3
+DONE D31_miope_qp P=92.325 bound=0.000 wall=0.7
+START D31_ff_feedback tipo=limite t0=552.3
+DONE D31_ff_feedback P=0.000 bound=0.000 wall=0.1
+START D32_mpc_qp_v5 tipo=limite t0=541.4
+DONE D32_mpc_qp_v5 P=0.000 bound=0.000 wall=30.4
+START D32_miope_qp tipo=limite t0=541.4
+DONE D32_miope_qp P=95.220 bound=0.000 wall=0.7
+START D32_ff_feedback tipo=limite t0=541.4
+DONE D32_ff_feedback P=0.000 bound=0.000 wall=0.1

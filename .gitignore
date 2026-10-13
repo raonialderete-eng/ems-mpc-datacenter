@@ -35,7 +35,10 @@ slprj/
 **/greybox_tmp/
 **/simulation/modelsim/
 
-# Nios object dumps (sources stay)
+# OSQP/HPS build products
+*.exe
+07_fpga/fase1_hps/*.o
+07_fpga/fase1_hps/third_party/osqp/build/
 **/obj/
 **/*.objdump
 **/*.map

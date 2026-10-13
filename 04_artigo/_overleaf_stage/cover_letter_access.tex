@@ -1,0 +1,48 @@
+\documentclass[11pt]{letter}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+\signature{Raoni Alderete\\
+Corresponding Author\\
+Graduate Program in Electrical Engineering\\
+Universidade Federal de Mato Grosso do Sul (UFMS)\\
+Campo Grande, MS, Brazil\\
+E-mail: raoni.alderete@ufms.br}
+
+\address{Raoni Alderete\\
+UFMS -- PPEE\\
+Campo Grande, MS 79070-900, Brazil}
+
+\date{\today}
+
+\begin{document}
+\begin{letter}{Editor-in-Chief\\
+IEEE Access}
+
+\opening{Dear Editor-in-Chief,}
+
+I am pleased to resubmit the manuscript entitled
+
+\begin{center}
+\textit{Predictive Energy Management of an Aggregated AI/HPC Data-Center Load with BESS:\\
+When Forecast-Aware Control Suffices and When MPC Adds Value}
+\end{center}
+
+as a Research Article in \textit{IEEE Access}, following the decision to reject the previous version in present form with encouragement to resubmit.
+
+This work presents an applied, comparative energy management framework for AI/HPC data centers with BESS providing UPS support. The scientific question is when forecast-aware simple control already removes converter-limited transients, and when multi-step QP still adds value. Six controllers share the same plant and cases: a reactive heuristic, a foresight-enabled heuristic, a myopic QP, a feedforward-plus-feedback inversion law, a deterministic MPC-QP (V5), and a three-scenario MPC with a shared command sequence.
+
+The study focuses on AI-typical demand steps and source-limit saturation. Under nominal load variation both V5 and FF+FB drive filtered unserved-power peaks below 1 kW, so multi-step QP is sufficient but not uniquely necessary. Under source loss, V5 reaches the physical bound 350 kW; peak mitigation is not energy autonomy. A reduced-horizon copy of the same MPC, solved with OSQP on a Cortex-A9, closed the loop on the aggregated MATLAB plant; recorded island peaks are MPC+fallback. Solver times on the board did not exceed 1 s; end-to-end 1 Hz deadline compliance was not assessed.
+
+The experimental pack \texttt{07\_Experimental\_Pack.zip} remains on the GitHub release of tag \texttt{v1.0.4-ieee-access-rev} (job MATs, \texttt{dataset\_v1}, B-group CSVs, audited MATLAB). The addendum \texttt{08\_Experimental\_Addendum.zip} on tag \texttt{v1.0.5-ieee-access-rev} holds OSQP/DE10 HIL CSVs and diagnostic CSVs. Zenodo \url{https://doi.org/10.5281/zenodo.22943792} archives the code snapshot of tag \texttt{v1.0.5} (concept DOI \url{https://doi.org/10.5281/zenodo.22846250}). Do not use 10.5281/zenodo.22837544 (tag v1.0.2).
+
+The manuscript is original, has not been published previously, and is not under consideration elsewhere. Both authors approve this submission. No conflict of interest is declared. This work is part of an M.Sc.\ research project at UFMS; no external grant number is reported. The corresponding author is Raoni Alderete. Prof.\ Edson Antonio Batista (FAENG/LABSEM) is co-author in recognition of the supervision of the embedded hardware-in-the-loop campaign.
+
+Thank you for considering our manuscript. I look forward to your editorial assessment.
+
+\closing{Sincerely,}
+
+\end{letter}
+\end{document}

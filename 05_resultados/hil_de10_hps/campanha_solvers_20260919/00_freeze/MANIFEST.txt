@@ -1,0 +1,11 @@
+﻿date: 2026-09-19
+campaign: campanha_solvers_20260919
+purpose: snapshot before OSQP/qpOASES campaign; do not overwrite
+gcc: C:\Users\Rauni\AppData\Local\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin\gcc.exe
+g++: C:\Users\Rauni\AppData\Local\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin\g++.exe
+gcc_version: gcc.exe (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r4) 16.1.0
+cmake: C:\Users\Rauni\AppData\Local\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin\cmake.exe
+os: Microsoft Windows NT 10.0.19045.0
+flags_intended: -O2 -std=c99 / -O2 (C++) no -ffast-math
+admm_p1: fase1_hps-P1-20260919-r2
+lambda_p1: lambda[p] = S[p] * y[p]  (missing rho)

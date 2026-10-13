@@ -1,0 +1,2 @@
+u0=0.00007829 pri=1.13687e-13 iter=93 fb=0 exit=1
+ctrl=mpc cenario=limite_fonte Pnao_max=0.000001 SOC_final=51.103008 fallback=0 evento=1011 tqp_med=0.000432 tqp_max=0.035184 pri_med=9.838e-13 pri_max=1.819e-12 iter_med=1.0 n_lim=0 n_inv=0 eval_app=1200 eval_kkt=1200 du0_same_max=0 shadow_ok=0

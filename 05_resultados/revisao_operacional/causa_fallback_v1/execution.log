@@ -1,0 +1,65 @@
+PART A  n=51 QPs
+A 1/51 j00014 t=462 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 2/51 j00014 t=463 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 3/51 j00014 t=464 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 4/51 j00014 t=465 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 5/51 j00014 t=466 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 6/51 j00014 t=467 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 7/51 j00014 t=468 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 8/51 j00014 t=469 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 9/51 j00014 t=470 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 10/51 j00014 t=471 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 11/51 j00014 t=472 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 12/51 j00014 t=473 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 13/51 j00014 t=475 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 14/51 j00014 t=476 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 15/51 j00014 t=477 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 16/51 j00014 t=478 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 17/51 j00014 t=481 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 18/51 j00014 t=482 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 19/51 j00014 t=483 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 20/51 j00019 t=352 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 21/51 j00019 t=355 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 22/51 j00019 t=357 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 23/51 j00019 t=358 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 24/51 j00019 t=359 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 25/51 j00019 t=360 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 26/51 j00019 t=361 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 27/51 j00019 t=362 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 28/51 j00019 t=363 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 29/51 j00019 t=364 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 30/51 j00019 t=365 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 31/51 j00019 t=366 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 32/51 j00019 t=367 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 33/51 j00019 t=368 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 34/51 j00019 t=369 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 35/51 j00019 t=370 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 36/51 j00019 t=371 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 37/51 j00019 t=372 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 38/51 j00019 t=373 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 39/51 j00019 t=374 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 40/51 j00019 t=375 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 41/51 j00019 t=376 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 42/51 j00019 t=377 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 43/51 j00019 t=378 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 44/51 j00019 t=380 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 45/51 j00019 t=381 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 46/51 j00019 t=383 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 47/51 j00019 t=384 ef0=-6 scaled=1 as=1 lmin=0.00666 ipm_falso_nao_convexo
+A 48/51 j00014 t=0 ef0=1 scaled=1 as=1 lmin=0.00669 ok
+A 49/51 j00014 t=199 ef0=1 scaled=1 as=1 lmin=0.00669 ok
+A 50/51 j00014 t=449 ef0=1 scaled=1 as=1 lmin=0.00666 ok
+A 51/51 j00014 t=489 ef0=1 scaled=1 as=1 lmin=0.00666 ok
+START CLOSED j00014 replay_oficial
+DONE CLOSED j00014 replay_oficial peak=350.067364 fb=19 SOC_ev=59.3449
+START CLOSED j00014 escala_0p001
+DONE CLOSED j00014 escala_0p001 peak=350.000303 fb=0 SOC_ev=58.9705
+START CLOSED j00014 qp_recovery
+DONE CLOSED j00014 qp_recovery peak=350.000302 fb=0 SOC_ev=58.9706
+START CLOSED j00019 replay_oficial
+DONE CLOSED j00019 replay_oficial peak=350.089666 fb=28 SOC_ev=59.5023
+START CLOSED j00019 escala_0p001
+DONE CLOSED j00019 escala_0p001 peak=350.000303 fb=0 SOC_ev=58.9710
+START CLOSED j00019 qp_recovery
+DONE CLOSED j00019 qp_recovery peak=350.000302 fb=0 SOC_ev=58.9711
+OUTPUT C:\Users\Rauni\Documents\MPC_DATACENTER\05_resultados\revisao_operacional\causa_fallback_v1

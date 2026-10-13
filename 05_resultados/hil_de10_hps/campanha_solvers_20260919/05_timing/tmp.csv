@@ -1,0 +1,4 @@
+solver,file,phase,median,p95,max,note
+admm,C:\Users\Rauni\Documents\MPC_DATACENTER\07_fpga\fase1_hps\qp_fixtures\perda80\qp_k0500_exit0.txt,total,0.0060195,0.0062199,0.0068303,ok
+admm,C:\Users\Rauni\Documents\MPC_DATACENTER\07_fpga\fase1_hps\qp_fixtures\perda80\qp_k0500_exit0.txt,setup,0,0,0,
+admm,C:\Users\Rauni\Documents\MPC_DATACENTER\07_fpga\fase1_hps\qp_fixtures\perda80\qp_k0500_exit0.txt,solve,0.0060195,0.0062199,0.0068303,

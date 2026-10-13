@@ -1,0 +1,14 @@
+{
+  "escolha_delta_u": "compensar_Pbase2_no_miope",
+  "w_v5": 50,
+  "Pbase": 950,
+  "Rbase": 100,
+  "w_du_miope_alinhado": 45125000,
+  "w_eff": 50,
+  "nota": "H_miope(u) += 2*w_du/Pbase^2. Com w_du=50*950^2, w_eff = w_V5 = 50 no termo Delta u em modo normal. Nao reotimiza terminal/slacks/recarga do V5. Modo evento V5 ainda usa 0.1*w_delta_u (diferenca estrutural).",
+  "fill": "persistence",
+  "dUmax": 400,
+  "dUmax_evento": 400,
+  "common_slew": true,
+  "cenarios": ["carga_faixas", "perda_fonte"]
+}
